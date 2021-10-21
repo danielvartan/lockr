@@ -8,9 +8,11 @@ test_private_key <- function() {
 
 assert_private_key <- function() {
     if (!test_private_key()) {
-        stop("The private key file ('id_rsa') cannot be found in the 'ssh' ",
-             "directory. Ask for the key to the repository administrators.",
-             call. = FALSE)
+        cli::cli_abort(paste0(
+            "The private key file ({cli::col_red('id_rsa')}) cannot be found ",
+            "in the {cli::col_blue('ssh')} directory. ",
+            "Ask for the key to the repository administrators."
+        ))
     }
 }
 
@@ -24,8 +26,10 @@ test_public_key <- function() {
 
 assert_public_key <- function() {
     if (!test_public_key()) {
-        stop("The public key file ('id_rsa') cannot be found in the 'ssh' ",
-             "directory. Ask for the key to the repository administrators.",
-             call. = FALSE)
+        cli::cli_abort(paste0(
+            "The public key file ({cli::col_red('id_rsa.pub')}) cannot be ",
+            "found in the {cli::col_blue('ssh')} directory. ",
+            "Ask for the key to the repository administrators."
+        ))
     }
 }

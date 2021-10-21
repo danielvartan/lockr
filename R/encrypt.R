@@ -39,7 +39,7 @@
 encrypt_extdata <- function(type = NULL, file = NULL, remove_file = TRUE,
                             package = encryptrpak:::get_package_name()) {
     checkmate::assert_string(package)
-    root <- system.file("extdata", package = package)
+    root <- find_path("extdata", package = package)
 
     assert_public_key()
     checkmate::assert_choice(type, list.files(root), null.ok = TRUE)
@@ -97,7 +97,7 @@ encrypt_extdata <- function(type = NULL, file = NULL, remove_file = TRUE,
 decrypt_extdata <- function(type = NULL, file = NULL, remove_file = TRUE,
                             package = encryptrpak:::get_package_name()) {
     checkmate::assert_string(package)
-    root <- system.file("extdata", package = package)
+    root <- find_path("extdata", package = package)
 
     assert_private_key()
     checkmate::assert_choice(type, list.files(root), null.ok = TRUE)

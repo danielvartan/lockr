@@ -27,6 +27,7 @@
 get_private_key <- function(package = encryptrpak:::get_package_name()) {
     checkmate::assert_string(package)
     assert_private_key()
+
     openssl::read_key(get_private_key_path(package))
 }
 
@@ -35,13 +36,18 @@ get_private_key <- function(package = encryptrpak:::get_package_name()) {
 get_public_key <- function(package = encryptrpak:::get_package_name()) {
     checkmate::assert_string(package)
     assert_public_key()
+
     openssl::read_pubkey(get_public_key_path(package))
 }
 
 get_private_key_path <- function(package = encryptrpak:::get_package_name()) {
-    file.path(system.file("ssh", package = package), "id_rsa")
+    checkmate::assert_string(package)
+
+    file.path(find_path("ssh", package), "id_rsa")
 }
 
 get_public_key_path <- function(package = encryptrpak:::get_package_name()) {
-    file.path(system.file("ssh", package = package), "id_rsa.pub")
+    checkmate::assert_string(package)
+
+    file.path(find_path("ssh", package), "id_rsa.pub")
 }

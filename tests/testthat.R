@@ -37,3 +37,11 @@ test_check("encryptrpak")
 # usethis::use_logo("./.archive/ai/hex-logo.png")
 # usethis::use_pkgdown_github_pages()
 # usethis::use_tidy_description()
+
+# # Encryption
+#
+# cyphr::keypair_openssl(public_key_path, private_key_path)
+# encryptr::genkeys()
+# openssl::askpass()
+# openssl::read_key(private_key_path)
+# openssl::read_pubkey(public_key_path)

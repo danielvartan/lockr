@@ -2,6 +2,18 @@ single_quote_ <- function(x) paste0("'", x, "'")
 double_quote_ <- function(x) paste0("\"", x, "\"")
 backtick_ <- function(x) paste0("`", x, "`")
 
+find_path <- function(dir, package = encryptrpak:::get_package_name()) {
+    root <- system.file(package = package)
+
+    if (!stringr::str_detect(root, "inst/?$") &&
+        any(stringr::str_detect("^inst$", list.files(root)), na.rm = TRUE)) {
+
+        system.file(paste0("inst/", dir), package = package)
+    } else {
+        system.file(dir, package = package)
+    }
+}
+
 get_package_name <- function() {
     require_pkg("rstudioapi")
     basename(rstudioapi::getActiveProject())
