@@ -1,0 +1,22 @@
+citHeader("To cite {encryptrpak} in publications use:")
+
+citEntry(
+  entry       = "Unpublished",
+  title       = paste0("{encryptrpak}:", " ",
+                       "an R Package to help encrypt/decrypt files of R", " ",
+                       "packages"),
+  author      = personList(as.person("Daniel Vartanian"),
+                           as.person("Mario Pedrazzoli")),
+  year        = "2021",
+  url         = paste0("https://gipso.github.io/",
+                       "encryptrpak/"),
+  textVersion = paste0("Vartanian, D.", ", ",
+                       "Pedrazzoli, M.", " ",
+                       "(2021)",  ". ",
+                       "{encryptrpak}:", " ",
+                       "an R Package to help encrypt/decrypt files of R", " ",
+                       "packages", ". ",
+                       "Retrieved from https://gipso.github.io/",
+                       "encryptrpak/", "."),
+  note        = "Lifecycle: experimental"
+)
