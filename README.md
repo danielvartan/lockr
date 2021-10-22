@@ -59,7 +59,7 @@ citation("encryptrpak")
 #> To cite {encryptrpak} in publications use:
 #> 
 #>   Vartanian, D., Pedrazzoli, M. (2021). {encryptrpak}: an R Package to
-#>   encrypt/decrypt files of R packages. Retrieved from
+#>   encrypt/decrypt files of R packages.
 #>   https://gipso.github.io/encryptrpak/.
 #> 
 #> A BibTeX entry for LaTeX users is

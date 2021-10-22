@@ -16,7 +16,7 @@ citEntry(
                        "{encryptrpak}:", " ",
                        "an R Package to encrypt/decrypt files of R", " ",
                        "packages", ". ",
-                       "Retrieved from https://gipso.github.io/",
+                       "https://gipso.github.io/",
                        "encryptrpak/", "."),
   note        = "Lifecycle: experimental"
 )
