@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>An R Package to Help Encrypt/Decrypt Files of R Packages • encryptrpak</title>
+<title>An R Package to Encrypt/Decrypt Files of R Packages • encryptrpak</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
 <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="apple-touch-icon.png">
@@ -17,9 +17,9 @@
 <script src="bootstrap-toc.js"></script><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- pkgdown --><link href="pkgdown.css" rel="stylesheet">
-<script src="pkgdown.js"></script><meta property="og:title" content="An R Package to Help Encrypt/Decrypt Files of R Packages">
+<script src="pkgdown.js"></script><meta property="og:title" content="An R Package to Encrypt/Decrypt Files of R Packages">
 <meta property="og:description" content="{encryptrpak} is an extension for the {encryptr} package, adding 
-     new features to help encrypt/decrypt files of R packages.">
+     new features to encrypt/decrypt files of R packages.">
 <meta property="og:image" content="https://gipso.github.io/encryptrpak/logo.png">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -80,12 +80,19 @@
 </h1></div>
 <!-- badges: start -->
 
-<p><code>encryptrpak</code> is an extension for the <a href="https://github.com/SurgicalInformatics/encryptr">encryptr</a> package, adding new features to help encrypt/decrypt files of R packages.</p>
+<p><code>encryptrpak</code> is an extension for the <a href="https://github.com/SurgicalInformatics/encryptr">encryptr</a> package, adding new features to encrypt/decrypt files of R packages.</p>
 <p>Please note that <code>encryptrpak</code> is not related in any way with the <code>encryptr</code> developer team.</p>
+<p>See also other utility or extension packages created by the GIPSO developer team:</p>
+<ul>
+<li>
+<a href="https://github.com/gipso/encryptrpak"><code>gutils</code></a>: an R package with a collection of utility functions created by the GIPSO developer team.</li>
+<li>
+<a href="https://github.com/gipso/lubritime"><code>lubritime</code></a>: an extension for the <a href="https://github.com/tidyverse/lubridate">lubridate</a> package to deal with time in R.</li>
+</ul>
 <div id="installation" class="section level2">
 <h2 class="hasAnchor">
 <a href="#installation" class="anchor"></a>Installation</h2>
-<p><code>encryptrpak</code> is still at the <a href="https://lifecycle.r-lib.org/articles/stages.html#experimental">experimental</a> stage of development. That means people can use the package and provide feedback, but it comes with no promises for long term stability.</p>
+<p><code>encryptrpak</code> will be always at the <a href="https://lifecycle.r-lib.org/articles/stages.html#experimental">experimental</a> stage of development. We don’t intend to publish this package to CRAN.</p>
 <p>You can install <code>encryptrpak</code> from GitHub with:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="co"># install.packages("remotes")</span>
@@ -101,13 +108,13 @@
 <span class="co">#&gt; To cite {encryptrpak} in publications use:</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;   Vartanian, D., Pedrazzoli, M. (2021). {encryptrpak}: an R Package to</span>
-<span class="co">#&gt;   help encrypt/decrypt files of R packages. Retrieved from</span>
+<span class="co">#&gt;   encrypt/decrypt files of R packages. Retrieved from</span>
 <span class="co">#&gt;   https://gipso.github.io/encryptrpak/.</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt; A BibTeX entry for LaTeX users is</span>
 <span class="co">#&gt; </span>
 <span class="co">#&gt;   @Unpublished{,</span>
-<span class="co">#&gt;     title = {{encryptrpak}: an R Package to help encrypt/decrypt files of R packages},</span>
+<span class="co">#&gt;     title = {{encryptrpak}: an R Package to encrypt/decrypt files of R packages},</span>
 <span class="co">#&gt;     author = {Daniel Vartanian and Mario Pedrazzoli},</span>
 <span class="co">#&gt;     year = {2021},</span>
 <span class="co">#&gt;     url = {https://gipso.github.io/encryptrpak/},</span>
