@@ -5,9 +5,9 @@
 \alias{get_public_key}
 \title{Get a private/public key of a package}
 \usage{
-get_private_key(package = encryptrpak:::get_package_name())
+get_private_key(package = gutils:::get_package_name())
 
-get_public_key(package = encryptrpak:::get_package_name())
+get_public_key(package = gutils:::get_package_name())
 }
 \arguments{
 \item{package}{(optional) a string indicating the target package. If not

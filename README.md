@@ -19,17 +19,26 @@ MIT](https://img.shields.io/badge/license-MIT-green)](https://choosealicense.com
 
 `encryptrpak` is an extension for the
 [encryptr](https://github.com/SurgicalInformatics/encryptr) package,
-adding new features to help encrypt/decrypt files of R packages.
+adding new features to encrypt/decrypt files of R packages.
 
 Please note that `encryptrpak` is not related in any way with the
 `encryptr` developer team.
 
+See also other utility or extension packages created by the GIPSO
+developer team:
+
+-   [`gutils`](https://github.com/gipso/encryptrpak): an R package with
+    a collection of utility functions created by the GIPSO developer
+    team.
+-   [`lubritime`](https://github.com/gipso/lubritime): an extension for
+    the [lubridate](https://github.com/tidyverse/lubridate) package to
+    deal with time in R.
+
 ## Installation
 
-`encryptrpak` is still at the
+`encryptrpak` will be always at the
 [experimental](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-stage of development. That means people can use the package and provide
-feedback, but it comes with no promises for long term stability.
+stage of development. We don’t intend to publish this package to CRAN.
 
 You can install `encryptrpak` from GitHub with:
 
@@ -50,13 +59,13 @@ citation("encryptrpak")
 #> To cite {encryptrpak} in publications use:
 #> 
 #>   Vartanian, D., Pedrazzoli, M. (2021). {encryptrpak}: an R Package to
-#>   help encrypt/decrypt files of R packages. Retrieved from
+#>   encrypt/decrypt files of R packages. Retrieved from
 #>   https://gipso.github.io/encryptrpak/.
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Unpublished{,
-#>     title = {{encryptrpak}: an R Package to help encrypt/decrypt files of R packages},
+#>     title = {{encryptrpak}: an R Package to encrypt/decrypt files of R packages},
 #>     author = {Daniel Vartanian and Mario Pedrazzoli},
 #>     year = {2021},
 #>     url = {https://gipso.github.io/encryptrpak/},

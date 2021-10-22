@@ -9,14 +9,14 @@ encrypt_extdata(
   type = NULL,
   file = NULL,
   remove_file = TRUE,
-  package = encryptrpak:::get_package_name()
+  package = gutils:::get_package_name()
 )
 
 decrypt_extdata(
   type = NULL,
   file = NULL,
   remove_file = TRUE,
-  package = encryptrpak:::get_package_name()
+  package = gutils:::get_package_name()
 )
 }
 \arguments{
