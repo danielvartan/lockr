@@ -18,25 +18,25 @@ library(encryptrpak)
 # encryptrpak <a href='https://gipso.github.io/encryptrpak'><img src='man/figures/logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
+![CRAN status](https://www.r-pkg.org/badges/version/encryptrpak)
 [![Project Status: WIP – Initial development is in progress, but there has not yet been a stable, usable release suitable for the public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
 [![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/gipso/encryptrpak/workflows/R-CMD-check/badge.svg)](https://github.com/gipso/encryptrpak/actions)
 [![Codecov test coverage](https://codecov.io/gh/gipso/encryptrpak/branch/main/graph/badge.svg)](https://codecov.io/gh/gipso/encryptrpak?branch=main)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://choosealicense.com/licenses/mit/)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://gipso.github.io/encryptrpak/CODE_OF_CONDUCT.html)
+[![Buy Me A Coffee donate button](https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg)](https://ko-fi.com/danielvartan)
 <!-- badges: end -->
+
+## Overview
 
 `encryptrpak` is an extension for the [encryptr](https://github.com/SurgicalInformatics/encryptr) package, adding new features to encrypt/decrypt files of R packages.
 
 Please note that `encryptrpak` is not related in any way with the `encryptr` developer team.
 
-See also other utility or extension packages created by the GIPSO developer team:
-
-* [`gutils`](https://github.com/gipso/encryptrpak): an R package with a collection of utility functions created by the GIPSO developer team.
-* [`lubritime`](https://github.com/gipso/lubritime): an extension for the [lubridate](https://github.com/tidyverse/lubridate) package to deal with time in R.
-
 ## Installation
 
-`encryptrpak` will be always at the [experimental](https://lifecycle.r-lib.org/articles/stages.html#experimental) stage of development. We don't intend to publish this package to CRAN.
+`encryptrpak` will always be at the [experimental](https://lifecycle.r-lib.org/articles/stages.html#experimental) stage of development. We don't intend to publish this package to CRAN.
 
 You can install `encryptrpak` from GitHub with:
 
@@ -52,3 +52,23 @@ If you use `encryptrpak` in your research, please consider citing it. We put a l
 ```{r}
 citation("encryptrpak")
 ```
+
+## Contributing
+
+`encryptrpak` is a community project, everyone is welcome to contribute. Take a moment to review our [Guidelines for Contributing](https://gipso.github.io/encryptrpak/CONTRIBUTING.html).
+
+Please note that `encryptrpak` is released with a [Contributor Code of
+Conduct](https://gipso.github.io/encryptrpak/CODE_OF_CONDUCT.html). By contributing
+to this project, you agree to abide by its terms.
+
+## Support `encryptrpak`
+
+[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/danielvartan)
+
+Working with science in Brazil is a daily challenge. There are few funding opportunities available and their value is not enough to live on. Added to this, every day Brazilian science suffers from deep cuts in funding, which requires researchers to always look for other sources of income.
+
+If this package helps you in any way or you simply want to support the author's work, please consider donating or even creating a membership subscription (if you can!). Your support will help with the author's scientific pursuit and with the package maintenance.
+
+To make a donation click on the [Ko-fi](https://ko-fi.com/danielvartan) button above. Please indicate the `encryptrpak` package in your donation message.
+
+Thank you!
