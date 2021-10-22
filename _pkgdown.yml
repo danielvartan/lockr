@@ -5,7 +5,7 @@ template:
     bootswatch: cosmo
     ganalytics: G-YXSQGFZ4QK
     mathjax: true
-    noindex: true
+    noindex: false
 
 navbar:
   structure:
