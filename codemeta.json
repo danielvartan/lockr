@@ -5,8 +5,8 @@
   ],
   "@type": "SoftwareSourceCode",
   "identifier": "encryptrpak",
-  "description": "{encryptrpak} is an extension for the {encryptr} package, adding \n     new features to help encrypt/decrypt files of R packages.",
-  "name": "encryptrpak: An R Package to Help Encrypt/Decrypt Files of R Packages",
+  "description": "{encryptrpak} is an extension for the {encryptr} package, adding \n     new features to encrypt/decrypt files of R packages.",
+  "name": "encryptrpak: An R Package to Encrypt/Decrypt Files of R Packages",
   "codeRepository": "https://github.com/gipso/encryptrpak/",
   "relatedLink": "https://gipso.github.io/encryptrpak/",
   "issueTracker": "https://github.com/gipso/encryptrpak/issues/",
@@ -155,7 +155,7 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": ">= 4.1"
+      "version": ">= 4.0"
     },
     {
       "@type": "SoftwareApplication",
@@ -211,6 +211,12 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "gutils",
+      "name": "gutils",
+      "sameAs": "https://github.com/gipso/gutils"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "lifecycle",
       "name": "lifecycle",
       "version": ">= 1.0.0",
@@ -234,9 +240,22 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=openssl"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "stringr",
+      "name": "stringr",
+      "version": ">= 1.4.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=stringr"
     }
   ],
-  "fileSize": "42.245KB",
+  "fileSize": "41.486KB",
   "contIntegration": ["https://github.com/gipso/encryptrpak/actions", "https://codecov.io/gh/gipso/encryptrpak?branch=main"],
   "developmentStatus": ["https://www.repostatus.org/#wip", "https://lifecycle.r-lib.org/articles/stages.html#experimental"],
   "releaseNotes": "https://github.com/gipso/encryptrpak/blob/master/NEWS.md",
@@ -256,7 +275,7 @@
           "familyName": "Pedrazzoli"
         }
       ],
-      "name": "{encryptrpak}: an R Package to help encrypt/decrypt files of R packages",
+      "name": "{encryptrpak}: an R Package to encrypt/decrypt files of R packages",
       "url": "https://gipso.github.io/encryptrpak/",
       "description": "Lifecycle: experimental"
     }
@@ -265,6 +284,8 @@
     "r",
     "sleep",
     "chronobiology",
-    "r-package"
-  ]
+    "r-package",
+    "encryption"
+  ],
+  "readme": "https://github.com/gipso/encryptrpak/blob/main/README.md"
 }

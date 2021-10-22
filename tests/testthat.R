@@ -6,13 +6,6 @@ test_check("encryptrpak")
 
 # # For development use only (comment the code after use (Ctrl + Shift + C))
 #
-# usethis::use_logo("./.archive/ai/hex-logo.png")
-# usethis::use_package_doc()
-# codemetar::write_codemeta()
-#
-# spelling::spell_check_package()
-# spelling::update_wordlist()
-#
 # .rs.restartR()
 # codemetar::give_opinions()
 # codemetar::write_codemeta()
