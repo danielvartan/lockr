@@ -1,5 +1,5 @@
 Package: encryptrpak
-Title: An R Package to Encrypt/Decrypt Files of R Packages
+Title: Encrypt/Decrypt Files of R Packages
 Version: 0.0.0.9000
 Authors@R: 
     c(person(given = "Daniel",
@@ -16,9 +16,8 @@ Authors@R:
              role = "fnd"),
       person(given = "University of Sao Paulo (USP)",
              role = "fnd"))
-Maintainer: Daniel Vartanian <danvartan@gmail.com>
-Description: {encryptrpak} is an extension for the {encryptr} package, adding 
-     new features to encrypt/decrypt files of R packages.
+Description: An extension for the 'encryptr' package, adding new features to 
+     encrypt/decrypt files of R packages.
 License: MIT + file LICENSE
 URL: https://gipso.github.io/encryptrpak/, 
      https://github.com/gipso/encryptrpak/
@@ -28,18 +27,19 @@ Depends:
 Imports: 
     checkmate (>= 2.0.0),
     cli (>= 3.0.1),
+    devtools (>= 2.4.1),
     dplyr (>= 1.0.7),
     encryptr (>= 0.1.3),
     gutils,
     lifecycle (>= 1.0.0),
     openssl (>= 1.4.5),
+    rstudioapi (>= 0.13),
     stringr (>= 1.4.0)
 Suggests: 
     covr,
     knitr,
     mockr,
     rmarkdown,
-    rstudioapi,
     spelling,
     testthat (>= 3.0.0)
 Remotes: 

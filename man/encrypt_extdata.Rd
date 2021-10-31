@@ -9,14 +9,16 @@ encrypt_extdata(
   type = NULL,
   file = NULL,
   remove_file = TRUE,
-  package = gutils:::get_package_name()
+  package = gutils:::get_package_name(),
+  devtools_load = TRUE
 )
 
 decrypt_extdata(
   type = NULL,
   file = NULL,
   remove_file = TRUE,
-  package = gutils:::get_package_name()
+  package = gutils:::get_package_name(),
+  devtools_load = TRUE
 )
 }
 \arguments{
@@ -35,6 +37,12 @@ the original file must be removed after the encryption/decryption (default:
 \item{package}{(optional) a string indicating the target package. If not
 assigned, the function will try to use the name of the active project
 directory (requires the \code{rstudioapi} package).}
+
+\item{devtools_load}{(optional) a \code{\link[=logical]{logical}} value indicating if
+the function must call \code{devtools::load_all(".")} before running. This is
+useful if you use \link[devtools:devtools]{devtools} for package
+development. If \code{devtools_load = FALSE} and the dev package is not loaded,
+the function will use a installed version of the package.}
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}

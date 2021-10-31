@@ -1,12 +1,9 @@
 {
-  "@context": [
-    "https://doi.org/10.5063/schema/codemeta-2.0",
-    "http://schema.org"
-  ],
+  "@context": ["https://doi.org/10.5063/schema/codemeta-2.0", "http://schema.org"],
   "@type": "SoftwareSourceCode",
   "identifier": "encryptrpak",
-  "description": "{encryptrpak} is an extension for the {encryptr} package, adding \n     new features to encrypt/decrypt files of R packages.",
-  "name": "encryptrpak: An R Package to Encrypt/Decrypt Files of R Packages",
+  "description": "An extension for the 'encryptr' package, adding new features to \n     encrypt/decrypt files of R packages.",
+  "name": "encryptrpak: Encrypt/Decrypt Files of R Packages",
   "codeRepository": "https://github.com/gipso/encryptrpak/",
   "relatedLink": "https://gipso.github.io/encryptrpak/",
   "issueTracker": "https://github.com/gipso/encryptrpak/issues/",
@@ -114,18 +111,6 @@
     },
     {
       "@type": "SoftwareApplication",
-      "identifier": "rstudioapi",
-      "name": "rstudioapi",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=rstudioapi"
-    },
-    {
-      "@type": "SoftwareApplication",
       "identifier": "spelling",
       "name": "spelling",
       "provider": {
@@ -182,6 +167,19 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=cli"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "devtools",
+      "name": "devtools",
+      "version": ">= 2.4.1",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=devtools"
     },
     {
       "@type": "SoftwareApplication",
@@ -243,6 +241,19 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "rstudioapi",
+      "name": "rstudioapi",
+      "version": ">= 0.13",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=rstudioapi"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "stringr",
       "name": "stringr",
       "version": ">= 1.4.0",
@@ -255,10 +266,12 @@
       "sameAs": "https://CRAN.R-project.org/package=stringr"
     }
   ],
-  "fileSize": "41.486KB",
+  "releaseNotes": "https://github.com/gipso/encryptrpak/blob/master/NEWS.md",
+  "readme": "https://github.com/gipso/encryptrpak/blob/main/README.md",
+  "fileSize": "43.903KB",
   "contIntegration": ["https://github.com/gipso/encryptrpak/actions", "https://codecov.io/gh/gipso/encryptrpak?branch=main"],
   "developmentStatus": ["https://www.repostatus.org/#wip", "https://lifecycle.r-lib.org/articles/stages.html#experimental"],
-  "releaseNotes": "https://github.com/gipso/encryptrpak/blob/master/NEWS.md",
+  "keywords": ["r-package", "encryption", "r", "rstats"],
   "citation": [
     {
       "@type": "CreativeWork",
@@ -279,13 +292,5 @@
       "url": "https://gipso.github.io/encryptrpak/",
       "description": "Lifecycle: experimental"
     }
-  ],
-  "keywords": [
-    "r",
-    "sleep",
-    "chronobiology",
-    "r-package",
-    "encryption"
-  ],
-  "readme": "https://github.com/gipso/encryptrpak/blob/main/README.md"
+  ]
 }

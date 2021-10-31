@@ -26,6 +26,11 @@
 #' @param remove_file (optional) a [`logical`][logical()] value indicating if
 #'   the original file must be removed after the encryption/decryption (default:
 #'   `TRUE`).
+#' @param devtools_load (optional) a [`logical`][logical()] value indicating if
+#'   the function must call `devtools::load_all(".")` before running. This is
+#'   useful if you use [devtools][devtools::devtools-package] for package
+#'   development. If `devtools_load = FALSE` and the dev package is not loaded,
+#'   the function will use a installed version of the package.
 #'
 #' @template param_a
 #' @family encrypt/decrypt functions
@@ -37,7 +42,8 @@
 #' decrypt_extdata()
 #' }
 encrypt_extdata <- function(type = NULL, file = NULL, remove_file = TRUE,
-                            package = gutils:::get_package_name()) {
+                            package = gutils:::get_package_name(),
+                            devtools_load = TRUE) {
     checkmate::assert_string(package)
     root <- gutils:::find_path("extdata", package = package)
 
@@ -45,6 +51,14 @@ encrypt_extdata <- function(type = NULL, file = NULL, remove_file = TRUE,
     checkmate::assert_choice(type, list.files(root), null.ok = TRUE)
     checkmate::assert_character(file, min.len = 1, null.ok = TRUE)
     checkmate::assert_flag(remove_file)
+    checkmate::assert_flag(devtools_load)
+
+    if (isTRUE(devtools_load)) {
+        devtools::load_all(rstudioapi::getActiveProject(), quiet = FALSE)
+
+        return(encrypt_extdata(type, file, remove_file, package,
+                               devtools_load = FALSE))
+    }
 
     if (is.null(type) && is.null(file)) {
         for (i in list.files(root, recursive = TRUE)) {
@@ -96,7 +110,8 @@ encrypt_extdata <- function(type = NULL, file = NULL, remove_file = TRUE,
 #' @rdname encrypt_extdata
 #' @export
 decrypt_extdata <- function(type = NULL, file = NULL, remove_file = TRUE,
-                            package = gutils:::get_package_name()) {
+                            package = gutils:::get_package_name(),
+                            devtools_load = TRUE) {
     checkmate::assert_string(package)
     root <- gutils:::find_path("extdata", package = package)
 
@@ -104,6 +119,14 @@ decrypt_extdata <- function(type = NULL, file = NULL, remove_file = TRUE,
     checkmate::assert_choice(type, list.files(root), null.ok = TRUE)
     checkmate::assert_character(file, min.len = 1, null.ok = TRUE)
     checkmate::assert_flag(remove_file)
+    checkmate::assert_flag(devtools_load)
+
+    if (isTRUE(devtools_load)) {
+        devtools::load_all(rstudioapi::getActiveProject(), quiet = FALSE)
+
+        return(decrypt_extdata(type, file, remove_file, package,
+                               devtools_load = FALSE))
+    }
 
     if (!is_interactive()) {
         cli::cli_abort("This function can only be used in interactive mode.")

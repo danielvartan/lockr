@@ -4,11 +4,11 @@
 \name{encryptrpak-package}
 \alias{encryptrpak}
 \alias{encryptrpak-package}
-\title{encryptrpak: An R Package to Help Encrypt/Decrypt Files of R Packages}
+\title{encryptrpak: Encrypt/Decrypt Files of R Packages}
 \description{
 \if{html}{\figure{logo.png}{options: align='right' alt='logo' width='120'}}
 
-{encryptrpak} is an extension for the {encryptr} package, adding new features to help encrypt/decrypt files of R packages.
+An extension for the 'encryptr' package, adding new features to encrypt/decrypt files of R packages.
 }
 \seealso{
 Useful links:
