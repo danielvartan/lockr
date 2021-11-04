@@ -18,7 +18,7 @@ directory (requires the \code{rstudioapi} package).}
 The data of a private/public key.
 }
 \description{
-\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
 
 \code{get_private_key()} and \code{get_public_key()} returns the data of a
 private/public key inside an R package.

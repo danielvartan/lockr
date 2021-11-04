@@ -48,7 +48,7 @@ the function will use a installed version of the package.}
 An invisible \code{NULL}. The functions are called just for side effects.
 }
 \description{
-\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
+\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
 
 \code{encrypt_extdata()} and \code{decrypt_extdata()} encrypt/decrypt files from
 the \code{extdata} folder of an R package.

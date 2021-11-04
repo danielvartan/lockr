@@ -5,12 +5,11 @@
 
 <!-- badges: start -->
 
-![CRAN status](https://www.r-pkg.org/badges/version/encryptrpak)
-[![Project Status: WIP – Initial development is in progress, but there
-has not yet been a stable, usable release suitable for the
-public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostatus.org/#wip)
+[![Project Status: Active – The project has reached a stable, usable
+state and is being actively
+developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle:
-experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
 [![R-CMD-check](https://github.com/gipso/encryptrpak/workflows/R-CMD-check/badge.svg)](https://github.com/gipso/encryptrpak/actions)
 [![Codecov test
 coverage](https://codecov.io/gh/gipso/encryptrpak/branch/main/graph/badge.svg)](https://app.codecov.io/gh/gipso/encryptrpak?branch=main)
@@ -33,16 +32,14 @@ Please note that `encryptrpak` is not related in any way with the
 
 ## Installation
 
-`encryptrpak` will always be at the
-[experimental](https://lifecycle.r-lib.org/articles/stages.html#experimental)
-stage of development. We don’t intend to publish this package to CRAN.
-
 You can install `encryptrpak` from GitHub with:
 
 ``` r
 # install.packages("remotes")
 remotes::install_github("gipso/encryptrpak")
 ```
+
+We don’t intend to publish this package to CRAN.
 
 ## Citation
 
@@ -55,9 +52,9 @@ citation("encryptrpak")
 #> 
 #> To cite {encryptrpak} in publications use:
 #> 
-#>   Vartanian, D., Pedrazzoli, M. (2021). {encryptrpak}: an R Package to
-#>   encrypt/decrypt files of R packages.
-#>   https://gipso.github.io/encryptrpak/.
+#>   Vartanian, D., & Pedrazzoli, M. (2021). {encryptrpak}: an R Package
+#>   to encrypt/decrypt files of R packages.
+#>   https://gipso.github.io/encryptrpak/
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -66,7 +63,7 @@ citation("encryptrpak")
 #>     author = {Daniel Vartanian and Mario Pedrazzoli},
 #>     year = {2021},
 #>     url = {https://gipso.github.io/encryptrpak/},
-#>     note = {Lifecycle: experimental},
+#>     note = {Lifecycle: maturing},
 #>   }
 ```
 

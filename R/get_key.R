@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' `r lifecycle::badge("experimental")`
+#' `r lifecycle::badge("maturing")`
 #'
 #' `get_private_key()` and `get_public_key()` returns the data of a
 #' private/public key inside an R package.

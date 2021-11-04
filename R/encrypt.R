@@ -2,7 +2,7 @@
 #'
 #' @description
 #'
-#' `r lifecycle::badge("experimental")`
+#' `r lifecycle::badge("maturing")`
 #'
 #' `encrypt_extdata()` and `decrypt_extdata()` encrypt/decrypt files from
 #' the `extdata` folder of an R package.
