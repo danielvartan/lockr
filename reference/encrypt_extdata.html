@@ -92,7 +92,7 @@ the extdata folder of an R package." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">encryptrpak</a>
-        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="Unreleased version">0.0.0.9000</span>
+        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
       </span>
     </div>
 
@@ -179,13 +179,16 @@ directory (requires the <code>rstudioapi</code> package).</p></td>
     <tr>
       <th>devtools_load</th>
       <td><p>(optional) a <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> value indicating if
-the function must call <code><a href='https://devtools.r-lib.org//reference/load_all.html'>devtools::load_all(".")</a></code> before running. This is
+the function must call <code>devtools::load_all(".")</code> before running. This is
 useful if you use <a href='https://devtools.r-lib.org//reference/devtools.html'>devtools</a> for package
 development. If <code>devtools_load = FALSE</code> and the dev package is not loaded,
 the function will use a installed version of the package.</p></td>
     </tr>
     </table>
 
+    <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
+
+    <p>An invisible <code>NULL</code>. The functions are called just for side effects.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
     <p>When decrypting, a dialog window will open asking for the key password for
@@ -196,11 +199,11 @@ folder (<code>inst</code>). The private and public keys must be named <code>id_r
 <code>id_rsa.pub</code>, respectively.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><div class='input'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span>
-<span class='fu'>encrypt_extdata</span><span class='op'>(</span><span class='op'>)</span>
-<span class='fu'>decrypt_extdata</span><span class='op'>(</span><span class='op'>)</span>
-<span class='op'>}</span>
-</div></pre>
+    <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
+<span class='r-in'><span class='fu'>encrypt_extdata</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>decrypt_extdata</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-in'><span class='op'>}</span></span>
+</pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="pkgdown-sidebar">
     <nav id="toc" data-toggle="toc" class="sticky-top">
