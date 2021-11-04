@@ -8,7 +8,7 @@
   "relatedLink": "https://gipso.github.io/encryptrpak/",
   "issueTracker": "https://github.com/gipso/encryptrpak/issues/",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.0.0.9000",
+  "version": "0.1.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -243,7 +243,7 @@
       "@type": "SoftwareApplication",
       "identifier": "rstudioapi",
       "name": "rstudioapi",
-      "version": ">= 0.13",
+      "version": ">= 0.13.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -251,24 +251,11 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=rstudioapi"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "stringr",
-      "name": "stringr",
-      "version": ">= 1.4.0",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=stringr"
     }
   ],
   "releaseNotes": "https://github.com/gipso/encryptrpak/blob/master/NEWS.md",
   "readme": "https://github.com/gipso/encryptrpak/blob/main/README.md",
-  "fileSize": "43.903KB",
+  "fileSize": "58.54KB",
   "contIntegration": ["https://github.com/gipso/encryptrpak/actions", "https://codecov.io/gh/gipso/encryptrpak?branch=main"],
   "developmentStatus": ["https://www.repostatus.org/#wip", "https://lifecycle.r-lib.org/articles/stages.html#experimental"],
   "keywords": ["r-package", "encryption", "r", "rstats"],

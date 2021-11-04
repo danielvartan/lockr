@@ -32,6 +32,8 @@
 #'   development. If `devtools_load = FALSE` and the dev package is not loaded,
 #'   the function will use a installed version of the package.
 #'
+#' @return An invisible `NULL`. The functions are called just for side effects.
+#'
 #' @template param_a
 #' @family encrypt/decrypt functions
 #' @export
@@ -45,42 +47,42 @@ encrypt_extdata <- function(type = NULL, file = NULL, remove_file = TRUE,
                             package = gutils:::get_package_name(),
                             devtools_load = TRUE) {
     checkmate::assert_string(package)
-    root <- gutils:::find_path("extdata", package = package)
-
-    assert_public_key()
-    checkmate::assert_choice(type, list.files(root), null.ok = TRUE)
     checkmate::assert_character(file, min.len = 1, null.ok = TRUE)
     checkmate::assert_flag(remove_file)
     checkmate::assert_flag(devtools_load)
 
+    assert_public_key()
+    root <- gutils:::find_path("extdata", package = package)
+    checkmate::assert_choice(type, list.files_(root), null.ok = TRUE)
+
     if (isTRUE(devtools_load)) {
-        devtools::load_all(rstudioapi::getActiveProject(), quiet = FALSE)
+        load_all(rstudioapi::getActiveProject(), quiet = FALSE)
 
         return(encrypt_extdata(type, file, remove_file, package,
                                devtools_load = FALSE))
     }
 
     if (is.null(type) && is.null(file)) {
-        for (i in list.files(root, recursive = TRUE)) {
+        for (i in list.files_(root, recursive = TRUE)) {
             if (!grepl("\\.encryptr\\.bin$", i)) {
-                encryptr::encrypt_file(file.path(root, i),
-                                       public_key_path = get_public_key_path())
+                encrypt_file(file.path(root, i),
+                             public_key_path = get_public_key_path())
 
-                if (isTRUE(remove_file)) file.remove(file.path(root, i))
+                if (isTRUE(remove_file)) file.remove_(file.path(root, i))
             }
         }
     } else if (!is.null(type) && is.null(file)) {
-        for (i in list.files(file.path(root, type))) {
+        for (i in list.files_(file.path(root, type))) {
             if (!grepl("\\.encryptr\\.bin$", i)) {
-                encryptr::encrypt_file(file.path(root, type, i),
-                                       public_key_path = get_public_key_path())
+                encrypt_file(file.path(root, type, i),
+                             public_key_path = get_public_key_path())
 
-                if (isTRUE(remove_file)) file.remove(file.path(root, type, i))
+                if (isTRUE(remove_file)) file.remove_(file.path(root, type, i))
             }
         }
     } else if (!is.null(type) && !is.null(file)) {
         for (i in file) {
-            if (!(i %in% list.files(file.path(root, type)))) {
+            if (!(i %in% list.files_(file.path(root, type)))) {
                 cli::cli_abort(paste0(
                     "{cli::col_red(gutils:::single_quote_(i))} file cannot ",
                     "be found."
@@ -90,10 +92,10 @@ encrypt_extdata <- function(type = NULL, file = NULL, remove_file = TRUE,
 
         for (i in file) {
             if (!grepl("\\.encryptr\\.bin$", i)) {
-                encryptr::encrypt_file(file.path(root, type, i),
-                                       public_key_path = get_public_key_path())
+                encrypt_file(file.path(root, type, i),
+                             public_key_path = get_public_key_path())
 
-                if (isTRUE(remove_file)) file.remove(file.path(root, type, i))
+                if (isTRUE(remove_file)) file.remove_(file.path(root, type, i))
             }
         }
     } else {
@@ -113,16 +115,16 @@ decrypt_extdata <- function(type = NULL, file = NULL, remove_file = TRUE,
                             package = gutils:::get_package_name(),
                             devtools_load = TRUE) {
     checkmate::assert_string(package)
-    root <- gutils:::find_path("extdata", package = package)
-
-    assert_private_key()
-    checkmate::assert_choice(type, list.files(root), null.ok = TRUE)
     checkmate::assert_character(file, min.len = 1, null.ok = TRUE)
     checkmate::assert_flag(remove_file)
     checkmate::assert_flag(devtools_load)
 
+    assert_private_key()
+    root <- gutils:::find_path("extdata", package = package)
+    checkmate::assert_choice(type, list.files_(root), null.ok = TRUE)
+
     if (isTRUE(devtools_load)) {
-        devtools::load_all(rstudioapi::getActiveProject(), quiet = FALSE)
+        load_all(rstudioapi::getActiveProject(), quiet = FALSE)
 
         return(decrypt_extdata(type, file, remove_file, package,
                                devtools_load = FALSE))
@@ -133,28 +135,26 @@ decrypt_extdata <- function(type = NULL, file = NULL, remove_file = TRUE,
     }
 
     if (is.null(type) && is.null(file)) {
-        for (i in list.files(root, recursive = TRUE)) {
+        for (i in list.files_(root, recursive = TRUE)) {
             if (grepl("\\.encryptr\\.bin$", i)) {
-                encryptr::decrypt_file(file.path(root, i),
-                                       private_key_path =
-                                           get_private_key_path())
+                decrypt_file(file.path(root, i),
+                             private_key_path = get_private_key_path())
 
-                if (isTRUE(remove_file)) file.remove(file.path(root, i))
+                if (isTRUE(remove_file)) file.remove_(file.path(root, i))
             }
         }
     } else if (!is.null(type) && is.null(file)) {
-        for (i in list.files(file.path(root, type))) {
+        for (i in list.files_(file.path(root, type))) {
             if (grepl("\\.encryptr\\.bin$", i)) {
-                encryptr::decrypt_file(file.path(root, type, i),
-                                       private_key_path =
-                                           get_private_key_path())
+                decrypt_file(file.path(root, type, i),
+                             private_key_path = get_private_key_path())
 
-                if (isTRUE(remove_file)) file.remove(file.path(root, type, i))
+                if (isTRUE(remove_file)) file.remove_(file.path(root, type, i))
             }
         }
     } else if (!is.null(type) && !is.null(file)) {
         for (i in file) {
-            if (!(i %in% list.files(file.path(root, type)))) {
+            if (!(i %in% list.files_(file.path(root, type)))) {
                 cli::cli_abort(paste0(
                     "{cli::col_red(gutils:::single_quote_(i))} file cannot be ",
                     "found."
@@ -164,11 +164,10 @@ decrypt_extdata <- function(type = NULL, file = NULL, remove_file = TRUE,
 
         for (i in file) {
             if (grepl("\\.encryptr\\.bin$", i)) {
-                encryptr::decrypt_file(file.path(root, type, i),
-                                       private_key_path =
-                                           get_private_key_path())
+                decrypt_file(file.path(root, type, i),
+                             private_key_path = get_private_key_path())
 
-                if (isTRUE(remove_file)) file.remove(file.path(root, type, i))
+                if (isTRUE(remove_file)) file.remove_(file.path(root, type, i))
             }
         }
     } else {

@@ -7,6 +7,7 @@ test_check("encryptrpak")
 # # For development use only (comment the code after use (Ctrl + Shift + C))
 #
 # .rs.restartR()
+# BiocCheck::BiocCheck()
 # codemetar::give_opinions()
 # codemetar::write_codemeta()
 # covr::package_coverage()
@@ -20,6 +21,7 @@ test_check("encryptrpak")
 # pkgdown::build_favicons(overwrite = TRUE)
 # pkgdown::build_reference(preview = FALSE)
 # pkgdown::build_site(preview = TRUE)
+# rhub::check_for_cran()
 # spelling::spell_check_package()
 # spelling::update_wordlist()
 # urlchecker::url_check()
@@ -33,7 +35,6 @@ test_check("encryptrpak")
 
 # # Encryption
 #
-# cyphr::keypair_openssl(public_key_path, private_key_path)
 # encryptr::genkeys()
 # openssl::askpass()
 # openssl::read_key(private_key_path)

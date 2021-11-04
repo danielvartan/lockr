@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# encryptrpak <a href='https://gipso.github.io/encryptrpak'><img src='man/figures/logo.png' align="right" height="139" /></a>
+# encryptrpak <a href='https://gipso.github.io/encryptrpak/'><img src='man/figures/logo.png' align="right" height="139" /></a>
 
 <!-- badges: start -->
 
@@ -13,7 +13,7 @@ public.](https://www.repostatus.org/badges/latest/wip.svg)](https://www.repostat
 experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 [![R-CMD-check](https://github.com/gipso/encryptrpak/workflows/R-CMD-check/badge.svg)](https://github.com/gipso/encryptrpak/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/gipso/encryptrpak/branch/main/graph/badge.svg)](https://codecov.io/gh/gipso/encryptrpak?branch=main)
+coverage](https://codecov.io/gh/gipso/encryptrpak/branch/main/graph/badge.svg)](https://app.codecov.io/gh/gipso/encryptrpak?branch=main)
 [![License:
 MIT](https://img.shields.io/badge/license-MIT-green)](https://choosealicense.com/licenses/mit/)
 [![Contributor
@@ -33,7 +33,7 @@ Please note that `encryptrpak` is not related in any way with the
 
 ## Installation
 
-`encryptrpak` will be always at the
+`encryptrpak` will always be at the
 [experimental](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 stage of development. We don’t intend to publish this package to CRAN.
 

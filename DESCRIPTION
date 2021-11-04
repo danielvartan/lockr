@@ -1,6 +1,6 @@
 Package: encryptrpak
 Title: Encrypt/Decrypt Files of R Packages
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     c(person(given = "Daniel",
              family = "Vartanian",
@@ -33,8 +33,7 @@ Imports:
     gutils,
     lifecycle (>= 1.0.0),
     openssl (>= 1.4.5),
-    rstudioapi (>= 0.13),
-    stringr (>= 1.4.0)
+    rstudioapi (>= 0.13.0)
 Suggests: 
     covr,
     knitr,

@@ -44,6 +44,9 @@ useful if you use \link[devtools:devtools]{devtools} for package
 development. If \code{devtools_load = FALSE} and the dev package is not loaded,
 the function will use a installed version of the package.}
 }
+\value{
+An invisible \code{NULL}. The functions are called just for side effects.
+}
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#experimental}{\figure{lifecycle-experimental.svg}{options: alt='[Experimental]'}}}{\strong{[Experimental]}}
 
