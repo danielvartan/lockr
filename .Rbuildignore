@@ -15,3 +15,4 @@
 ^Meta$
 ^pkgdown$
 ^README\.Rmd$
+^CITATION\.cff$
