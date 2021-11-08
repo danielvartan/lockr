@@ -57,8 +57,7 @@ citation("encryptrpak")
 `encryptrpak` is a community project, everyone is welcome to contribute. Take a moment to review our [Guidelines for Contributing](https://gipso.github.io/encryptrpak/CONTRIBUTING.html).
 
 Please note that `encryptrpak` is released with a [Contributor Code of
-Conduct](https://gipso.github.io/encryptrpak/CODE_OF_CONDUCT.html). By contributing
-to this project, you agree to abide by its terms.
+Conduct](https://gipso.github.io/encryptrpak/CODE_OF_CONDUCT.html). By contributing to this project, you agree to abide by its terms.
 
 ## Support `encryptrpak`
 

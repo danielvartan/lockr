@@ -8,7 +8,7 @@ message: 'To cite package "encryptrpak" in publications use:'
 type: software
 license: MIT
 title: 'encryptrpak: Encrypt/Decrypt Files of R Packages'
-version: 0.1.0
+version: 0.1.0.9000
 abstract: An extension for the 'encryptr' package, adding new features to encrypt/decrypt
   files of R packages.
 authors:
