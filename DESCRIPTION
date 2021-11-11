@@ -1,6 +1,6 @@
 Package: encryptrpak
 Title: Encrypt/Decrypt Files of R Packages
-Version: 0.2.0
+Version: 0.2.0.9000
 Authors@R: 
     c(person(given = "Daniel",
              family = "Vartanian",
