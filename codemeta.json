@@ -8,7 +8,7 @@
   "relatedLink": "https://gipso.github.io/encryptrpak/",
   "issueTracker": "https://github.com/gipso/encryptrpak/issues/",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -253,7 +253,7 @@
   ],
   "releaseNotes": "https://github.com/gipso/encryptrpak/blob/master/NEWS.md",
   "readme": "https://github.com/gipso/encryptrpak/blob/main/README.md",
-  "fileSize": "84.841KB",
+  "fileSize": "84.843KB",
   "contIntegration": ["https://github.com/gipso/encryptrpak/actions", "https://app.codecov.io/gh/gipso/encryptrpak?branch=main"],
   "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#maturing"],
   "keywords": ["r-package", "encryption", "r", "rstats"],
