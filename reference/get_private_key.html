@@ -48,8 +48,11 @@
 
 <meta property="og:title" content="Get a private/public key of a package — get_private_key" />
 <meta property="og:description" content="
-get_private_key() and get_public_key() returns the data of a
-private/public key inside an R package." />
+get_private_key() and get_public_key() returns the a
+rsa object with the data of a private/public key
+inside an R package.
+get_private_key_path() and get_public_key_path() returns a string with
+the location of a private/public key inside an R package." />
 <meta property="og:image" content="https://gipso.github.io/encryptrpak/logo.png" />
 
 
@@ -92,7 +95,7 @@ private/public key inside an R package." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">encryptrpak</a>
-        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -129,13 +132,26 @@ private/public key inside an R package." />
 
     <div class="ref-description">
     <p><a href='https://lifecycle.r-lib.org/articles/stages.html#maturing'><img src='figures/lifecycle-maturing.svg' alt='[Maturing]' /></a></p>
-<p><code>get_private_key()</code> and <code>get_public_key()</code> returns the data of a
-private/public key inside an R package.</p>
+<p><code>get_private_key()</code> and <code>get_public_key()</code> returns the a
+<code><a href='https://rdrr.io/pkg/openssl/man/read_key.html'>rsa</a></code> object with the data of a private/public key
+inside an R package.</p>
+<p><code>get_private_key_path()</code> and <code>get_public_key_path()</code> returns a string with
+the location of a private/public key inside an R package.</p>
     </div>
 
-    <pre class="usage"><span class='fu'>get_private_key</span><span class='op'>(</span>package <span class='op'>=</span> <span class='fu'>gutils</span><span class='fu'>:::</span><span class='fu'>get_package_name</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span>
+    <pre class="usage"><span class='fu'>get_private_key</span><span class='op'>(</span>package <span class='op'>=</span> <span class='fu'>gutils</span><span class='fu'>:::</span><span class='fu'>get_package_name</span><span class='op'>(</span><span class='op'>)</span>, devtools_load <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
 
-<span class='fu'>get_public_key</span><span class='op'>(</span>package <span class='op'>=</span> <span class='fu'>gutils</span><span class='fu'>:::</span><span class='fu'>get_package_name</span><span class='op'>(</span><span class='op'>)</span><span class='op'>)</span></pre>
+<span class='fu'>get_public_key</span><span class='op'>(</span>package <span class='op'>=</span> <span class='fu'>gutils</span><span class='fu'>:::</span><span class='fu'>get_package_name</span><span class='op'>(</span><span class='op'>)</span>, devtools_load <span class='op'>=</span> <span class='cn'>FALSE</span><span class='op'>)</span>
+
+<span class='fu'>get_private_key_path</span><span class='op'>(</span>
+  package <span class='op'>=</span> <span class='fu'>gutils</span><span class='fu'>:::</span><span class='fu'>get_package_name</span><span class='op'>(</span><span class='op'>)</span>,
+  devtools_load <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span>
+
+<span class='fu'>get_public_key_path</span><span class='op'>(</span>
+  package <span class='op'>=</span> <span class='fu'>gutils</span><span class='fu'>:::</span><span class='fu'>get_package_name</span><span class='op'>(</span><span class='op'>)</span>,
+  devtools_load <span class='op'>=</span> <span class='cn'>FALSE</span>
+<span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
@@ -144,23 +160,36 @@ private/public key inside an R package.</p>
       <th>package</th>
       <td><p>(optional) a string indicating the target package. If not
 assigned, the function will try to use the name of the active project
-directory (requires the <code>rstudioapi</code> package).</p></td>
+directory.</p></td>
+    </tr>
+    <tr>
+      <th>devtools_load</th>
+      <td><p>(optional) a <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> value
+indicating if the function must call <code>devtools::load_all(".")</code> before
+running. This is useful if you use <a href='https://devtools.r-lib.org/'>devtools</a>
+for package development. If <code>devtools_load = FALSE</code> and the dev package is
+not loaded, the function will use a installed version of the package
+(default: <code>FALSE</code>).</p></td>
     </tr>
     </table>
 
     <h2 class="hasAnchor" id="value"><a class="anchor" href="#value"></a>Value</h2>
 
-    <p>The data of a private/public key.</p>
+    <p>A <code><a href='https://rdrr.io/pkg/openssl/man/read_key.html'>rsa</a></code> object with the data of a private/public
+key or a string with the path of a private/public key.</p>
     <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
 
-    <p>The keys must be in a folder named <code>ssh</code> that must be present in the system
-folder (<code>inst</code>). The private and public keys must be named <code>id_rsa</code> and
-<code>id_rsa.pub</code>, respectively.</p>
+    <p>The keys must be in a directory named <code>ssh</code> that must be present in the
+package system folder (for <a href='https://bit.ly/3F4Wqwz'>source packages</a> that is
+usually the <code>inst</code> directory). The private and public keys must be named
+<code>id_rsa</code> and <code>id_rsa.pub</code>, respectively.</p>
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
     <pre class="examples"><span class='r-in'><span class='kw'>if</span> <span class='op'>(</span><span class='cn'>FALSE</span><span class='op'>)</span> <span class='op'>{</span></span>
 <span class='r-in'><span class='fu'>get_private_key</span><span class='op'>(</span><span class='op'>)</span></span>
 <span class='r-in'><span class='fu'>get_public_key</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>get_private_key_path</span><span class='op'>(</span><span class='op'>)</span></span>
+<span class='r-in'><span class='fu'>get_public_key_path</span><span class='op'>(</span><span class='op'>)</span></span>
 <span class='r-in'><span class='op'>}</span></span>
 </pre>
   </div>

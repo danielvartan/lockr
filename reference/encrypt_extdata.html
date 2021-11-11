@@ -92,7 +92,7 @@ the extdata folder of an R package." />
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">encryptrpak</a>
-        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -138,7 +138,7 @@ the <code>extdata</code> folder of an R package.</p>
   file <span class='op'>=</span> <span class='cn'>NULL</span>,
   remove_file <span class='op'>=</span> <span class='cn'>TRUE</span>,
   package <span class='op'>=</span> <span class='fu'>gutils</span><span class='fu'>:::</span><span class='fu'>get_package_name</span><span class='op'>(</span><span class='op'>)</span>,
-  devtools_load <span class='op'>=</span> <span class='cn'>TRUE</span>
+  devtools_load <span class='op'>=</span> <span class='cn'>FALSE</span>
 <span class='op'>)</span>
 
 <span class='fu'>decrypt_extdata</span><span class='op'>(</span>
@@ -146,7 +146,7 @@ the <code>extdata</code> folder of an R package.</p>
   file <span class='op'>=</span> <span class='cn'>NULL</span>,
   remove_file <span class='op'>=</span> <span class='cn'>TRUE</span>,
   package <span class='op'>=</span> <span class='fu'>gutils</span><span class='fu'>:::</span><span class='fu'>get_package_name</span><span class='op'>(</span><span class='op'>)</span>,
-  devtools_load <span class='op'>=</span> <span class='cn'>TRUE</span>
+  devtools_load <span class='op'>=</span> <span class='cn'>FALSE</span>
 <span class='op'>)</span></pre>
 
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
@@ -174,15 +174,16 @@ the original file must be removed after the encryption/decryption (default:
       <th>package</th>
       <td><p>(optional) a string indicating the target package. If not
 assigned, the function will try to use the name of the active project
-directory (requires the <code>rstudioapi</code> package).</p></td>
+directory.</p></td>
     </tr>
     <tr>
       <th>devtools_load</th>
-      <td><p>(optional) a <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> value indicating if
-the function must call <code>devtools::load_all(".")</code> before running. This is
-useful if you use <a href='https://devtools.r-lib.org//reference/devtools.html'>devtools</a> for package
-development. If <code>devtools_load = FALSE</code> and the dev package is not loaded,
-the function will use a installed version of the package.</p></td>
+      <td><p>(optional) a <code><a href='https://rdrr.io/r/base/logical.html'>logical</a></code> value
+indicating if the function must call <code>devtools::load_all(".")</code> before
+running. This is useful if you use <a href='https://devtools.r-lib.org/'>devtools</a>
+for package development. If <code>devtools_load = FALSE</code> and the dev package is
+not loaded, the function will use a installed version of the package
+(default: <code>FALSE</code>).</p></td>
     </tr>
     </table>
 
