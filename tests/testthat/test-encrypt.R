@@ -1,14 +1,13 @@
 test_that("encrypt_extdata | general test", {
-    # "if (is.null(type) && is.null(file))" & "if (isTRUE(devtools_load))"
+    # "if (is.null(type) && is.null(file))"
     mock <- function(.parent = parent.frame(), .env = topenv(.parent)) {
         mockr::with_mock(
             assert_public_key = function(...) TRUE,
             list.files_ = function(...) "",
-            load_all = function(...) TRUE,
             encrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
             encrypt_extdata(type = NULL, file = NULL, remove_file = TRUE,
-                            package = "base", devtools_load = TRUE)
+                            package = "base", devtools_load = FALSE)
         )
     }
 
@@ -19,11 +18,10 @@ test_that("encrypt_extdata | general test", {
         mockr::with_mock(
             assert_public_key = function(...) TRUE,
             list.files_ = function(...) "",
-            load_all = function(...) TRUE,
             encrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
             encrypt_extdata(type = "", file = NULL, remove_file = TRUE,
-                            package = "base", devtools_load = TRUE)
+                            package = "base", devtools_load = FALSE)
         )
     }
 
@@ -34,11 +32,10 @@ test_that("encrypt_extdata | general test", {
         mockr::with_mock(
             assert_public_key = function(...) TRUE,
             list.files_ = function(...) "",
-            load_all = function(...) TRUE,
             encrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
             encrypt_extdata(type = "", file = "a", remove_file = TRUE,
-                            package = "base", devtools_load = TRUE)
+                            package = "base", devtools_load = FALSE)
         )
     }
 
@@ -49,11 +46,10 @@ test_that("encrypt_extdata | general test", {
         mockr::with_mock(
             assert_public_key = function(...) TRUE,
             list.files_ = function(...) "",
-            load_all = function(...) TRUE,
             encrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
             encrypt_extdata(type = "", file = "", remove_file = TRUE,
-                            package = "base", devtools_load = TRUE)
+                            package = "base", devtools_load = FALSE)
         )
     }
 
@@ -64,11 +60,10 @@ test_that("encrypt_extdata | general test", {
         mockr::with_mock(
             assert_public_key = function(...) TRUE,
             list.files_ = function(...) "",
-            load_all = function(...) TRUE,
             encrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
             encrypt_extdata(type = NULL, file = "", remove_file = TRUE,
-                            package = "base", devtools_load = TRUE)
+                            package = "base", devtools_load = FALSE)
         )
     }
 
@@ -78,17 +73,17 @@ test_that("encrypt_extdata | general test", {
 test_that("encrypt_extdata | assertion test", {
     # "checkmate::assert_string(package)"
     expect_error(encrypt_extdata(type = NULL, file = NULL, remove_file = TRUE,
-                                 package = 1, devtools_load = TRUE),
+                                 package = 1, devtools_load = FALSE),
                  "Assertion on 'package' failed")
 
     # "checkmate::assert_character(file, min.len = 1, null.ok = TRUE)"
     expect_error(encrypt_extdata(type = NULL, file = 1, remove_file = TRUE,
-                                 package = "base", devtools_load = TRUE),
+                                 package = "base", devtools_load = FALSE),
                  "Assertion on 'file' failed")
 
     # "checkmate::assert_flag(remove_file))"
     expect_error(encrypt_extdata(type = NULL, file = NULL, remove_file = 1,
-                                 package = "base", devtools_load = TRUE),
+                                 package = "base", devtools_load = FALSE),
                  "Assertion on 'remove_file' failed")
 
     # "checkmate::assert_flag(devtools_load)"
@@ -98,18 +93,17 @@ test_that("encrypt_extdata | assertion test", {
 
     # "assert_public_key()"
     expect_error(encrypt_extdata(type = NULL, file = NULL, remove_file = TRUE,
-                                 package = "base", devtools_load = TRUE))
+                                 package = "base", devtools_load = FALSE))
 
     # "checkmate::assert_choice(type, list.files_(root), null.ok = TRUE)"
     mock <- function(.parent = parent.frame(), .env = topenv(.parent)) {
         mockr::with_mock(
             assert_public_key = function(...) TRUE,
             list.files_ = function(...) "",
-            load_all = function(...) TRUE,
             encrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
             encrypt_extdata(type = "a", file = NULL, remove_file = TRUE,
-                            package = "base", devtools_load = TRUE)
+                            package = "base", devtools_load = FALSE)
         )
     }
 
@@ -117,18 +111,18 @@ test_that("encrypt_extdata | assertion test", {
 })
 
 test_that("decrypt_extdata | general test", {
-    # "if (is.null(type) && is.null(file))" & "if (isTRUE(devtools_load))"
+    # "if (!is_interactive())" & "if (is.null(type) && is.null(file))"
     mock <- function(.parent = parent.frame(), .env = topenv(.parent)) {
         mockr::with_mock(
             assert_private_key = function(...) TRUE,
             list.files_ = function(...) "a.encryptr.bin",
-            load_all = function(...) TRUE,
             is_interactive = function(...) TRUE,
+            password_warning = function(...) TRUE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
             decrypt_extdata(type = NULL, file = NULL,
                             remove_file = TRUE, package = "base",
-                            devtools_load = TRUE)
+                            devtools_load = FALSE)
         )
     }
 
@@ -139,13 +133,13 @@ test_that("decrypt_extdata | general test", {
         mockr::with_mock(
             assert_private_key = function(...) TRUE,
             list.files_ = function(...) "a.encryptr.bin",
-            load_all = function(...) TRUE,
             is_interactive = function(...) TRUE,
+            password_warning = function(...) TRUE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
             decrypt_extdata(type = "a.encryptr.bin", file = NULL,
                             remove_file = TRUE, package = "base",
-                            devtools_load = TRUE)
+                            devtools_load = FALSE)
         )
     }
 
@@ -156,12 +150,12 @@ test_that("decrypt_extdata | general test", {
         mockr::with_mock(
             assert_private_key = function(...) TRUE,
             list.files_ = function(...) "",
-            load_all = function(...) TRUE,
             is_interactive = function(...) TRUE,
+            password_warning = function(...) TRUE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
             decrypt_extdata(type = "", file = "a", remove_file = TRUE,
-                            package = "base", devtools_load = TRUE)
+                            package = "base", devtools_load = FALSE)
         )
     }
 
@@ -172,13 +166,13 @@ test_that("decrypt_extdata | general test", {
         mockr::with_mock(
             assert_private_key = function(...) TRUE,
             list.files_ = function(...) "a.encryptr.bin",
-            load_all = function(...) TRUE,
             is_interactive = function(...) TRUE,
+            password_warning = function(...) TRUE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
             decrypt_extdata(type = "a.encryptr.bin", file = "a.encryptr.bin",
                             remove_file = TRUE, package = "base",
-                            devtools_load = TRUE)
+                            devtools_load = FALSE)
         )
     }
 
@@ -189,12 +183,12 @@ test_that("decrypt_extdata | general test", {
         mockr::with_mock(
             assert_private_key = function(...) TRUE,
             list.files_ = function(...) "",
-            load_all = function(...) TRUE,
             is_interactive = function(...) TRUE,
+            password_warning = function(...) TRUE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
             decrypt_extdata(type = NULL, file = "", remove_file = TRUE,
-                            package = "base", devtools_load = TRUE)
+                            package = "base", devtools_load = FALSE)
         )
     }
 
@@ -204,17 +198,17 @@ test_that("decrypt_extdata | general test", {
 test_that("decrypt_extdata | assertion test", {
     # "checkmate::assert_string(package)"
     expect_error(decrypt_extdata(type = NULL, file = NULL, remove_file = TRUE,
-                                 package = 1, devtools_load = TRUE),
+                                 package = 1, devtools_load = FALSE),
                  "Assertion on 'package' failed")
 
     # "checkmate::assert_character(file, min.len = 1, null.ok = TRUE)"
     expect_error(decrypt_extdata(type = NULL, file = 1, remove_file = TRUE,
-                                 package = "base", devtools_load = TRUE),
+                                 package = "base", devtools_load = FALSE),
                  "Assertion on 'file' failed")
 
     # "checkmate::assert_flag(remove_file))"
     expect_error(decrypt_extdata(type = NULL, file = NULL, remove_file = 1,
-                                 package = "base", devtools_load = TRUE),
+                                 package = "base", devtools_load = FALSE),
                  "Assertion on 'remove_file' failed")
 
     # "checkmate::assert_flag(devtools_load)"
@@ -224,19 +218,18 @@ test_that("decrypt_extdata | assertion test", {
 
     # "assert_private_key()"
     expect_error(decrypt_extdata(type = NULL, file = NULL, remove_file = TRUE,
-                                 package = "base", devtools_load = TRUE))
+                                 package = "base", devtools_load = FALSE))
 
     # "checkmate::assert_choice(type, list.files_(root), null.ok = TRUE)"
     mock <- function(.parent = parent.frame(), .env = topenv(.parent)) {
         mockr::with_mock(
             assert_private_key = function(...) TRUE,
             list.files_ = function(...) "",
-            load_all = function(...) TRUE,
             is_interactive = function(...) TRUE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
             decrypt_extdata(type = "a", file = NULL, remove_file = TRUE,
-                            package = "base", devtools_load = TRUE)
+                            package = "base", devtools_load = FALSE)
         )
     }
 
@@ -247,12 +240,11 @@ test_that("decrypt_extdata | assertion test", {
         mockr::with_mock(
             assert_private_key = function(...) TRUE,
             list.files_ = function(...) "",
-            load_all = function(...) TRUE,
             is_interactive = function(...) FALSE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
             decrypt_extdata(type = NULL, file = NULL, remove_file = TRUE,
-                            package = "base", devtools_load = TRUE)
+                            package = "base", devtools_load = FALSE)
         )
     }
 

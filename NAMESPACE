@@ -3,6 +3,8 @@
 export(decrypt_extdata)
 export(encrypt_extdata)
 export(get_private_key)
+export(get_private_key_path)
 export(get_public_key)
+export(get_public_key_path)
 importFrom(dplyr,"%>%")
 importFrom(lifecycle,deprecate_soft)

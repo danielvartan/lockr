@@ -10,7 +10,7 @@ encrypt_extdata(
   file = NULL,
   remove_file = TRUE,
   package = gutils:::get_package_name(),
-  devtools_load = TRUE
+  devtools_load = FALSE
 )
 
 decrypt_extdata(
@@ -18,7 +18,7 @@ decrypt_extdata(
   file = NULL,
   remove_file = TRUE,
   package = gutils:::get_package_name(),
-  devtools_load = TRUE
+  devtools_load = FALSE
 )
 }
 \arguments{
@@ -36,13 +36,14 @@ the original file must be removed after the encryption/decryption (default:
 
 \item{package}{(optional) a string indicating the target package. If not
 assigned, the function will try to use the name of the active project
-directory (requires the \code{rstudioapi} package).}
+directory.}
 
-\item{devtools_load}{(optional) a \code{\link[=logical]{logical}} value indicating if
-the function must call \code{devtools::load_all(".")} before running. This is
-useful if you use \link[devtools:devtools]{devtools} for package
-development. If \code{devtools_load = FALSE} and the dev package is not loaded,
-the function will use a installed version of the package.}
+\item{devtools_load}{(optional) a \code{\link[base:logical]{logical}} value
+indicating if the function must call \code{devtools::load_all(".")} before
+running. This is useful if you use \href{https://devtools.r-lib.org/}{devtools}
+for package development. If \code{devtools_load = FALSE} and the dev package is
+not loaded, the function will use a installed version of the package
+(default: \code{FALSE}).}
 }
 \value{
 An invisible \code{NULL}. The functions are called just for side effects.

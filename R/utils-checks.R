@@ -1,7 +1,8 @@
 test_private_key <- function(package = gutils:::get_package_name()) {
     checkmate::assert_string(package)
 
-    if (file.exists_(get_private_key_path(package))) {
+    if (file.exists_(file.path(gutils:::find_path("ssh", package),
+                               "id_rsa"))) {
         TRUE
     } else {
         FALSE
@@ -25,7 +26,8 @@ assert_private_key <- function(package = gutils:::get_package_name()) {
 test_public_key <- function(package = gutils:::get_package_name()) {
     checkmate::assert_string(package)
 
-    if (file.exists_(get_public_key_path(package))) {
+    if (file.exists_(file.path(gutils:::find_path("ssh", package),
+                               "id_rsa.pub"))) {
         TRUE
     } else {
         FALSE

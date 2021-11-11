@@ -25,3 +25,8 @@ test_that("list.files_() | general test", {
 test_that("load_all() | general test", {
     expect_error(load_all(1))
 })
+
+test_that("menu() | general test", {
+    expect_error(menu(graphics = 1))
+})
+
