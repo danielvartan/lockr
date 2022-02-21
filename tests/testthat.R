@@ -30,7 +30,7 @@ test_check("encryptrpak")
 # usethis::use_coverage()
 # usethis::use_github_action("check-pak")
 # usethis::use_github_action("test-coverage-pak")
-# usethis::use_logo("./.archive/ai/hex-logo.png")
+# usethis::use_logo(file.choose())
 # usethis::use_tidy_description()
 
 # # Encryption
