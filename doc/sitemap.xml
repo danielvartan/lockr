@@ -1,15 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gipso.github.io/encryptrpak//index.html</loc>
+    <loc>https://gipso.github.io/encryptrpak/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://gipso.github.io/encryptrpak//reference/encrypt_extdata.html</loc>
+    <loc>https://gipso.github.io/encryptrpak/CONTRIBUTING.html</loc>
   </url>
   <url>
-    <loc>https://gipso.github.io/encryptrpak//reference/encryptrpak-package.html</loc>
+    <loc>https://gipso.github.io/encryptrpak/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://gipso.github.io/encryptrpak//reference/get_private_key.html</loc>
+    <loc>https://gipso.github.io/encryptrpak/LICENSE.html</loc>
+  </url>
+  <url>
+    <loc>https://gipso.github.io/encryptrpak/authors.html</loc>
+  </url>
+  <url>
+    <loc>https://gipso.github.io/encryptrpak/index.html</loc>
+  </url>
+  <url>
+    <loc>https://gipso.github.io/encryptrpak/news/index.html</loc>
+  </url>
+  <url>
+    <loc>https://gipso.github.io/encryptrpak/reference/encrypt_extdata.html</loc>
+  </url>
+  <url>
+    <loc>https://gipso.github.io/encryptrpak/reference/encryptrpak-package.html</loc>
+  </url>
+  <url>
+    <loc>https://gipso.github.io/encryptrpak/reference/get_private_key.html</loc>
+  </url>
+  <url>
+    <loc>https://gipso.github.io/encryptrpak/reference/index.html</loc>
   </url>
 </urlset>
