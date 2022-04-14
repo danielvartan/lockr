@@ -6,8 +6,8 @@ test_that("encrypt_extdata | general test", {
             list.files_ = function(...) "",
             encrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
-            encrypt_extdata(type = NULL, file = NULL, remove_file = TRUE,
-                            package = "base", devtools_load = FALSE)
+            {encrypt_extdata(type = NULL, file = NULL, remove_file = TRUE,
+                            package = "base", devtools_load = FALSE)}
         )
     }
 
@@ -20,8 +20,8 @@ test_that("encrypt_extdata | general test", {
             list.files_ = function(...) "",
             encrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
-            encrypt_extdata(type = "", file = NULL, remove_file = TRUE,
-                            package = "base", devtools_load = FALSE)
+            {encrypt_extdata(type = "", file = NULL, remove_file = TRUE,
+                            package = "base", devtools_load = FALSE)}
         )
     }
 
@@ -34,8 +34,8 @@ test_that("encrypt_extdata | general test", {
             list.files_ = function(...) "",
             encrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
-            encrypt_extdata(type = "", file = "a", remove_file = TRUE,
-                            package = "base", devtools_load = FALSE)
+            {encrypt_extdata(type = "", file = "a", remove_file = TRUE,
+                            package = "base", devtools_load = FALSE)}
         )
     }
 
@@ -48,8 +48,8 @@ test_that("encrypt_extdata | general test", {
             list.files_ = function(...) "",
             encrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
-            encrypt_extdata(type = "", file = "", remove_file = TRUE,
-                            package = "base", devtools_load = FALSE)
+            {encrypt_extdata(type = "", file = "", remove_file = TRUE,
+                            package = "base", devtools_load = FALSE)}
         )
     }
 
@@ -62,8 +62,8 @@ test_that("encrypt_extdata | general test", {
             list.files_ = function(...) "",
             encrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
-            encrypt_extdata(type = NULL, file = "", remove_file = TRUE,
-                            package = "base", devtools_load = FALSE)
+            {encrypt_extdata(type = NULL, file = "", remove_file = TRUE,
+                            package = "base", devtools_load = FALSE)}
         )
     }
 
@@ -102,8 +102,8 @@ test_that("encrypt_extdata | assertion test", {
             list.files_ = function(...) "",
             encrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
-            encrypt_extdata(type = "a", file = NULL, remove_file = TRUE,
-                            package = "base", devtools_load = FALSE)
+            {encrypt_extdata(type = "a", file = NULL, remove_file = TRUE,
+                            package = "base", devtools_load = FALSE)}
         )
     }
 
@@ -120,9 +120,9 @@ test_that("decrypt_extdata | general test", {
             password_warning = function(...) TRUE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
-            decrypt_extdata(type = NULL, file = NULL,
+            {decrypt_extdata(type = NULL, file = NULL,
                             remove_file = TRUE, package = "base",
-                            devtools_load = FALSE)
+                            devtools_load = FALSE)}
         )
     }
 
@@ -137,9 +137,9 @@ test_that("decrypt_extdata | general test", {
             password_warning = function(...) TRUE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
-            decrypt_extdata(type = "a.encryptr.bin", file = NULL,
+            {decrypt_extdata(type = "a.encryptr.bin", file = NULL,
                             remove_file = TRUE, package = "base",
-                            devtools_load = FALSE)
+                            devtools_load = FALSE)}
         )
     }
 
@@ -154,8 +154,8 @@ test_that("decrypt_extdata | general test", {
             password_warning = function(...) TRUE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
-            decrypt_extdata(type = "", file = "a", remove_file = TRUE,
-                            package = "base", devtools_load = FALSE)
+            {decrypt_extdata(type = "", file = "a", remove_file = TRUE,
+                            package = "base", devtools_load = FALSE)}
         )
     }
 
@@ -170,9 +170,9 @@ test_that("decrypt_extdata | general test", {
             password_warning = function(...) TRUE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
-            decrypt_extdata(type = "a.encryptr.bin", file = "a.encryptr.bin",
+            {decrypt_extdata(type = "a.encryptr.bin", file = "a.encryptr.bin",
                             remove_file = TRUE, package = "base",
-                            devtools_load = FALSE)
+                            devtools_load = FALSE)}
         )
     }
 
@@ -187,8 +187,8 @@ test_that("decrypt_extdata | general test", {
             password_warning = function(...) TRUE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
-            decrypt_extdata(type = NULL, file = "", remove_file = TRUE,
-                            package = "base", devtools_load = FALSE)
+            {decrypt_extdata(type = NULL, file = "", remove_file = TRUE,
+                            package = "base", devtools_load = FALSE)}
         )
     }
 
@@ -228,8 +228,8 @@ test_that("decrypt_extdata | assertion test", {
             is_interactive = function(...) TRUE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
-            decrypt_extdata(type = "a", file = NULL, remove_file = TRUE,
-                            package = "base", devtools_load = FALSE)
+            {decrypt_extdata(type = "a", file = NULL, remove_file = TRUE,
+                            package = "base", devtools_load = FALSE)}
         )
     }
 
@@ -243,8 +243,8 @@ test_that("decrypt_extdata | assertion test", {
             is_interactive = function(...) FALSE,
             decrypt_file = function(...) TRUE,
             file.remove_ = function (...) TRUE,
-            decrypt_extdata(type = NULL, file = NULL, remove_file = TRUE,
-                            package = "base", devtools_load = FALSE)
+            {decrypt_extdata(type = NULL, file = NULL, remove_file = TRUE,
+                            package = "base", devtools_load = FALSE)}
         )
     }
 

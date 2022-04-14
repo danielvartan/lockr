@@ -4,7 +4,7 @@ test_that("test_private_key | general test", {
     mock <- function(.parent = parent.frame(), .env = topenv(.parent)) {
         mockr::with_mock(
             file.exists_ = function(...) TRUE,
-            test_private_key(package = "base")
+            {test_private_key(package = "base")}
         )
     }
 
@@ -23,7 +23,7 @@ test_that("assert_private_key | general test", {
     mock <- function(.parent = parent.frame(), .env = topenv(.parent)) {
         mockr::with_mock(
             test_private_key = function(...) TRUE,
-            assert_private_key(package = "base")
+            {assert_private_key(package = "base")}
         )
     }
 
@@ -42,7 +42,7 @@ test_that("test_public_key | general test", {
     mock <- function(.parent = parent.frame(), .env = topenv(.parent)) {
         mockr::with_mock(
             file.exists_ = function(...) TRUE,
-            test_public_key(package = "base")
+            {test_public_key(package = "base")}
         )
     }
 
@@ -61,7 +61,7 @@ test_that("assert_public_key | general test", {
     mock <- function(.parent = parent.frame(), .env = topenv(.parent)) {
         mockr::with_mock(
             test_public_key = function(...) TRUE,
-            assert_public_key(package = "base")
+            {assert_public_key(package = "base")}
         )
     }
 
