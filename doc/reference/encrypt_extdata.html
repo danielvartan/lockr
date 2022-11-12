@@ -60,21 +60,21 @@ the <code>extdata</code> folder of an R package.</p>
     </div>
 
     <div id="ref-usage">
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="fu">encrypt_extdata</span><span class="op">(</span>
-  type <span class="op">=</span> <span class="cn">NULL</span>,
-  file <span class="op">=</span> <span class="cn">NULL</span>,
-  remove_file <span class="op">=</span> <span class="cn">TRUE</span>,
-  package <span class="op">=</span> <span class="fu">gutils</span><span class="fu">:::</span><span class="fu">get_package_name</span><span class="op">(</span><span class="op">)</span>,
-  devtools_load <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span>
-
-<span class="fu">decrypt_extdata</span><span class="op">(</span>
-  type <span class="op">=</span> <span class="cn">NULL</span>,
-  file <span class="op">=</span> <span class="cn">NULL</span>,
-  remove_file <span class="op">=</span> <span class="cn">TRUE</span>,
-  package <span class="op">=</span> <span class="fu">gutils</span><span class="fu">:::</span><span class="fu">get_package_name</span><span class="op">(</span><span class="op">)</span>,
-  devtools_load <span class="op">=</span> <span class="cn">FALSE</span>
-<span class="op">)</span></code></pre></div>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">encrypt_extdata</span><span class="op">(</span></span>
+<span>  type <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  file <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  remove_file <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  package <span class="op">=</span> <span class="fu">gutils</span><span class="fu">:::</span><span class="fu">get_package_name</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  devtools_load <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">decrypt_extdata</span><span class="op">(</span></span>
+<span>  type <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  file <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  remove_file <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  package <span class="op">=</span> <span class="fu">gutils</span><span class="fu">:::</span><span class="fu">get_package_name</span><span class="op">(</span><span class="op">)</span>,</span>
+<span>  devtools_load <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span></code></pre></div>
     </div>
 
     <div id="arguments">
@@ -83,18 +83,26 @@ the <code>extdata</code> folder of an R package.</p>
 <dd><p>(optional) a string indicating the folder of the <code>file</code> argument.
 If <code>NULL</code> the function will encrypt/decrypt all files in the <code>extdata</code>
 folder (default: <code>NULL</code>).</p></dd>
+
+
 <dt>file</dt>
 <dd><p>(optional) a string indicating the file to encrypt/decrypt. If
 <code>file</code> is <code>NULL</code> and <code>type</code> is assigned, the function will encrypt/decrypt
 all files in the <code>type</code> folder (default: <code>NULL</code>).</p></dd>
+
+
 <dt>remove_file</dt>
 <dd><p>(optional) a <code><a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a></code> value indicating if
 the original file must be removed after the encryption/decryption (default:
 <code>TRUE</code>).</p></dd>
+
+
 <dt>package</dt>
 <dd><p>(optional) a string indicating the target package. If not
 assigned, the function will try to use the name of the active project
 directory.</p></dd>
+
+
 <dt>devtools_load</dt>
 <dd><p>(optional) a <code><a href="https://rdrr.io/r/base/logical.html" class="external-link">logical</a></code> value
 indicating if the function must call <code>devtools::load_all(".")</code> before
@@ -102,10 +110,13 @@ running. This is useful if you use <a href="https://devtools.r-lib.org/" class="
 for package development. If <code>devtools_load = FALSE</code> and the dev package is
 not loaded, the function will use a installed version of the package
 (default: <code>FALSE</code>).</p></dd>
+
 </dl></div>
     <div id="value">
     <h2>Value</h2>
-    <p>An invisible <code>NULL</code>. The functions are called just for side effects.</p>
+    
+
+<p>An invisible <code>NULL</code>. The functions are called just for side effects.</p>
     </div>
     <div id="details">
     <h2>Details</h2>
@@ -119,10 +130,10 @@ folder (<code>inst</code>). The private and public keys must be named <code>id_r
 
     <div id="ref-examples">
     <h2>Examples</h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span>
-<span class="r-in"><span class="fu">encrypt_extdata</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="fu">decrypt_extdata</span><span class="op">(</span><span class="op">)</span></span>
-<span class="r-in"><span class="op">}</span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span></span></span>
+<span class="r-in"><span><span class="fu">encrypt_extdata</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">decrypt_extdata</span><span class="op">(</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </div>
@@ -137,7 +148,7 @@ folder (<code>inst</code>). The private and public keys must be named <code>id_r
 </div>
 
 <div class="pkgdown">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.3.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.</p>
 </div>
 
       </footer></div>
