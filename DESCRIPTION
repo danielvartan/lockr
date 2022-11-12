@@ -23,7 +23,7 @@ URL: https://gipso.github.io/encryptrpak/,
      https://github.com/gipso/encryptrpak/
 BugReports: https://github.com/gipso/encryptrpak/issues/
 Depends:
-    R (>= 4.2)
+    R (>= 4.1)
 Imports: 
     checkmate (>= 2.1.0),
     cli (>= 3.4.1),
@@ -33,7 +33,7 @@ Imports:
     gutils,
     lifecycle (>= 1.0.3),
     openssl (>= 2.0.4),
-    utils (>= 4.2.0)
+    utils (>= 4.1.0)
 Suggests: 
     covr (>= 3.6.1),
     knitr (>= 1.40),
