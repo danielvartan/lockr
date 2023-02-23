@@ -4,6 +4,7 @@ template:
   params:
     bootswatch: cosmo
     mathjax: true
+    noindex: false
 
 navbar:
   structure:
@@ -33,6 +34,5 @@ authors:
     href: https://github.com/danielvartan
 
 development:
-  mode: auto
-  destination: doc
+  mode: unreleased
   version_label: warning
