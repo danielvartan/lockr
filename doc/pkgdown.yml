@@ -1,9 +1,9 @@
 pandoc: 2.19.2
-pkgdown: 2.0.6
+pkgdown: 2.0.7
 pkgdown_sha: ~
 articles: {}
-last_built: 2022-11-12T19:14Z
+last_built: 2023-02-23T14:32Z
 urls:
-  reference: https://gipso.github.io/encryptrpak/reference
-  article: https://gipso.github.io/encryptrpak/articles
+  reference: https://giperbio.github.io/encryptrpak/reference
+  article: https://giperbio.github.io/encryptrpak/articles
 
