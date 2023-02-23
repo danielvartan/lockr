@@ -1,19 +1,22 @@
-url: https://gipso.github.io/encryptrpak/
+url: https://giperbio.github.io/encryptrpak/
 
 template:
   params:
     bootswatch: cosmo
-    ganalytics: G-YXSQGFZ4QK
     mathjax: true
-    noindex: false
 
 navbar:
   structure:
-    left:  [intro, reference, articles, news]
-    right: [github]
+    left:
+    - home
+    - intro
+    - reference
+    - articles
+    - news
+    right: github
   components:
     home: ~
-    news: ~
+    intro: ~
     articles: ~
 
 reference:
@@ -28,12 +31,6 @@ reference:
 authors:
   Daniel Vartanian:
     href: https://github.com/danielvartan
-  Mario Pedrazzoli:
-    href: https://github.com/pedrazzo
-  Interdisciplinary Sleep Research Group (GIPSO):
-    href: http://each.usp.br/gipso
-  University of Sao Paulo (USP):
-    href: http://usp.br
 
 development:
   mode: auto

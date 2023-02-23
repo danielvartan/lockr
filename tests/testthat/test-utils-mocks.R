@@ -29,4 +29,3 @@ test_that("load_all() | general test", {
 test_that("menu() | general test", {
     expect_error(menu(graphics = 1))
 })
-

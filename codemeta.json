@@ -4,9 +4,9 @@
   "identifier": "encryptrpak",
   "description": "An extension for the 'encryptr' package, adding new features to encrypt/decrypt files of R packages.",
   "name": "encryptrpak: Encrypt/Decrypt Files of R Packages",
-  "relatedLink": "https://gipso.github.io/encryptrpak/",
-  "codeRepository": "https://github.com/gipso/encryptrpak/",
-  "issueTracker": "https://github.com/gipso/encryptrpak/issues/",
+  "relatedLink": "https://giperbio.github.io/encryptrpak/",
+  "codeRepository": "https://github.com/giperbio/encryptrpak/",
+  "issueTracker": "https://github.com/giperbio/encryptrpak/issues/",
   "license": "https://spdx.org/licenses/MIT",
   "version": "0.2.0.9000",
   "programmingLanguage": {
@@ -22,13 +22,6 @@
       "familyName": "Vartanian",
       "email": "danvartan@gmail.com",
       "@id": "https://orcid.org/0000-0001-7782-759X"
-    },
-    {
-      "@type": "Person",
-      "givenName": "Mario",
-      "familyName": "Pedrazzoli",
-      "email": "pedrazzo@usp.br",
-      "@id": "https://orcid.org/0000-0002-5257-591X"
     }
   ],
   "copyrightHolder": [
@@ -38,16 +31,6 @@
       "familyName": "Vartanian",
       "email": "danvartan@gmail.com",
       "@id": "https://orcid.org/0000-0001-7782-759X"
-    }
-  ],
-  "funder": [
-    {
-      "@type": "Organization",
-      "name": "Interdisciplinary Sleep Research Group (GIPSO)"
-    },
-    {
-      "@type": "Organization",
-      "name": "University of Sao Paulo (USP)"
     }
   ],
   "maintainer": [
@@ -77,7 +60,7 @@
       "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
-      "version": ">= 1.40",
+      "version": ">= 1.42",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -90,7 +73,7 @@
       "@type": "SoftwareApplication",
       "identifier": "mockr",
       "name": "mockr",
-      "version": ">= 0.2.0",
+      "version": ">= 0.2.1",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -103,7 +86,7 @@
       "@type": "SoftwareApplication",
       "identifier": "rmarkdown",
       "name": "rmarkdown",
-      "version": ">= 2.18",
+      "version": ">= 2.20",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -129,7 +112,7 @@
       "@type": "SoftwareApplication",
       "identifier": "testthat",
       "name": "testthat",
-      "version": ">= 3.1.5",
+      "version": ">= 3.1.6",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -163,7 +146,7 @@
       "@type": "SoftwareApplication",
       "identifier": "cli",
       "name": "cli",
-      "version": ">= 3.4.1",
+      "version": ">= 3.6.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -189,7 +172,7 @@
       "@type": "SoftwareApplication",
       "identifier": "dplyr",
       "name": "dplyr",
-      "version": ">= 1.0.10",
+      "version": ">= 1.1.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -215,7 +198,7 @@
       "@type": "SoftwareApplication",
       "identifier": "gutils",
       "name": "gutils",
-      "sameAs": "https://github.com/gipso/gutils"
+      "sameAs": "https://github.com/giperbio/gutils"
     },
     "8": {
       "@type": "SoftwareApplication",
@@ -234,7 +217,7 @@
       "@type": "SoftwareApplication",
       "identifier": "openssl",
       "name": "openssl",
-      "version": ">= 2.0.4",
+      "version": ">= 2.0.5",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -251,31 +234,28 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "83.89KB",
+  "fileSize": "83.642KB",
   "citation": [
     {
       "@type": "CreativeWork",
-      "datePublished": "2021",
+      "datePublished": "2023",
       "author": [
         {
           "@type": "Person",
           "givenName": "Daniel",
-          "familyName": "Vartanian"
-        },
-        {
-          "@type": "Person",
-          "givenName": "Mario",
-          "familyName": "Pedrazzoli"
+          "familyName": "Vartanian",
+          "email": "danvartan@gmail.com",
+          "@id": "https://orcid.org/0000-0001-7782-759X"
         }
       ],
-      "name": "{encryptrpak}: an R Package to encrypt/decrypt files of R packages",
-      "url": "https://gipso.github.io/encryptrpak/",
-      "description": "Lifecycle: maturing"
+      "name": "{encryptrpak}: encrypt/decrypt files of R packages",
+      "url": "https://giperbio.github.io/encryptrpak/",
+      "description": "R package version 0.0.0.9000"
     }
   ],
-  "releaseNotes": "https://github.com/gipso/encryptrpak/blob/master/NEWS.md",
-  "readme": "https://github.com/gipso/encryptrpak/blob/main/README.md",
-  "contIntegration": ["https://github.com/gipso/encryptrpak/actions", "https://app.codecov.io/gh/gipso/encryptrpak?branch=main"],
+  "releaseNotes": "https://github.com/giperbio/encryptrpak/blob/master/NEWS.md",
+  "readme": "https://github.com/giperbio/encryptrpak/blob/main/README.md",
+  "contIntegration": ["https://github.com/giperbio/encryptrpak/actions", "https://app.codecov.io/gh/giperbio/encryptrpak?branch=main"],
   "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#maturing"],
   "keywords": ["r-package", "encryption", "r", "rstats"]
 }

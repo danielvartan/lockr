@@ -1,22 +1,32 @@
-citHeader("To cite {encryptrpak} in publications use:")
-
-citEntry(
-  entry       = "Unpublished",
-  title       = paste0("{encryptrpak}:", " ",
-                       "an R Package to encrypt/decrypt files of R", " ",
-                       "packages"),
-  author      = personList(as.person("Daniel Vartanian"),
-                           as.person("Mario Pedrazzoli")),
-  year        = "2021",
-  url         = paste0("https://gipso.github.io/",
-                       "encryptrpak/"),
-  textVersion = paste0("Vartanian, D.", ", & ",
-                       "Pedrazzoli, M.", " ",
-                       "(2021)",  ". ",
-                       "{encryptrpak}:", " ",
-                       "an R Package to encrypt/decrypt files of R", " ",
-                       "packages", ". ",
-                       "https://gipso.github.io/",
-                       "encryptrpak/"),
-  note        = "Lifecycle: maturing"
+utils::bibentry(
+    header = "To cite {encryptrpak} in publications use:",
+    bibtype  = "Unpublished",
+    title = paste0(
+        "{encryptrpak}:", " ",
+        "encrypt/decrypt files of R packages"
+        ),
+    author = c(
+        utils::person(
+            given = "Daniel",
+            family = "Vartanian",
+            role = c("aut", "cre", "ccp", "cph"),
+            email = "danvartan@gmail.com",
+            comment = c(ORCID = "0000-0001-7782-759X")
+            )
+        ),
+    year = "2023",
+    url = paste0(
+        "https://giperbio.github.io/",
+        "encryptrpak/"
+        ),
+    note = "R package version 0.0.0.9000",
+    textVersion = paste0(
+        "Vartanian, D.", " ",
+        "(2023)",  ". ",
+        "{encryptrpak}:", " ",
+        "encrypt/decrypt files of R packages", ". ",
+        "R package version 0.2.0.9000", ". ",
+        "https://giperbio.github.io/",
+        "encryptrpak/"
+        )
 )

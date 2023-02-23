@@ -13,25 +13,14 @@ An extension for the 'encryptr' package, adding new features to encrypt/decrypt 
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://gipso.github.io/encryptrpak/}
-  \item \url{https://github.com/gipso/encryptrpak/}
-  \item Report bugs at \url{https://github.com/gipso/encryptrpak/issues/}
+  \item \url{https://giperbio.github.io/encryptrpak/}
+  \item \url{https://github.com/giperbio/encryptrpak/}
+  \item Report bugs at \url{https://github.com/giperbio/encryptrpak/issues/}
 }
 
 }
 \author{
 \strong{Maintainer}: Daniel Vartanian \email{danvartan@gmail.com} (\href{https://orcid.org/0000-0001-7782-759X}{ORCID}) [conceptor, copyright holder]
-
-Authors:
-\itemize{
-  \item Mario Pedrazzoli \email{pedrazzo@usp.br} (\href{https://orcid.org/0000-0002-5257-591X}{ORCID}) [scientific advisor]
-}
-
-Other contributors:
-\itemize{
-  \item Interdisciplinary Sleep Research Group (GIPSO) [funder]
-  \item University of Sao Paulo (USP) [funder]
-}
 
 }
 \keyword{internal}

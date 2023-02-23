@@ -1,52 +1,46 @@
 Package: encryptrpak
 Title: Encrypt/Decrypt Files of R Packages
 Version: 0.2.0.9000
-Authors@R: 
-    c(person(given = "Daniel",
-             family = "Vartanian",
-             role = c("aut", "cre", "ccp", "cph"),
-             email = "danvartan@gmail.com",
-             comment = c(ORCID = "0000-0001-7782-759X")),
-      person(given = "Mario",
-             family = "Pedrazzoli",
-             email = "pedrazzo@usp.br",
-             role = c("aut", "sad"),
-             comment = c(ORCID = "0000-0002-5257-591X")),
-      person(given = "Interdisciplinary Sleep Research Group (GIPSO)",
-             role = "fnd"),
-      person(given = "University of Sao Paulo (USP)",
-             role = "fnd"))
+Authors@R: c(
+        person(
+            given = "Daniel",
+            family = "Vartanian",
+            role = c("aut", "cre", "ccp", "cph"),
+            email = "danvartan@gmail.com",
+            comment = c(ORCID = "0000-0001-7782-759X")
+            )
+        )
 Description: An extension for the 'encryptr' package, adding new features to 
      encrypt/decrypt files of R packages.
 License: MIT + file LICENSE
-URL: https://gipso.github.io/encryptrpak/, 
-     https://github.com/gipso/encryptrpak/
-BugReports: https://github.com/gipso/encryptrpak/issues/
+URL: https://giperbio.github.io/encryptrpak/, 
+    https://github.com/giperbio/encryptrpak/
+BugReports: https://github.com/giperbio/encryptrpak/issues/
 Depends:
     R (>= 4.1)
 Imports: 
     checkmate (>= 2.1.0),
-    cli (>= 3.4.1),
+    cli (>= 3.6.0),
     devtools (>= 2.4.5),
-    dplyr (>= 1.0.10),
+    dplyr (>= 1.1.0),
     encryptr (>= 0.1.3),
     gutils,
     lifecycle (>= 1.0.3),
-    openssl (>= 2.0.4),
+    openssl (>= 2.0.5),
     utils (>= 4.1.0)
 Suggests: 
     covr (>= 3.6.1),
-    knitr (>= 1.40),
-    mockr (>= 0.2.0),
-    rmarkdown (>= 2.18),
+    knitr (>= 1.42),
+    mockr (>= 0.2.1),
+    rmarkdown (>= 2.20),
     spelling (>= 2.2),
-    testthat (>= 3.1.5)
+    testthat (>= 3.1.6)
 Remotes: 
-    github::gipso/gutils
+    github::giperbio/gutils
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.2
+RoxygenNote: 7.2.3

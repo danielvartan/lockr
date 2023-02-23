@@ -3,7 +3,9 @@ test_that("get_private_key | general test", {
         mockr::with_mock(
             assert_private_key = function(...) TRUE,
             password_warning = function(...) TRUE,
-            {get_private_key(package = "base", devtools_load = FALSE)}
+            {
+                get_private_key(package = "base", devtools_load = FALSE)
+            }
         )
     }
 
@@ -24,7 +26,9 @@ test_that("get_public_key | general test", {
     mock <- function(.parent = parent.frame(), .env = topenv(.parent)) {
         mockr::with_mock(
             assert_public_key = function(...) TRUE,
-            {get_public_key(package = "base", devtools_load = FALSE)}
+            {
+                get_public_key(package = "base", devtools_load = FALSE)
+            }
         )
     }
 
@@ -45,7 +49,9 @@ test_that("get_private_key_path | general test", {
     mock <- function(.parent = parent.frame(), .env = topenv(.parent)) {
         mockr::with_mock(
             assert_private_key = function(...) TRUE,
-            {get_private_key_path(package = "base", devtools_load = FALSE)}
+            {
+                get_private_key_path(package = "base", devtools_load = FALSE)
+            }
         )
     }
 
@@ -67,7 +73,9 @@ test_that("get_public_key_path | general test", {
     mock <- function(.parent = parent.frame(), .env = topenv(.parent)) {
         mockr::with_mock(
             assert_public_key = function(...) TRUE,
-            {get_public_key_path(package = "base", devtools_load = FALSE)}
+            {
+                get_public_key_path(package = "base", devtools_load = FALSE)
+            }
         )
     }
 

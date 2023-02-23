@@ -6,13 +6,13 @@ First of all, thanks for considering contributing to `encryptrpak`! 👍 It's pe
 
 `encryptrpak` is an open source project, maintained by people who care. We are not directly funded to do so.
 
-[repo]: https://github.com/gipso/encryptrpak
-[issues]: https://github.com/gipso/encryptrpak/issues
-[discussions]: https://github.com/gipso/encryptrpak/discussions
-[new_issue]: https://github.com/gipso/encryptrpak/issues/new
-[new_discussion]: https://github.com/gipso/encryptrpak/discussions/new
-[website]: https://gipso.github.io/encryptrpak
-[citation]: https://gipso.github.io/encryptrpak/authors.html
+[repo]: https://github.com/giperbio/encryptrpak
+[issues]: https://github.com/giperbio/encryptrpak/issues
+[discussions]: https://github.com/giperbio/encryptrpak/discussions
+[new_issue]: https://github.com/giperbio/encryptrpak/issues/new
+[new_discussion]: https://github.com/giperbio/encryptrpak/discussions/new
+[website]: https://giperbio.github.io/encryptrpak
+[citation]: https://giperbio.github.io/encryptrpak/authors.html
 [email]: mailto:danvartan@gmail.com
 
 ## Code of conduct

@@ -2,7 +2,9 @@ test_that("devtools_load | general test", {
     mock <- function(.parent = parent.frame(), .env = topenv(.parent)) {
         mockr::with_mock(
             load_all = function(...) TRUE,
-            {devtools_load(load = TRUE)}
+            {
+                devtools_load(load = TRUE)
+            }
         )
     }
 

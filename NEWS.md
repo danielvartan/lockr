@@ -4,8 +4,6 @@
 
 # encryptrpak (development version)
 
-* _placeholder_.
-
 # encryptrpak 0.2.0 (2021-11-11)
 
 * `get_private_key_path()` and `get_public_key_path()` are now exported 
