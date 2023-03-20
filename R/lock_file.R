@@ -68,13 +68,21 @@ lock_file <- function(file, public_key = "./inst/ssh/id_rsa.pub",
 
     locked_file_name <- paste0(file, suffix)
 
+    if (grepl(paste0(gutils:::escape_regex(suffix), "$"), file)) {
+        cli::cli_abort(paste0(
+            "The file ",
+            "'{.strong {cli::col_red(basename(file))}}' ",
+            "already has the lock suffix ({.strong '{suffix}'})."
+        ))
+    }
+
     if (file.exists(locked_file_name)) {
         cli::cli_abort(paste0(
             "A locked file named ",
             "'{.strong {cli::col_red(basename(locked_file_name))}}' ",
             "already exists. Delete it or rename it."
         ))
-        }
+    }
 
     openssl::encrypt_envelope(
         data = file, pubkey = public_key

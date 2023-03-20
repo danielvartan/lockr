@@ -62,7 +62,7 @@ citation("lockr")
 #> To cite {lockr} in publications use:
 #> 
 #>   Vartanian, D. (2023). {lockr}: easily encrypt/decrypt files. R
-#>   package version 0.3.0. https://giperbio.github.io/lockr/
+#>   package version 0.3.0.9000. https://giperbio.github.io/lockr/
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
@@ -71,7 +71,7 @@ citation("lockr")
 #>     author = {Daniel Vartanian},
 #>     year = {2023},
 #>     url = {https://giperbio.github.io/lockr/},
-#>     note = {R package version 0.3.0},
+#>     note = {R package version 0.3.0.9000},
 #>   }
 ```
 

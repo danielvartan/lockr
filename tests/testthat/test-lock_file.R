@@ -20,6 +20,14 @@ test_that("lock_file() | general test", {
         suffix = ".lockr", remove_file = TRUE
     ) %>%
         expect_error()
+
+    locked_temp_file <- paste0(temp_file, ".lockr")
+    file.create(locked_temp_file)
+    lock_file(
+        file = locked_temp_file, public_key = public_key,
+        suffix = ".lockr", remove_file = TRUE
+    ) %>%
+        expect_error()
 })
 
 test_that("lock_file() | assertion test", {

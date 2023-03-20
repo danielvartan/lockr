@@ -8,7 +8,7 @@
   "codeRepository": "https://github.com/giperbio/lockr/",
   "issueTracker": "https://github.com/giperbio/lockr/issues/",
   "license": "https://spdx.org/licenses/MIT",
-  "version": "0.3.0",
+  "version": "0.3.0.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -215,7 +215,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "46.969KB",
+  "fileSize": "48.838KB",
   "citation": [
     {
       "@type": "CreativeWork",
@@ -231,7 +231,7 @@
       ],
       "name": "{lockr}: easily encrypt/decrypt files",
       "url": "https://giperbio.github.io/lockr/",
-      "description": "R package version 0.3.0"
+      "description": "R package version 0.3.0.9000"
     }
   ],
   "releaseNotes": "https://github.com/giperbio/lockr/blob/master/NEWS.md",

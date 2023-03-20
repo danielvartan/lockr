@@ -8,7 +8,7 @@ message: 'To cite package "lockr" in publications use:'
 type: software
 license: MIT
 title: 'lockr: Easily Encrypt/Decrypt Files'
-version: 0.3.0
+version: 0.3.0.9000
 abstract: A user-friendly toolkit to encrypt/decrypt files, specially made for research
   compendiums.
 authors:
@@ -26,7 +26,7 @@ preferred-citation:
     orcid: https://orcid.org/0000-0001-7782-759X
   year: '2023'
   url: https://giperbio.github.io/lockr/
-  notes: R package version 0.3.0
+  notes: R package version 0.3.0.9000
 repository-code: https://github.com/giperbio/lockr/issues/
 url: https://giperbio.github.io/lockr/
 contact:

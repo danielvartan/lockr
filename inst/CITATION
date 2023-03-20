@@ -19,13 +19,13 @@ utils::bibentry(
         "https://giperbio.github.io/",
         "lockr/"
         ),
-    note = "R package version 0.3.0",
+    note = "R package version 0.3.0.9000",
     textVersion = paste0(
         "Vartanian, D.", " ",
         "(2023)",  ". ",
         "{lockr}:", " ",
         "easily encrypt/decrypt files", ". ",
-        "R package version 0.3.0", ". ",
+        "R package version 0.3.0.9000", ". ",
         "https://giperbio.github.io/",
         "lockr/"
         )
