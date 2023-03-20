@@ -2,8 +2,6 @@
 <!--- https://style.tidyverse.org/news.html -->
 <!--- https://semver.org/ -->
 
-# lockr (development version)
-
 # lockr 0.3.0 (2023-03-20)
 
 * `encryptrpak` was renamed to `lockr`.
@@ -20,7 +18,7 @@
 * `lock_dir()` and `unlock_dir()` were added. These functions allow the user
   to encrypt/decrypt all files inside a directory.
 
-# lockr 0.2.0 (2021-11-11) (encryptrpak)
+# encryptrpak 0.2.0 (2021-11-11)
 
 * `get_private_key_path()` and `get_public_key_path()` are now exported 
   functions.
@@ -31,11 +29,11 @@
   is always set to `FALSE`.
 
 
-# lockr 0.1.0 (2021-11-04) (encryptrpak)
+# encryptrpak 0.1.0 (2021-11-04)
 
 * First `lockr` release. 🎉
 
 
-# lockr 0.0.0.9000 (encryptrpak)
+# encryptrpak 0.0.0.9000
 
 * Added a `NEWS.md` file to track changes to the package.
