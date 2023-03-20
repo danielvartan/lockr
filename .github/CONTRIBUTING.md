@@ -1,18 +1,18 @@
-# Contributing to `encryptrpak`
+# Contributing to `lockr`
 
 <!-- This CONTRIBUTING.md was adapted from https://gist.github.com/peterdesmet/e90a1b0dc17af6c12daf6e8b2f044e7c -->
 
-First of all, thanks for considering contributing to `encryptrpak`! 👍 It's people like you that make it rewarding for us - the project maintainers - to work on `encryptrpak`. 😊
+First of all, thanks for considering contributing to `lockr`! 👍 It's people like you that make it rewarding for us - the project maintainers - to work on `lockr`. 😊
 
-`encryptrpak` is an open source project, maintained by people who care. We are not directly funded to do so.
+`lockr` is an open source project, maintained by people who care. We are not directly funded to do so.
 
-[repo]: https://github.com/giperbio/encryptrpak
-[issues]: https://github.com/giperbio/encryptrpak/issues
-[discussions]: https://github.com/giperbio/encryptrpak/discussions
-[new_issue]: https://github.com/giperbio/encryptrpak/issues/new
-[new_discussion]: https://github.com/giperbio/encryptrpak/discussions/new
-[website]: https://giperbio.github.io/encryptrpak
-[citation]: https://giperbio.github.io/encryptrpak/authors.html
+[repo]: https://github.com/giperbio/lockr
+[issues]: https://github.com/giperbio/lockr/issues
+[discussions]: https://github.com/giperbio/lockr/discussions
+[new_issue]: https://github.com/giperbio/lockr/issues/new
+[new_discussion]: https://github.com/giperbio/lockr/discussions/new
+[website]: https://giperbio.github.io/lockr
+[citation]: https://giperbio.github.io/lockr/authors.html
 [email]: mailto:danvartan@gmail.com
 
 ## Code of conduct
@@ -25,19 +25,19 @@ There are several ways you can contribute to this project. If you want to know m
 
 ### Share the love ❤️
 
-Think `encryptrpak` is useful? Let others discover it, by telling them in person, via Twitter or a blog post.
+Think `lockr` is useful? Let others discover it, by telling them in person, via Twitter or a blog post.
 
-Using `encryptrpak` for a paper you are writing? Consider [citing it][citation].
+Using `lockr` for a paper you are writing? Consider [citing it][citation].
 
 ### Ask a question ⁉️
 
-Using `encryptrpak` and got stuck? Browse the [documentation][website] to see if you can find a solution. Still stuck? Post your question as an [new discussion on GitHub][new_discussion]. While we cannot offer user support, we'll try to do our best to address it, as questions often lead to better documentation or the discovery of bugs.
+Using `lockr` and got stuck? Browse the [documentation][website] to see if you can find a solution. Still stuck? Post your question as an [new discussion on GitHub][new_discussion]. While we cannot offer user support, we'll try to do our best to address it, as questions often lead to better documentation or the discovery of bugs.
 
 Want to ask a question in private? Contact the package maintainer by [email][email].
 
 ### Propose an idea 💡
 
-Have an idea for a new `encryptrpak` feature? Take a look at the [documentation][website] and [discussion list][discussions] to see if it isn't included or suggested yet. If not, suggest your idea as an [discussion on GitHub][new_discussion]. While we can't promise to implement your idea, it helps to:
+Have an idea for a new `lockr` feature? Take a look at the [documentation][website] and [discussion list][discussions] to see if it isn't included or suggested yet. If not, suggest your idea as an [discussion on GitHub][new_discussion]. While we can't promise to implement your idea, it helps to:
 
 * Explain in detail how it would work.
 * Keep the scope as narrow as possible.
@@ -46,7 +46,7 @@ See below if you want to contribute code for your idea as well.
 
 ### Report a bug 🐛
 
-Using `encryptrpak` and discovered a bug? That's annoying! Don't let others have the same experience and report it as an [issue on GitHub][new_issue] so we can fix it. A good bug report makes it easier for us to do so, so please include:
+Using `lockr` and discovered a bug? That's annoying! Don't let others have the same experience and report it as an [issue on GitHub][new_issue] so we can fix it. A good bug report makes it easier for us to do so, so please include:
 
 * The content of `utils::sessionInfo()`.
 * Any details about your local setup that might be helpful in troubleshooting.
@@ -70,7 +70,7 @@ Functions are described as comments near their code and translated to documentat
 
 ### Contribute code 📝
 
-Care to fix bugs or implement new functionality for `encryptrpak`? Awesome! 👏 Have a look at the [issue list][issues] and leave a comment on the things you want to work on. See also the development guidelines below.
+Care to fix bugs or implement new functionality for `lockr`? Awesome! 👏 Have a look at the [issue list][issues] and leave a comment on the things you want to work on. See also the development guidelines below.
 
 ## Development guidelines
 

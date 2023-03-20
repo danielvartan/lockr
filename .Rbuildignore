@@ -10,8 +10,8 @@
 ^data-raw$
 ^doc$
 ^docs$
-^encryptrpak\.Rproj$
 ^LICENSE\.md$
+^lockr\.Rproj$
 ^man-roxygen$
 ^Meta$
 ^pkgdown$

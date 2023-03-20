@@ -1,9 +1,9 @@
 utils::bibentry(
-    header = "To cite {encryptrpak} in publications use:",
+    header = "To cite {lockr} in publications use:",
     bibtype  = "Unpublished",
     title = paste0(
-        "{encryptrpak}:", " ",
-        "encrypt/decrypt files of R packages"
+        "{lockr}:", " ",
+        "easily encrypt/decrypt files"
         ),
     author = c(
         utils::person(
@@ -17,16 +17,16 @@ utils::bibentry(
     year = "2023",
     url = paste0(
         "https://giperbio.github.io/",
-        "encryptrpak/"
+        "lockr/"
         ),
-    note = "R package version 0.0.0.9000",
+    note = "R package version 0.3.0",
     textVersion = paste0(
         "Vartanian, D.", " ",
         "(2023)",  ". ",
-        "{encryptrpak}:", " ",
-        "encrypt/decrypt files of R packages", ". ",
-        "R package version 0.2.0.9000", ". ",
+        "{lockr}:", " ",
+        "easily encrypt/decrypt files", ". ",
+        "R package version 0.3.0", ". ",
         "https://giperbio.github.io/",
-        "encryptrpak/"
+        "lockr/"
         )
     )

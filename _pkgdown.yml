@@ -1,4 +1,4 @@
-url: https://giperbio.github.io/encryptrpak/
+url: https://giperbio.github.io/lockr/
 
 template:
   params:
@@ -23,11 +23,12 @@ navbar:
 reference:
 - title: Encrypt/Decrypt
   contents:
-  - encrypt_extdata
+  - lock_file
+  - lock_dir
 
 - title: Utilities
   contents:
-  - get_private_key
+  - rsa_keygen
 
 authors:
   Daniel Vartanian:

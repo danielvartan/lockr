@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# encryptrpak <a href="https://giperbio.github.io/encryptrpak/"><img src="man/figures/logo.png" style="float:right; height:139px;" /></a>
+# lockr
 
 <!-- badges: start -->
 
@@ -10,75 +10,68 @@ state and is being actively
 developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![Lifecycle:
 maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
-[![R-CMD-check](https://github.com/giperbio/encryptrpak/workflows/R-CMD-check/badge.svg)](https://github.com/giperbio/encryptrpak/actions)
+[![R-CMD-check](https://github.com/giperbio/lockr/workflows/R-CMD-check/badge.svg)](https://github.com/giperbio/lockr/actions)
 [![Codecov test
-coverage](https://codecov.io/gh/giperbio/encryptrpak/branch/main/graph/badge.svg)](https://app.codecov.io/gh/giperbio/encryptrpak?branch=main)
+coverage](https://codecov.io/gh/giperbio/lockr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/giperbio/lockr?branch=main)
 [![License:
 MIT](https://img.shields.io/badge/license-MIT-green)](https://choosealicense.com/licenses/mit/)
 [![Contributor
-Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://giperbio.github.io/encryptrpak/CODE_OF_CONDUCT.html)
+Covenant](https://img.shields.io/badge/Contributor%20Covenant-v2.0%20adopted-ff69b4.svg)](https://giperbio.github.io/lockr/CODE_OF_CONDUCT.html)
 <!-- badges: end -->
 
 ## Overview
 
-`encryptrpak` is an extension for the
-[encryptr](https://github.com/SurgicalInformatics/encryptr) package,
-adding new features to encrypt/decrypt files of R packages.
+`lockr` is a user-friendly R package designed for encrypting/decrypting
+files, with the aim of facilitating the storage and sharing of research
+compendiums using R.
 
-Please note that `encryptrpak` is not related in any way with the
-`encryptr` developer team.
+The creation of this package was inspired by Ben Marwick, Carl Boettiger
+& Lincoln Mullen’s article [Packaging Data Analytical Work Reproducibly
+Using R (and Friends)](https://doi.org/10.1080/00031305.2017.1375986).
 
 ## Prerequisites
 
-You need to have some familiarity with the [R programming
-language](https://www.r-project.org/) and with the
-[encryptr](https://github.com/SurgicalInformatics/encryptr) package to
-use `encryptrpak` main functions.
+To use the main functions of `lockr`, some familiarity with the [R
+programming language](https://www.r-project.org/) is required.
 
-If you don’t feel comfortable with R, we strongly recommend checking
-Hadley Wickham and Garrett Grolemund free and online book [R for Data
-Science](https://r4ds.had.co.nz/) and the Coursera course from John
-Hopkins University [Data Science: Foundations using
+If you are not comfortable with R, we strongly recommend checking out
+Hadley Wickham and Garrett Grolemund’s free online book [R for Data
+Science](https://r4ds.had.co.nz/), as well as the Coursera course [Data
+Science: Foundations using
 R](https://www.coursera.org/specializations/data-science-foundations-r)
-(free for audit students).
-
-Please refer to the [encryptr](https://encrypt-r.org/) package
-documentation to learn more about it.
+from John Hopkins University (free for audit students).
 
 ## Installation
 
-You can install `encryptrpak` with:
+You can install `lockr` using:
 
 ``` r
 # install.packages("remotes")
-remotes::install_github("giperbio/encryptrpak")
+remotes::install_github("giperbio/lockr")
 ```
-
-We don’t intend to publish this package to CRAN.
 
 ## Citation
 
-If you use `encryptrpak` in your research, please consider citing it. We
-put a lot of work to build and maintain a free and open-source R
-package. You can find the `encryptrpak` citation below.
+If you use `lockr` in your research, please consider citing it. We have
+put a lot of work into building and maintaining this free and
+open-source R package. The citation can be found below.
 
 ``` r
-citation("encryptrpak")
+citation("lockr")
 #> 
-#> To cite {encryptrpak} in publications use:
+#> To cite {lockr} in publications use:
 #> 
-#>   Vartanian, D. (2023). {encryptrpak}: encrypt/decrypt files of R
-#>   packages. R package version 0.2.0.9000.
-#>   https://giperbio.github.io/encryptrpak/
+#>   Vartanian, D. (2023). {lockr}: easily encrypt/decrypt files. R
+#>   package version 0.3.0. https://giperbio.github.io/lockr/
 #> 
 #> A BibTeX entry for LaTeX users is
 #> 
 #>   @Unpublished{,
-#>     title = {{encryptrpak}: encrypt/decrypt files of R packages},
+#>     title = {{lockr}: easily encrypt/decrypt files},
 #>     author = {Daniel Vartanian},
 #>     year = {2023},
-#>     url = {https://giperbio.github.io/encryptrpak/},
-#>     note = {R package version 0.0.0.9000},
+#>     url = {https://giperbio.github.io/lockr/},
+#>     note = {R package version 0.3.0},
 #>   }
 ```
 
@@ -86,13 +79,12 @@ citation("encryptrpak")
 
 We welcome contributions, including bug reports.
 
-Take a moment to review our [Guidelines for
-Contributing](https://giperbio.github.io/encryptrpak/CONTRIBUTING.html).
+Please take a moment to review our [Guidelines for
+Contributing](https://giperbio.github.io/lockr/CONTRIBUTING.html).
 
 <br>
 
-Become an `encryptrpak` supporter!
+Become a supporter of `lockr`!
 
 Click [here](https://github.com/sponsors/danielvartan) to make a
-donation. Please indicate the `encryptrpak` package in your donation
-message.
+donation. Please indicate the `lockr` package in your donation message.

@@ -4,13 +4,13 @@
 # -----------------------------------------------------------
  
 cff-version: 1.2.0
-message: 'To cite package "encryptrpak" in publications use:'
+message: 'To cite package "lockr" in publications use:'
 type: software
 license: MIT
-title: 'encryptrpak: Encrypt/Decrypt Files of R Packages'
-version: 0.2.0.9000
-abstract: An extension for the 'encryptr' package, adding new features to encrypt/decrypt
-  files of R packages.
+title: 'lockr: Easily Encrypt/Decrypt Files'
+version: 0.3.0
+abstract: A user-friendly toolkit to encrypt/decrypt files, specially made for research
+  compendiums.
 authors:
 - family-names: Vartanian
   given-names: Daniel
@@ -18,17 +18,17 @@ authors:
   orcid: https://orcid.org/0000-0001-7782-759X
 preferred-citation:
   type: unpublished
-  title: 'encryptrpak: encrypt/decrypt files of R packages'
+  title: 'lockr: easily encrypt/decrypt files'
   authors:
   - family-names: Vartanian
     given-names: Daniel
     email: danvartan@gmail.com
     orcid: https://orcid.org/0000-0001-7782-759X
   year: '2023'
-  url: https://giperbio.github.io/encryptrpak/
-  notes: R package version 0.0.0.9000
-repository-code: https://github.com/giperbio/encryptrpak/issues/
-url: https://giperbio.github.io/encryptrpak/
+  url: https://giperbio.github.io/lockr/
+  notes: R package version 0.3.0
+repository-code: https://github.com/giperbio/lockr/issues/
+url: https://giperbio.github.io/lockr/
 contact:
 - family-names: Vartanian
   given-names: Daniel
@@ -67,30 +67,11 @@ references:
   url: https://cli.r-lib.org
   repository: https://CRAN.R-project.org/package=cli
   authors:
-  - family-names: Csardi
-    given-names: Gabor
+  - family-names: Csárdi
+    given-names: Gábor
     email: csardi.gabor@gmail.com
   year: '2023'
   version: '>= 3.6.0'
-- type: software
-  title: devtools
-  abstract: 'devtools: Tools to Make Developing R Packages Easier'
-  notes: Imports
-  url: https://devtools.r-lib.org/
-  repository: https://CRAN.R-project.org/package=devtools
-  authors:
-  - family-names: Wickham
-    given-names: Hadley
-  - family-names: Hester
-    given-names: Jim
-  - family-names: Chang
-    given-names: Winston
-  - family-names: Bryan
-    given-names: Jennifer
-    email: jenny@rstudio.com
-    orcid: https://orcid.org/0000-0002-6983-2759
-  year: '2023'
-  version: '>= 2.4.5'
 - type: software
   title: dplyr
   abstract: 'dplyr: A Grammar of Data Manipulation'
@@ -102,12 +83,12 @@ references:
     given-names: Hadley
     email: hadley@posit.co
     orcid: https://orcid.org/0000-0003-4757-117X
-  - family-names: Francois
+  - family-names: François
     given-names: Romain
     orcid: https://orcid.org/0000-0002-2444-4226
   - family-names: Henry
     given-names: Lionel
-  - family-names: Muller
+  - family-names: Müller
     given-names: Kirill
     orcid: https://orcid.org/0000-0002-1416-3412
   - family-names: Vaughan
@@ -116,28 +97,6 @@ references:
     orcid: https://orcid.org/0000-0003-4777-038X
   year: '2023'
   version: '>= 1.1.0'
-- type: software
-  title: encryptr
-  abstract: 'encryptr: Easily Encrypt and Decrypt Data Frame/Tibble Columns or Files
-    using RSA Public/Private Keys'
-  notes: Imports
-  url: https://github.com/SurgicalInformatics/encryptr
-  repository: https://CRAN.R-project.org/package=encryptr
-  authors:
-  - family-names: Fairfield
-    given-names: Cameron
-    email: cameron.fairfield@ed.ac.uk
-  - family-names: Ots
-    given-names: Riinu
-  - family-names: Knight
-    given-names: Stephen
-  - family-names: Drake
-    given-names: Tom
-  - family-names: Harrison
-    given-names: Ewen
-    email: ewen.harrison@ed.ac.uk
-  year: '2023'
-  version: '>= 0.1.3'
 - type: software
   title: gutils
   abstract: 'gutils: Utility Functions Created by the GIPERBIO Developer Team'
@@ -178,19 +137,20 @@ references:
     email: jeroen@berkeley.edu
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2023'
-  version: '>= 2.0.5'
+  version: '>= 2.0.6'
 - type: software
-  title: utils
-  abstract: 'R: A Language and Environment for Statistical Computing'
-  notes: Imports
+  title: askpass
+  abstract: 'askpass: Safe Password Entry for R, Git, and SSH'
+  notes: Suggests
+  url: https://github.com/jeroen/askpass#readme
+  repository: https://CRAN.R-project.org/package=askpass
   authors:
-  - name: R Core Team
-  location:
-    name: Vienna, Austria
+  - family-names: Ooms
+    given-names: Jeroen
+    email: jeroen@berkeley.edu
+    orcid: https://orcid.org/0000-0002-4035-0289
   year: '2023'
-  institution:
-    name: R Foundation for Statistical Computing
-  version: '>= 4.1.0'
+  version: '>= 1.1'
 - type: software
   title: covr
   abstract: 'covr: Test Coverage for Packages'
@@ -223,7 +183,7 @@ references:
   url: https://krlmlr.github.io/mockr/
   repository: https://CRAN.R-project.org/package=mockr
   authors:
-  - family-names: M<U+00FC>ller
+  - family-names: Müller
     given-names: Kirill
     email: kirill@cynkra.com
   year: '2023'
@@ -296,7 +256,7 @@ references:
     given-names: Hadley
     email: hadley@rstudio.com
   year: '2023'
-  version: '>= 3.1.6'
+  version: '>= 3.1.7'
 identifiers:
 - type: url
-  value: https://github.com/giperbio/encryptrpak/
+  value: https://github.com/giperbio/lockr/
