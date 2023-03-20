@@ -1,39 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://giperbio.github.io/encryptrpak/404.html</loc>
+    <loc>https://giperbio.github.io/lockr/404.html</loc>
   </url>
   <url>
-    <loc>https://giperbio.github.io/encryptrpak/CODE_OF_CONDUCT.html</loc>
+    <loc>https://giperbio.github.io/lockr/CODE_OF_CONDUCT.html</loc>
   </url>
   <url>
-    <loc>https://giperbio.github.io/encryptrpak/CONTRIBUTING.html</loc>
+    <loc>https://giperbio.github.io/lockr/CONTRIBUTING.html</loc>
   </url>
   <url>
-    <loc>https://giperbio.github.io/encryptrpak/LICENSE-text.html</loc>
+    <loc>https://giperbio.github.io/lockr/LICENSE-text.html</loc>
   </url>
   <url>
-    <loc>https://giperbio.github.io/encryptrpak/LICENSE.html</loc>
+    <loc>https://giperbio.github.io/lockr/LICENSE.html</loc>
   </url>
   <url>
-    <loc>https://giperbio.github.io/encryptrpak/authors.html</loc>
+    <loc>https://giperbio.github.io/lockr/authors.html</loc>
   </url>
   <url>
-    <loc>https://giperbio.github.io/encryptrpak/index.html</loc>
+    <loc>https://giperbio.github.io/lockr/index.html</loc>
   </url>
   <url>
-    <loc>https://giperbio.github.io/encryptrpak/news/index.html</loc>
+    <loc>https://giperbio.github.io/lockr/news/index.html</loc>
   </url>
   <url>
-    <loc>https://giperbio.github.io/encryptrpak/reference/encrypt_extdata.html</loc>
+    <loc>https://giperbio.github.io/lockr/reference/index.html</loc>
   </url>
   <url>
-    <loc>https://giperbio.github.io/encryptrpak/reference/encryptrpak-package.html</loc>
+    <loc>https://giperbio.github.io/lockr/reference/lock_dir.html</loc>
   </url>
   <url>
-    <loc>https://giperbio.github.io/encryptrpak/reference/get_private_key.html</loc>
+    <loc>https://giperbio.github.io/lockr/reference/lock_file.html</loc>
   </url>
   <url>
-    <loc>https://giperbio.github.io/encryptrpak/reference/index.html</loc>
+    <loc>https://giperbio.github.io/lockr/reference/lockr-package.html</loc>
+  </url>
+  <url>
+    <loc>https://giperbio.github.io/lockr/reference/rsa_keygen.html</loc>
   </url>
 </urlset>
