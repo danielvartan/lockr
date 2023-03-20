@@ -21,7 +21,7 @@ directory."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">lockr</a>
-        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0</span>
+        <span class="version label label-warning" data-toggle="tooltip" data-placement="bottom" title="Released version">0.3.0.9000</span>
       </span>
     </div>
 
@@ -135,7 +135,7 @@ effects.</p>
 <span class="r-in"><span><span class="va">ssh_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="st">"ssh"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/files2.html" class="external-link">dir.create</a></span><span class="op">(</span><span class="va">ssh_dir</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="rsa_keygen.html">rsa_keygen</a></span><span class="op">(</span><span class="va">ssh_dir</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Keys successfully created at '<span style="font-weight: bold;">/tmp/RtmpPXVuqU/ssh156b2cedab0</span>'.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Keys successfully created at '<span style="font-weight: bold;">/tmp/RtmpCbw9TB/ssh164d4a1c27a5</span>'.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">temp_dir</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span><span class="st">"dir"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/files2.html" class="external-link">dir.create</a></span><span class="op">(</span><span class="va">temp_dir</span><span class="op">)</span></span></span>
@@ -143,29 +143,27 @@ effects.</p>
 <span class="r-in"><span>    <span class="fu"><a href="https://rdrr.io/r/base/files.html" class="external-link">file.create</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span>tmpdir <span class="op">=</span> <span class="va">temp_dir</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="va">temp_dir</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "file156b1878b642" "file156b59d475d7" "file156b5d9e7024" "file156b6a47cb85"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "file156b77e10cdf"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "file164d1486e652" "file164d1d712e5d" "file164d27f36dd1" "file164d450015b" </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "file164dc74b865" </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">lock_dir</span><span class="op">(</span><span class="va">temp_dir</span>, public_key <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">ssh_dir</span>, <span class="st">"id_rsa.pub"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Locked file written at</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpPXVuqU/dir156b4b5fc0e5/file156b1878b642.lockr</span>'.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpCbw9TB/dir164d590e5053/file164d1486e652.lockr</span>'.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Locked file written at</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpPXVuqU/dir156b4b5fc0e5/file156b59d475d7.lockr</span>'.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpCbw9TB/dir164d590e5053/file164d1d712e5d.lockr</span>'.</span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Locked file written at</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpPXVuqU/dir156b4b5fc0e5/file156b5d9e7024.lockr</span>'.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Locked file written at</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpPXVuqU/dir156b4b5fc0e5/file156b6a47cb85.lockr</span>'.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Locked file written at</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpPXVuqU/dir156b4b5fc0e5/file156b77e10cdf.lockr</span>'.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpCbw9TB/dir164d590e5053/file164d27f36dd1.lockr</span>'.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Locked file written at '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpCbw9TB/dir164d590e5053/file164d450015b.lockr</span>'.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Locked file written at '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpCbw9TB/dir164d590e5053/file164dc74b865.lockr</span>'.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Unlocking files</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu">unlock_dir</span><span class="op">(</span><span class="va">temp_dir</span>, private_key <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">ssh_dir</span>, <span class="st">"id_rsa"</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Unlocked file written at '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpPXVuqU/dir156b4b5fc0e5/file156b1878b642</span>'.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Unlocked file written at '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpPXVuqU/dir156b4b5fc0e5/file156b59d475d7</span>'.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Unlocked file written at '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpPXVuqU/dir156b4b5fc0e5/file156b5d9e7024</span>'.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Unlocked file written at '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpPXVuqU/dir156b4b5fc0e5/file156b6a47cb85</span>'.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Unlocked file written at '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpPXVuqU/dir156b4b5fc0e5/file156b77e10cdf</span>'.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Unlocked file written at '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpCbw9TB/dir164d590e5053/file164d1486e652</span>'.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Unlocked file written at '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpCbw9TB/dir164d590e5053/file164d1d712e5d</span>'.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Unlocked file written at '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpCbw9TB/dir164d590e5053/file164d27f36dd1</span>'.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Unlocked file written at '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpCbw9TB/dir164d590e5053/file164d450015b</span>'.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Unlocked file written at '<span style="color: #BB0000; font-weight: bold;">/tmp/RtmpCbw9TB/dir164d590e5053/file164dc74b865</span>'.</span>
 </code></pre></div>
     </div>
   </div>
