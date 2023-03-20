@@ -1,26 +1,16 @@
-#' Encrypt/decrypt files of a package
+#' Encrypt or decrypt all files in a directory
 #'
 #' @description
 #'
 #' `r lifecycle::badge("maturing")`
 #'
 #' __WARNING__: This function must be used with caution! Check the parameters
-#' very carefully.
+#' carefully.
 #'
-#' `lock_dir()` and `unlock_dir()` encrypt/decrypt all files from a given
+#' `lock_dir()` and `unlock_dir()` can encrypt or decrypt all files from a given
 #' directory.
 #'
-#' @details
-#'
-#' When decrypting, a dialog window will open asking for the key password for
-#' each file that must be decrypted. You can only run `unlock_dir()` in
-#' [interactive][interactive()] mode.
-#'
-#' The keys must be in a folder named `ssh` that must be present in the system
-#' folder (`inst`). The private and public keys must be named `id_rsa` and
-#' `id_rsa.pub`, respectively.
-#'
-#' @param dir a string indicating the folder to encrypt/decrypt. (default:
+#' @param dir A string indicating the directory to encrypt/decrypt. (default:
 #'   `"./inst/extdata"`).
 #'
 #' @return An invisible `NULL`. These functions are called just for side

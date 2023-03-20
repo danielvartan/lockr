@@ -3,7 +3,7 @@
 \name{lock_file}
 \alias{lock_file}
 \alias{unlock_file}
-\title{Encrypt/Decrypt a file using an RSA key pair}
+\title{Encrypt or decrypt single files}
 \usage{
 lock_file(
   file,
@@ -24,7 +24,7 @@ unlock_file(
 \item{file}{A string with the file path to be encrypted/decrypted. For
 security reasons, encrypted files must end with the suffix parameter.}
 
-\item{public_key}{(optional) an \code{\link[openssl:keygen]{opensssl}} RSA
+\item{public_key}{(optional) an \code{\link[openssl:keygen]{openssl}} RSA
 public key or a string specifying the public key path. See \code{\link[=rsa_keygen]{rsa_keygen()}}
 to learn how to create an RSA key pair (default:
 \code{"./inst/ssh/id_rsa.pub"}).}
@@ -37,7 +37,7 @@ encrypting)/removed (when decrypting) to/of the file. It must start with
 the original file must be removed after the encryption/decryption process
 (default: \code{TRUE}).}
 
-\item{private_key}{(optional) an \code{\link[openssl:keygen]{opensssl}} RSA
+\item{private_key}{(optional) an \code{\link[openssl:keygen]{openssl}} RSA
 private key or a string specifying the private key path. See \code{\link[=rsa_keygen]{rsa_keygen()}}
 to learn how to create an RSA key pair (default: \code{"./inst/ssh/id_rsa"}).}
 
@@ -46,16 +46,16 @@ the password to read the private key. Avoid typing passwords on the
 console, use \link[askpass:askpass]{askpass()} instead (default: \code{NULL}).}
 }
 \value{
-An invisible string with the locked/unlocked file path.
+An invisible string containing the locked/unlocked file path.
 }
 \description{
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
 
-\code{lock_file()} and \code{unlock_file} can encrypt/decrypt any kind file using an
-RSA key pair. If you project doesn't have an RSA key pair, you can use
+\code{lock_file()} and \code{unlock_file} can encrypt/decrypt any kind of file using an
+RSA key pair. If your project doesn't have an RSA key pair, you can use
 \code{\link[=rsa_keygen]{rsa_keygen()}} to create one.
 
-\code{lock_file()} and \code{unlock_file} use
+These functions use
 \link[openssl:encrypt_envelope]{encrypt_envelope()} /
 \link[openssl:encrypt_envelope]{decrypt_envelope()} to perform file
 encryption/decryption. See those functions to learn more about the

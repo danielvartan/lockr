@@ -1,14 +1,14 @@
-#' Encrypt/Decrypt a file using an RSA key pair
+#' Encrypt or decrypt single files
 #'
 #' @description
 #'
 #' `r lifecycle::badge("maturing")`
 #'
-#' `lock_file()` and `unlock_file` can encrypt/decrypt any kind file using an
-#' RSA key pair. If you project doesn't have an RSA key pair, you can use
+#' `lock_file()` and `unlock_file` can encrypt/decrypt any kind of file using an
+#' RSA key pair. If your project doesn't have an RSA key pair, you can use
 #' [rsa_keygen()] to create one.
 #'
-#' `lock_file()` and `unlock_file` use
+#' These functions use
 #' [encrypt_envelope()][openssl::encrypt_envelope()] /
 #' [decrypt_envelope()][openssl::decrypt_envelope()] to perform file
 #' encryption/decryption. See those functions to learn more about the
@@ -17,7 +17,7 @@
 #' @param file A string with the file path to be encrypted/decrypted. For
 #'   security reasons, encrypted files must end with the suffix parameter.
 #'
-#' @return An invisible string with the locked/unlocked file path.
+#' @return An invisible string containing the locked/unlocked file path.
 #'
 #' @template param_private_key
 #' @template param_public_key

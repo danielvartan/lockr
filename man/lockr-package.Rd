@@ -6,8 +6,6 @@
 \alias{lockr-package}
 \title{lockr: Easily Encrypt/Decrypt Files}
 \description{
-\if{html}{\figure{logo.png}{options: style='float: right' alt='logo' width='120'}}
-
 A user-friendly toolkit to encrypt/decrypt files, specially made for research compendiums.
 }
 \seealso{

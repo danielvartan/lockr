@@ -1,20 +1,17 @@
-#' Create and write a pair of RSA keys
+#' Generate and write a pair of RSA keys
 #'
-#' `rsa_keygen()` creates a pair of RSA (Rivest-Shamir-Adleman) private and
-#' public keys for your package.
+#' `rsa_keygen()` generates a pair of RSA (Rivest-Shamir-Adleman) private and
+#' public keys for your project.
 #'
 #' @param dir (optional) a string specifying the directory to save the generated
 #'   keys (default: `"./inst/ssh"`)
-#' @param password (optional) a string specifying the password to encrypt the
-#'   private key. If `NULL`, the private key will not be encrypted (default:
-#'   `NULL`).
 #' @param password (optional) a string specifying the password to protect the
 #'   private key. If `NULL`, the private key will not be protected (default:
 #'   `NULL`).
 #' @param bits (optional) an integer number specifying the length of the RSA key
 #'   in bits (default: `2048`).
 #'
-#' @return An invisible `NULL`. This function is called just for side effects.
+#' @return An invisible `NULL`. This function is called  for side effects only.
 #'
 #' @family utility functions
 #' @export

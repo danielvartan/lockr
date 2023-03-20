@@ -2,7 +2,7 @@
 % Please edit documentation in R/rsa_keygen.R
 \name{rsa_keygen}
 \alias{rsa_keygen}
-\title{Create and write a pair of RSA keys}
+\title{Generate and write a pair of RSA keys}
 \usage{
 rsa_keygen(dir = "./inst/ssh", password = NULL, bits = 2048)
 }
@@ -18,11 +18,11 @@ private key. If \code{NULL}, the private key will not be protected (default:
 in bits (default: \code{2048}).}
 }
 \value{
-An invisible \code{NULL}. This function is called just for side effects.
+An invisible \code{NULL}. This function is called  for side effects only.
 }
 \description{
-\code{rsa_keygen()} creates a pair of RSA (Rivest-Shamir-Adleman) private and
-public keys for your package.
+\code{rsa_keygen()} generates a pair of RSA (Rivest-Shamir-Adleman) private and
+public keys for your project.
 }
 \examples{
 temp_dir = tempfile("dir")

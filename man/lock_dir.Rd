@@ -3,7 +3,7 @@
 \name{lock_dir}
 \alias{lock_dir}
 \alias{unlock_dir}
-\title{Encrypt/decrypt files of a package}
+\title{Encrypt or decrypt all files in a directory}
 \usage{
 lock_dir(
   dir = "./inst/extdata",
@@ -21,10 +21,10 @@ unlock_dir(
 )
 }
 \arguments{
-\item{dir}{a string indicating the folder to encrypt/decrypt. (default:
+\item{dir}{A string indicating the directory to encrypt/decrypt. (default:
 \code{"./inst/extdata"}).}
 
-\item{public_key}{(optional) an \code{\link[openssl:keygen]{opensssl}} RSA
+\item{public_key}{(optional) an \code{\link[openssl:keygen]{openssl}} RSA
 public key or a string specifying the public key path. See \code{\link[=rsa_keygen]{rsa_keygen()}}
 to learn how to create an RSA key pair (default:
 \code{"./inst/ssh/id_rsa.pub"}).}
@@ -37,7 +37,7 @@ encrypting)/removed (when decrypting) to/of the file. It must start with
 the original file must be removed after the encryption/decryption process
 (default: \code{TRUE}).}
 
-\item{private_key}{(optional) an \code{\link[openssl:keygen]{opensssl}} RSA
+\item{private_key}{(optional) an \code{\link[openssl:keygen]{openssl}} RSA
 private key or a string specifying the private key path. See \code{\link[=rsa_keygen]{rsa_keygen()}}
 to learn how to create an RSA key pair (default: \code{"./inst/ssh/id_rsa"}).}
 
@@ -53,19 +53,10 @@ effects.
 \ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
 
 \strong{WARNING}: This function must be used with caution! Check the parameters
-very carefully.
+carefully.
 
-\code{lock_dir()} and \code{unlock_dir()} encrypt/decrypt all files from a given
+\code{lock_dir()} and \code{unlock_dir()} can encrypt or decrypt all files from a given
 directory.
-}
-\details{
-When decrypting, a dialog window will open asking for the key password for
-each file that must be decrypted. You can only run \code{unlock_dir()} in
-\link[=interactive]{interactive} mode.
-
-The keys must be in a folder named \code{ssh} that must be present in the system
-folder (\code{inst}). The private and public keys must be named \code{id_rsa} and
-\code{id_rsa.pub}, respectively.
 }
 \examples{
 ## Locking files
