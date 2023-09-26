@@ -60,7 +60,7 @@ lock_dir <- function(dir = "./inst/extdata",
             silent = TRUE
             )
 
-        if (grepl(paste0(gutils:::escape_regex(suffix), "$"), file)) {
+        if (grepl(paste0(rutils:::escape_regex(suffix), "$"), file)) {
             "Next"
         } else if (!inherits(out, "try-error")) {
             out
@@ -105,7 +105,7 @@ unlock_dir <- function(dir = "./inst/extdata",
             silent = TRUE
             )
 
-        if (!grepl(paste0(gutils:::escape_regex(suffix), "$"), file)) {
+        if (!grepl(paste0(rutils:::escape_regex(suffix), "$"), file)) {
             "Next"
         } else if (!inherits(out, "try-error")) {
             out

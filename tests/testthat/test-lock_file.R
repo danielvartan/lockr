@@ -3,7 +3,7 @@ test_that("lock_file() | general test", {
     dir.create(temp_dir)
     temp_file <- tempfile(tmpdir = temp_dir)
     file.create(temp_file)
-    rsa_keygen(temp_dir) %>% gutils:::shush()
+    rsa_keygen(temp_dir) %>% rutils:::shush()
     public_key <- file.path(temp_dir, "id_rsa.pub")
     list.files(temp_dir)
 
@@ -11,7 +11,7 @@ test_that("lock_file() | general test", {
         file = temp_file, public_key = public_key,
         suffix = ".lockr", remove_file = TRUE
     ) %>%
-        gutils:::shush() %>%
+        rutils:::shush() %>%
         checkmate::expect_string()
 
     file.create(temp_file)
@@ -70,7 +70,7 @@ test_that("unlock_file() | general test", {
     dir.create(temp_dir)
     temp_file <- tempfile(tmpdir = temp_dir)
     file.create(temp_file)
-    rsa_keygen(temp_dir) %>% gutils:::shush()
+    rsa_keygen(temp_dir) %>% rutils:::shush()
     public_key <- file.path(temp_dir, "id_rsa.pub")
     private_key <- file.path(temp_dir, "id_rsa")
 
@@ -78,7 +78,7 @@ test_that("unlock_file() | general test", {
         file = temp_file, public_key = public_key,
         suffix = ".lockr", remove_file = TRUE
     ) %>%
-        gutils:::shush() %>%
+        rutils:::shush() %>%
         checkmate::expect_string()
 
     list.files(temp_dir)
@@ -88,7 +88,7 @@ test_that("unlock_file() | general test", {
         file = locked_temp_file, private_key = private_key,
         suffix = ".lockr", remove_file = TRUE, password = NULL
     ) %>%
-        gutils:::shush() %>%
+        rutils:::shush() %>%
         checkmate::expect_string()
 
     file.create(locked_temp_file)

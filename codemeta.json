@@ -14,7 +14,7 @@
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.2.2 (2022-10-31 ucrt)",
+  "runtimePlatform": "R version 4.3.1 (2023-06-16 ucrt)",
   "author": [
     {
       "@type": "Person",
@@ -140,7 +140,7 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": ">= 4.1"
+      "version": ">= 4.2"
     },
     "2": {
       "@type": "SoftwareApplication",
@@ -183,12 +183,6 @@
     },
     "5": {
       "@type": "SoftwareApplication",
-      "identifier": "gutils",
-      "name": "gutils",
-      "sameAs": "https://github.com/giperbio/gutils"
-    },
-    "6": {
-      "@type": "SoftwareApplication",
       "identifier": "lifecycle",
       "name": "lifecycle",
       "version": ">= 1.0.3",
@@ -200,7 +194,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=lifecycle"
     },
-    "7": {
+    "6": {
       "@type": "SoftwareApplication",
       "identifier": "openssl",
       "name": "openssl",
@@ -213,9 +207,15 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=openssl"
     },
+    "7": {
+      "@type": "SoftwareApplication",
+      "identifier": "rutils",
+      "name": "rutils",
+      "sameAs": "https://github.com/danielvartan/rutils"
+    },
     "SystemRequirements": null
   },
-  "fileSize": "48.838KB",
+  "fileSize": "50.113KB",
   "citation": [
     {
       "@type": "CreativeWork",
@@ -235,7 +235,7 @@
     }
   ],
   "releaseNotes": "https://github.com/giperbio/lockr/blob/master/NEWS.md",
-  "readme": "https://github.com/giperbio/lockr/blob/main/README.md",
+  "readme": "https://github.com/danielvartan/lockr/blob/main/README.md",
   "contIntegration": ["https://github.com/giperbio/lockr/actions", "https://app.codecov.io/gh/giperbio/lockr?branch=main"],
   "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#maturing"],
   "keywords": ["r-package", "encryption", "r", "rstats"]

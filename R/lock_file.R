@@ -68,7 +68,7 @@ lock_file <- function(file, public_key = "./inst/ssh/id_rsa.pub",
 
     locked_file_name <- paste0(file, suffix)
 
-    if (grepl(paste0(gutils:::escape_regex(suffix), "$"), file)) {
+    if (grepl(paste0(rutils:::escape_regex(suffix), "$"), file)) {
         cli::cli_abort(paste0(
             "The file ",
             "'{.strong {cli::col_red(basename(file))}}' ",
@@ -107,7 +107,7 @@ unlock_file <- function(file, private_key = "./inst/ssh/id_rsa",
                         suffix = ".lockr", remove_file = TRUE,
                         password = NULL) {
     checkmate::assert_string(suffix, pattern = "^\\.")
-    pattern <- paste0(gutils:::escape_regex(suffix), "$")
+    pattern <- paste0(rutils:::escape_regex(suffix), "$")
 
     checkmate::assert_string(file)
     checkmate::assert_string(file, pattern = pattern)

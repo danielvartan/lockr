@@ -4,8 +4,6 @@
 
 # lockr (development version)
 
-
-
 # lockr 0.3.0 (2023-03-20)
 
 * `encryptrpak` was renamed to `lockr`.

@@ -3,7 +3,7 @@ test_that("rsa_keygen() | general test", {
     dir.create(temp_dir)
 
     rsa_keygen(dir = temp_dir, password = "test", bits = 2048) %>%
-        gutils:::shush()
+      rutils:::shush()
 
     file.path(temp_dir, "id_rsa") %>%
         checkmate::expect_file_exists()

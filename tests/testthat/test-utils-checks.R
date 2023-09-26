@@ -8,7 +8,7 @@ test_that("test_public_key() | general test", {
         expect_false()
 
     temp_dir <- tempdir()
-    gutils:::shush(rsa_keygen(temp_dir))
+    rutils:::shush(rsa_keygen(temp_dir))
     file.path(temp_dir, "id_rsa.pub") %>%
         test_public_key() %>%
         expect_true()
@@ -42,7 +42,7 @@ test_that("test_private_key() | general test", {
         expect_false()
 
     temp_dir <- tempdir()
-    gutils:::shush(rsa_keygen(temp_dir, password = "test"))
+    rutils:::shush(rsa_keygen(temp_dir, password = "test"))
     file.path(temp_dir, "id_rsa") %>%
         test_private_key(password = "test") %>%
         expect_true()

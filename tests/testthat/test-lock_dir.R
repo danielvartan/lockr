@@ -1,7 +1,7 @@
 test_that("lock_dir() | general test", {
     ssh_dir <- tempfile("ssh")
     dir.create(ssh_dir)
-    rsa_keygen(ssh_dir) %>% gutils:::shush()
+    rsa_keygen(ssh_dir) %>% rutils:::shush()
 
     temp_dir <- tempfile("dir")
     dir.create(temp_dir)
@@ -11,7 +11,7 @@ test_that("lock_dir() | general test", {
     list.files(temp_dir)
 
     lock_dir(temp_dir, public_key = file.path(ssh_dir, "id_rsa.pub")) %>%
-        gutils:::shush() %>%
+        rutils:::shush() %>%
         expect_null()
 })
 
@@ -50,7 +50,7 @@ test_that("lock_dir() | assertion test", {
 test_that("unlock_dir() | general test", {
     ssh_dir <- tempfile("ssh")
     dir.create(ssh_dir)
-    rsa_keygen(ssh_dir) %>% gutils:::shush()
+    rsa_keygen(ssh_dir) %>% rutils:::shush()
 
     temp_dir <- tempfile("dir")
     dir.create(temp_dir)
@@ -60,10 +60,10 @@ test_that("unlock_dir() | general test", {
     list.files(temp_dir)
 
     lock_dir(temp_dir, public_key = file.path(ssh_dir, "id_rsa.pub")) %>%
-        gutils:::shush()
+        rutils:::shush()
 
     unlock_dir(temp_dir, private_key = file.path(ssh_dir, "id_rsa")) %>%
-        gutils:::shush() %>%
+        rutils:::shush() %>%
         expect_null()
 })
 

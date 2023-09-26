@@ -16,14 +16,14 @@ License: MIT + file LICENSE
 URL: https://giperbio.github.io/lockr/, https://github.com/giperbio/lockr/
 BugReports: https://github.com/giperbio/lockr/issues/
 Depends:
-    R (>= 4.1)
+    R (>= 4.2)
 Imports: 
     checkmate (>= 2.1.0),
     cli (>= 3.6.0),
     dplyr (>= 1.1.0),
-    gutils,
     lifecycle (>= 1.0.3),
     openssl (>= 2.0.6),
+    rutils
 Suggests: 
     askpass (>= 1.1),
     covr (>= 3.6.1),
@@ -33,7 +33,7 @@ Suggests:
     spelling (>= 2.2),
     testthat (>= 3.1.7)
 Remotes: 
-    github::giperbio/gutils
+    github::danielvartan/rutils
 VignetteBuilder: 
     knitr
 Config/testthat/edition: 3
