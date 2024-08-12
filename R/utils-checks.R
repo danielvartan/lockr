@@ -8,8 +8,9 @@ test_public_key <- function(public_key = "./inst/ssh/id_rsa.pub") {
     } else {
         checkmate::assert_file_exists(public_key)
 
-        test <- public_key %>%
-            openssl::read_pubkey() %>%
+        test <- 
+        public_key |>
+            openssl::read_pubkey() |>
             try(silent = TRUE)
 
         if (!inherits(test, "try-error")) {
@@ -43,8 +44,9 @@ test_private_key <- function(private_key = "./inst/ssh/id_rsa",
     } else {
         checkmate::assert_file_exists(private_key)
 
-        test <- private_key %>%
-            openssl::read_key(password = password) %>%
+        test <- 
+            private_key |>
+            openssl::read_key(password = password) |>
             try(silent = TRUE)
 
         if (!inherits(test, "try-error")) {
