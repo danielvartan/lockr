@@ -1,1 +1,3 @@
-id_rsa
+*
+!.gitignore
+!id_rsa.pub

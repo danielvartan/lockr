@@ -10,34 +10,33 @@ Authors@R: c(
             comment = c(ORCID = "0000-0001-7782-759X")
             )
         )
-Description: A user-friendly toolkit to encrypt/decrypt files, specially made 
+Description: A user-friendly toolkit to encrypt/decrypt files, specially made
     for research compendiums.
 License: MIT + file LICENSE
-URL: https://giperbio.github.io/lockr/, https://github.com/giperbio/lockr/
-BugReports: https://github.com/giperbio/lockr/issues/
+URL: https://danielvartan.github.io/lockr/, https://github.com/danielvartan/lockr/
+BugReports: https://github.com/danielvartan/lockr/issues/
 Depends:
-    R (>= 4.2)
-Imports: 
-    checkmate (>= 2.1.0),
-    cli (>= 3.6.0),
-    dplyr (>= 1.1.0),
-    lifecycle (>= 1.0.3),
-    openssl (>= 2.0.6),
-    rutils
-Suggests: 
-    askpass (>= 1.1),
-    covr (>= 3.6.1),
-    knitr (>= 1.42),
+    R (>= 4.3)
+Imports:
+    checkmate (>= 2.3.2),
+    cli (>= 3.6.3),
+    dplyr (>= 1.1.4),
+    fs (>= 1.6.5),
+    here (>= 1.0.1),
+    lifecycle (>= 1.0.4),
+    openssl (>= 2.3.2),
+    readr (>= 2.1.5),
+    stringr (>= 1.5.1)
+Suggests:
+    askpass (>= 1.2.1),
+    covr (>= 3.6.4),
+    knitr (>= 1.49),
     mockr (>= 0.2.1),
-    rmarkdown (>= 2.20),
-    spelling (>= 2.2),
-    testthat (>= 3.1.7)
-Remotes: 
-    github::danielvartan/rutils
-VignetteBuilder: 
-    knitr
+    rmarkdown (>= 2.29),
+    spelling (>= 2.3.1),
+    testthat (>= 3.2.2)
 Config/testthat/edition: 3
 Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.3
+RoxygenNote: 7.3.2

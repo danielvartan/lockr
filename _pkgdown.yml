@@ -1,9 +1,14 @@
-url: https://giperbio.github.io/lockr/
+# (2025-03-02) You may have to install the development version of `bslib` to
+# use `_brands.yml` (`remotes::install_github("rstudio/bslib", force = TRUE)`).
+
+url: https://danielvartan.github.io/lockr/
 
 template:
+  bslib:
+    version: 5
+  math-rendering: mathjax
+  light-switch: true
   params:
-    bootswatch: cosmo
-    mathjax: true
     noindex: false
 
 navbar:
@@ -14,7 +19,10 @@ navbar:
     - reference
     - articles
     - news
-    right: github
+    right:
+    - search
+    - lightswitch
+    - github
   components:
     home: ~
     intro: ~
@@ -32,7 +40,7 @@ reference:
 
 authors:
   Daniel Vartanian:
-    href: https://github.com/danielvartan
+    href: https://github.com/danielvartan/
 
 development:
   mode: unreleased

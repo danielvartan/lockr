@@ -1,0 +1,9 @@
+lockr
+beepr
+cffr
+codemetar
+groomr
+rutils
+Codecov
+danielvartan
+br

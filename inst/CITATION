@@ -1,32 +1,32 @@
 utils::bibentry(
-    header = "To cite {lockr} in publications use:",
-    bibtype  = "Unpublished",
-    title = paste0(
-        "{lockr}:", " ",
-        "easily encrypt/decrypt files"
-        ),
-    author = c(
-        utils::person(
-            given = "Daniel",
-            family = "Vartanian",
-            role = c("aut", "cre", "ccp", "cph"),
-            email = "danvartan@gmail.com",
-            comment = c(ORCID = "0000-0001-7782-759X")
-            )
-        ),
-    year = "2023",
-    url = paste0(
-        "https://giperbio.github.io/",
-        "lockr/"
-        ),
-    note = "R package version 0.3.0.9000",
-    textVersion = paste0(
-        "Vartanian, D.", " ",
-        "(2023)",  ". ",
-        "{lockr}:", " ",
-        "easily encrypt/decrypt files", ". ",
-        "R package version 0.3.0.9000", ". ",
-        "https://giperbio.github.io/",
-        "lockr/"
-        )
+  header = "To cite {lockr} in publications use:",
+  bibtype = "Misc",
+  title = paste0(
+    "{lockr}:", " ",
+    "Easily encrypt/decrypt files"
+  ),
+  author = c(
+    person(
+      given = "Daniel",
+      family = "Vartanian",
+      role = c("aut", "cre", "ccp", "cph"),
+      email = "danvartan@gmail.com",
+      comment = c(ORCID = "0000-0001-7782-759X")
     )
+  ),
+  year = "2025",
+  url = paste0(
+    "https://danielvartan.github.io/",
+    "lockr/"
+  ),
+  note = "R package",
+  textVersion = paste0(
+    "Vartanian, D.", ". ",
+    "(2025)", ". ",
+    "{lockr}:", " ",
+    "Easily encrypt/decrypt files", ". ",
+    "R package", ". ",
+    "https://danielvartan.github.io/",
+    "lockr/"
+  )
+)

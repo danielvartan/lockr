@@ -58,91 +58,106 @@
 #' con <- file(temp_file, "r+")
 #' readLines(con)
 #' close(con)
-lock_file <- function(file, public_key = "./inst/ssh/id_rsa.pub",
-                      suffix = ".lockr", remove_file = TRUE) {
-    checkmate::assert_string(file)
-    checkmate::assert_file_exists(file)
-    checkmate::assert_string(suffix, pattern = "^\\.")
-    checkmate::assert_flag(remove_file)
-    assert_public_key(public_key)
+lock_file <- function(
+    file, public_key = "./inst/ssh/id_rsa.pub", #nolint
+    suffix = ".lockr", remove_file = TRUE
+  ) {
+  checkmate::assert_string(file)
+  checkmate::assert_file_exists(file)
+  checkmate::assert_string(suffix, pattern = "^\\.")
+  checkmate::assert_flag(remove_file)
+  assert_public_key(public_key)
 
-    locked_file_name <- paste0(file, suffix)
+  locked_file_name <- paste0(file, suffix)
 
-    if (grepl(paste0(rutils:::escape_regex(suffix), "$"), file)) {
-        cli::cli_abort(paste0(
-            "The file ",
-            "'{.strong {cli::col_red(basename(file))}}' ",
-            "already has the lock suffix ({.strong '{suffix}'})."
-        ))
-    }
+  if (grepl(paste0(stringr::str_escape(suffix), "$"), file)) {
+    cli::cli_abort(
+      paste0(
+        "The file ",
+        "'{.strong {cli::col_red(basename(file))}}' ",
+        "already has the lock suffix ({.strong '{suffix}'})."
+      )
+    )
+  }
 
-    if (file.exists(locked_file_name)) {
-        cli::cli_abort(paste0(
-            "A locked file named ",
-            "'{.strong {cli::col_red(basename(locked_file_name))}}' ",
-            "already exists. Delete it or rename it."
-        ))
-    }
+  if (file.exists(locked_file_name)) {
+    cli::cli_abort(
+      paste0(
+        "A locked file named ",
+        "'{.strong {cli::col_red(basename(locked_file_name))}}' ",
+        "already exists. Delete it or rename it."
+      )
+    )
+  }
 
-    openssl::encrypt_envelope(
-        data = file, pubkey = public_key
-        ) %>%
-        saveRDS(file = locked_file_name)
+  openssl::encrypt_envelope(data = file, pubkey = public_key) |>
+    saveRDS(file = locked_file_name)
 
-    if (isTRUE(remove_file)) file.remove(file)
+  if (isTRUE(remove_file)) file.remove(file)
 
-    if (file.exists(locked_file_name)) {
-        cli::cli_inform(paste0(
-            "Locked file written at ",
-            "'{.strong {cli::col_red(locked_file_name)}}'."
-        ))
-    }
+  if (file.exists(locked_file_name)) {
+    cli::cli_inform(
+      paste0(
+        "Locked file written at ",
+        "'{.strong {cli::col_red(locked_file_name)}}'."
+      )
+    )
+  }
 
-    invisible(locked_file_name)
+  invisible(locked_file_name)
 }
 
 #' @rdname lock_file
 #' @export
-unlock_file <- function(file, private_key = "./inst/ssh/id_rsa",
-                        suffix = ".lockr", remove_file = TRUE,
-                        password = NULL) {
-    checkmate::assert_string(suffix, pattern = "^\\.")
-    pattern <- paste0(rutils:::escape_regex(suffix), "$")
+unlock_file <- function(
+    file, private_key = "./inst/ssh/id_rsa", #nolint
+    suffix = ".lockr", remove_file = TRUE,
+    password = NULL
+  ) {
+  checkmate::assert_string(suffix, pattern = "^\\.")
+  pattern <- paste0(stringr::str_escape(suffix), "$")
 
-    checkmate::assert_string(file)
-    checkmate::assert_string(file, pattern = pattern)
-    checkmate::assert_file_exists(file)
-    checkmate::assert_flag(remove_file)
-    checkmate::assert_string(password, null.ok = TRUE)
-    assert_private_key(private_key, password)
+  checkmate::assert_string(file)
+  checkmate::assert_string(file, pattern = pattern)
+  checkmate::assert_file_exists(file)
+  checkmate::assert_flag(remove_file)
+  checkmate::assert_string(password, null.ok = TRUE)
+  assert_private_key(private_key, password)
 
-    unlock_file_name <- gsub(pattern, "", file)
+  unlock_file_name <- gsub(pattern, "", file)
 
-    if (file.exists(unlock_file_name)) {
-        cli::cli_abort(paste0(
-            "A file named ",
-            "'{.strong {cli::col_red(basename(unlock_file_name))}}' ",
-            "already exists. Delete it or rename it."
-        ))
-    }
+  if (file.exists(unlock_file_name)) {
+    cli::cli_abort(
+      paste0(
+        "A file named ",
+        "'{.strong {cli::col_red(basename(unlock_file_name))}}' ",
+        "already exists. Delete it or rename it."
+      )
+    )
+  }
 
-    data <- readRDS(file)
-    con <- file(unlock_file_name, "wb")
-    openssl::decrypt_envelope(
-        data$data, data$iv, data$session, key = private_key,
-        password = password
-        ) %>%
-        writeBin(con)
-    close(con)
+  data <- readRDS(file)
+  con <- file(unlock_file_name, "wb")
 
-    if (isTRUE(remove_file)) file.remove(file)
+  openssl::decrypt_envelope(
+    data$data, data$iv, data$session,
+    key = private_key,
+    password = password
+  ) |>
+    writeBin(con)
 
-    if (file.exists(unlock_file_name)) {
-        cli::cli_inform(paste0(
-            "Unlocked file written at ",
-            "'{.strong {cli::col_red(unlock_file_name)}}'."
-        ))
-    }
+  close(con)
 
-    invisible(unlock_file_name)
+  if (isTRUE(remove_file)) file.remove(file)
+
+  if (file.exists(unlock_file_name)) {
+    cli::cli_inform(
+      paste0(
+        "Unlocked file written at ",
+        "'{.strong {cli::col_red(unlock_file_name)}}'."
+      )
+    )
+  }
+
+  invisible(unlock_file_name)
 }

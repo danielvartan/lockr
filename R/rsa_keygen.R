@@ -17,23 +17,23 @@
 #' @export
 #'
 #' @examples
-#' temp_dir = tempfile("dir")
+#' temp_dir <- tempfile("dir")
 #' dir.create(temp_dir)
 #'
 #' rsa_keygen(dir = temp_dir, password = "test", bits = 2048)
 #'
 #' list.files(temp_dir)
 rsa_keygen <- function(dir = "./inst/ssh", password = NULL, bits = 2048) {
-    checkmate::assert_string(dir, null.ok = FALSE)
-    checkmate::assert_directory_exists(dir)
-    checkmate::assert_string(password, null.ok = TRUE)
-    checkmate::assert_integerish(bits)
+  checkmate::assert_string(dir, null.ok = FALSE)
+  checkmate::assert_directory_exists(dir)
+  checkmate::assert_string(password, null.ok = TRUE)
+  checkmate::assert_integerish(bits)
 
-    key <- openssl::rsa_keygen(bits)
-    openssl::write_pem(key, file.path(dir, "id_rsa"), password = password)
-    openssl::write_pem(as.list(key)$pubkey, file.path(dir, "id_rsa.pub"))
+  key <- openssl::rsa_keygen(bits)
+  openssl::write_pem(key, file.path(dir, "id_rsa"), password = password)
+  openssl::write_pem(as.list(key)$pubkey, file.path(dir, "id_rsa.pub"))
 
-    cli::cli_inform("Keys successfully created at '{.strong {dir}}'.")
+  cli::cli_inform("Keys successfully created at '{.strong {dir}}'.")
 
-    invisible(NULL)
+  invisible(NULL)
 }

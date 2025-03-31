@@ -1,0 +1,14 @@
+{"rule":"PASSIVE_VOICE","sentence":"^\\QThe \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q argument is always set to \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Qencryptrpak 0.0.0.9000\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\QLifecycle: maturing R-CMD-check.yaml Codecov test coverage License: MIT Contributor Covenant\\E$"}
+{"rule":"DASH_RULE","sentence":"^\\QProject Status: Active – The project has reached a stable, usable state and is being actively developed.\\E$"}
+{"rule":"DESIGN","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q is a user-friendly R package designed for encrypting/decrypting files.\\E$"}
+{"rule":"PASSIVE_VOICE","sentence":"^\\Q\\E(?:Dummy|Ina|Jimmy-)[0-9]+\\Q code is released under the MIT license.\\E$"}
+{"rule":"MORFOLOGIK_RULE_EN_US","sentence":"^\\Q# lockr\\E$"}
+{"rule":"SENTENCE_WHITESPACE","sentence":"^\\QR'\nlibrary(beepr)\nlibrary(cffr)\nlibrary(codemetar)\nlibrary(groomr) # https://github.com/danielvartan/groomr\nlibrary(here)\nlibrary(rutils) # https://github.com/danielvartan/rutils\n```\\E$"}
+{"rule":"LIBRARY","sentence":"^\\QR'\nlibrary(beepr)\nlibrary(cffr)\nlibrary(codemetar)\nlibrary(groomr) # https://github.com/danielvartan/groomr\nlibrary(here)\nlibrary(rutils) # https://github.com/danielvartan/rutils\n```\\E$"}
+{"rule":"DASH_RULE","sentence":"^\\Q<!-- badges: start -->\n[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)\n[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)\n[![R-CMD-check.yaml](https://github.com/danielvartan/lockr/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/danielvartan/lockr/actions/workflows/check-standard.yaml)\n[![Codecov test coverage](https://codecov.io/gh/danielvartan/lockr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/danielvartan/lockr?branch=main)\n[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://choosealicense.com/licenses/mit/)\n[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)\n<!-- badges: end -->\\E$"}
+{"rule":"DESIGN","sentence":"^\\Q`lockr` is a user-friendly R package designed for encrypting/decrypting files.\\E$"}
+{"rule":"GITHUB","sentence":"^\\Q``` r\nremotes::install_github(\"danielvartan/lockr\")\n```\\E$"}
+{"rule":"FILE_EXTENSIONS_CASE","sentence":"^\\Q`br`{=html}\\E$"}
+{"rule":"FILE_EXTENSIONS_CASE","sentence":"^\\Q`<br>`{=html}\\E$"}

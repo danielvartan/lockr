@@ -11,9 +11,9 @@ A user-friendly toolkit to encrypt/decrypt files, specially made for research co
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://giperbio.github.io/lockr/}
-  \item \url{https://github.com/giperbio/lockr/}
-  \item Report bugs at \url{https://github.com/giperbio/lockr/issues/}
+  \item \url{https://danielvartan.github.io/lockr/}
+  \item \url{https://github.com/danielvartan/lockr/}
+  \item Report bugs at \url{https://github.com/danielvartan/lockr/issues/}
 }
 
 }

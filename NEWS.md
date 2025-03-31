@@ -8,26 +8,26 @@
 
 * `encryptrpak` was renamed to `lockr`.
 * `encryptr` and `devtools`are no longer in the import dependence list.
-* `encrypt_extdata()` and `decrypt_extdata()` were superseded and removed from 
+* `encrypt_extdata()` and `decrypt_extdata()` were superseded and removed from
   the package.
-* `get_private_key()`, `get_public_key()`, `get_private_key_path()`, and 
-  `get_public_key_path()` were remove from the package. Please use `openssl` 
+* `get_private_key()`, `get_public_key()`, `get_private_key_path()`, and
+  `get_public_key_path()` were removed from the package. Please use `openssl`
   for reading keys.
-* `rsa_keygen()` was added. This function facilitate the creation of RSA key 
+* `rsa_keygen()` was added. This function facilitates the creation of RSA key
   pairs.
-* `lock_file()` and `unlock_file()` were added. This functions allow the user
+* `lock_file()` and `unlock_file()` were added. These functions allow the user
   to encrypt/decrypt individual files.
 * `lock_dir()` and `unlock_dir()` were added. These functions allow the user
   to encrypt/decrypt all files inside a directory.
 
 # encryptrpak 0.2.0 (2021-11-11)
 
-* `get_private_key_path()` and `get_public_key_path()` are now exported 
+* `get_private_key_path()` and `get_public_key_path()` are now exported
   functions.
 * An argument called `devtools_load` was added to `get_private_key()`,
   `get_public_key()`, `get_private_key_path()`, `get_public_key_path()`,
   `encrypt_extdata()`, and `decrypt_extdata()`. This allows developers to load
-  packages to memory before running the functions. The `devtools_load` argument 
+  packages to memory before running the functions. The `devtools_load` argument
   is always set to `FALSE`.
 
 
