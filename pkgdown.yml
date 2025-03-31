@@ -1,8 +1,8 @@
 pandoc: 3.1.11
-pkgdown: 2.1.0
+pkgdown: 2.1.1
 pkgdown_sha: ~
 articles: {}
-last_built: 2024-08-12T08:26Z
+last_built: 2025-03-31T08:26Z
 urls:
-  reference: https://giperbio.github.io/lockr/reference
-  article: https://giperbio.github.io/lockr/articles
+  reference: https://danielvartan.github.io/lockr/reference
+  article: https://danielvartan.github.io/lockr/articles
