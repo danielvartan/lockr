@@ -7,6 +7,10 @@
 - [`save_and_lock()`](https://danielvartan.github.io/lockr/reference/save_and_lock.md)
   was added. This function combines saving and locking data into a
   single step.
+- [`staticrypt()`](https://danielvartan.github.io/lockr/reference/staticrypt.md)
+  was added. This function creates an interface with the
+  [Staticrypt](https://github.com/robinmoisson/staticrypt) tool for
+  encrypting HTML files.
 
 ## lockr 0.3.0 (2023-03-20)
 

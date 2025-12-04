@@ -107,9 +107,10 @@ private key path. See <code><a href="rsa_keygen.html">rsa_keygen()</a></code> to
 
 <dt id="arg-password">password<a class="anchor" aria-label="anchor" href="#arg-password"></a></dt>
 <dd><p>(optional) A <code><a href="https://rdrr.io/r/base/character.html" class="external-link">character</a></code> string
-specifying the password to read the private key (<strong>only for protected
-keys</strong>). Don´t type passwords on the console, use
-<a href="https://r-lib.r-universe.dev/askpass/reference/askpass.html" class="external-link">askpass()</a> instead (default: <code>NULL</code>).</p></dd>
+specifying the password for decrypting a protected private key.
+For security, avoid hardcoding passwords in scripts. Use
+<code><a href="https://r-lib.r-universe.dev/askpass/reference/askpass.html" class="external-link">askpass()</a></code> to prompt for secure input
+(default: <code>NULL</code>).</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -134,12 +135,12 @@ locked/unlocked file path.</p>
 <span class="r-in"><span><span class="va">temp_file</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/tempfile.html" class="external-link">tempfile</a></span><span class="op">(</span>tmpdir <span class="op">=</span> <span class="va">temp_dir</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="rsa_keygen.html">rsa_keygen</a></span><span class="op">(</span><span class="va">temp_dir</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Keys successfully created at <span style="color: #BB0000; font-weight: bold;">/tmp/RtmpEFRbN0/dir1ada3591d95f</span>.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Keys successfully created at <span style="color: #BB0000; font-weight: bold;">/tmp/RtmpjlNzSx/dir19d817a33900</span>.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">con</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html" class="external-link">file</a></span><span class="op">(</span><span class="va">temp_file</span>, <span class="st">"w+"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/cat.html" class="external-link">cat</a></span><span class="op">(</span><span class="st">"Test"</span>, file <span class="op">=</span> <span class="va">temp_file</span>, sep <span class="op">=</span> <span class="st">"\n"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="va">temp_dir</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "file1ada49d462ad" "id_rsa"           "id_rsa.pub"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "file19d81ec98173" "id_rsa"           "id_rsa.pub"      </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/warning.html" class="external-link">suppressWarnings</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">con</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Test"</span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/connections.html" class="external-link">close</a></span><span class="op">(</span><span class="va">con</span><span class="op">)</span></span></span>
@@ -150,19 +151,19 @@ locked/unlocked file path.</p>
 <span class="r-in"><span>  <span class="fu">lock_file</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    public_key <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">temp_dir</span>, <span class="st">"id_rsa.pub"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Locked file written at <span style="color: #BB0000; font-weight: bold;">/tmp/RtmpEFRbN0/dir1ada3591d95f/file1ada49d462ad.lockr</span>.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Locked file written at <span style="color: #BB0000; font-weight: bold;">/tmp/RtmpjlNzSx/dir19d817a33900/file19d81ec98173.lockr</span>.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">temp_file_locked</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/paste.html" class="external-link">paste0</a></span><span class="op">(</span><span class="va">temp_file</span>, <span class="st">".lockr"</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">con</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html" class="external-link">file</a></span><span class="op">(</span><span class="va">temp_file_locked</span>, <span class="st">"rb"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="va">temp_dir</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "file1ada49d462ad.lockr" "id_rsa"                 "id_rsa.pub"            </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "file19d81ec98173.lockr" "id_rsa"                 "id_rsa.pub"            </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/warning.html" class="external-link">suppressWarnings</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">con</span><span class="op">)</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "\037\x8b\b"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [2] "\002\x8f\xdb\f\xee\xd4\031.YRs\xa8\xc3}~]m\xb0\xf0*\xabwvW\xe6\xc9\xf8\xaa\006\xff"                                                                                                                                                                                                                                                                                                                                                                                                                                   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "\xdbcv\xf0\a\xd3]ӄ5W7粸&amp;\034\xaf?\xf0\xfby\x87\xa0T\xd0\xcd\xc4\xcc\xf8#Ώ\xfdw;o;\xbajN\xf4|\023&gt;\xed\x98K\x95\xb7\xa7VE\xcan&gt;8K\xe3D\xb4\xee\xfay\xc7'\034\xf9\177(\x8f7E?\xba\xb0\x97Gj~tH\xe7\xd4SKt\x9f\006&gt;hn.w\xb5=[`\xa9\xbe\xf9\xe5\xff\xd8w9+\xaa\037\x9d\xcf\xf2e\xa9Ys\xf3q\xcb\xeem\x86\031\x97\xeb\xd8\xd5&amp;=W\xf7\177t\xe1\030\x9b\xec\xbd\xc0\xfb!\xfb\x85\xbcV\xbe}*\xf58\xe0R\xfd\xd5\033\034ۙ`\xe1s\xfe\xffڳ\xd2G\177\xef\xadi8\xf4~\x9e\xa7\xd5\027\006\006\026\x90\034#\003\v\003'(P\xf3\022sS\x8bA"</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "!\xa1"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "\026d\xca,\x83\xb2؋S\x8b\x8b3\xf3\xf3\xa0\\\x96\x94ĒD \xfd\017"                                                                                                                                                                                                                                                                                                                                                                                                                                                       </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "\037\x8b\b"                                                                                                                                                                                                                                                                                                 </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [2] "\xf5\xb57\a]\x90n\027d{\xfb&lt;\xa4\x93\xebȊ\xa7M.\xabrE\xeb~Y\xe6\x88&gt;\xf6I\xbd`i\xc7\032\xbcY$\xdel\xcb\xc1\xad\xe6\f\xfb\x9fm\xf8\xc8\xc1\xc3x\x8c]\xe6S\xf0\xab2\xcešj\xf1rf&gt;\xa5S\xba\xccB-\xe7\u07be\xd1ȷ\xa8\xad\xe0\xb07\xdbO+\xa6\xc3\002\xa6u\x92\xd6'\xaf|m"                                        </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [3] "\022Ov\xb2/] \xc9|\xff\x9d\xcda\xf3\xb9\023\x9e\x9d;6_\xe7/S\xce\xe1\033\x9a\xa9B\xc1\x8d{v%E\xb4\037\xf3N\xbb\xf4t\x93\xf0|\xf3\xd4\xc97\177\xcb\xdc\xe9џ\xff+L\x80y\xc6S\xb5ç?=\xe7\xd0f\xbc\xd8w \xf0&gt;\x9fD\x8a\x92\xac\x9f\xb2ّ\\A\xc9e\x9eO\xb9a\xe1S\xb7\xfb\xb8W\026\xdf\027\xfdǛk\x8d\xefpn\x90a``ab"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [4] "!\xa1"                                                                                                                                                                                                                                                                                                      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [5] "\026d\xca,\x83\xb2؋S\x8b\x8b3\xf3\xf3\xa0\\\x96\x94ĒD \xfd\017"                                                                                                                                                                                                                                             </span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/connections.html" class="external-link">close</a></span><span class="op">(</span><span class="va">con</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co">## Unlocking Files -----</span></span></span>
@@ -171,10 +172,10 @@ locked/unlocked file path.</p>
 <span class="r-in"><span>  <span class="fu">unlock_file</span><span class="op">(</span></span></span>
 <span class="r-in"><span>    private_key <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/file.path.html" class="external-link">file.path</a></span><span class="op">(</span><span class="va">temp_dir</span>, <span class="st">"id_rsa"</span><span class="op">)</span></span></span>
 <span class="r-in"><span>  <span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Unlocked file written at <span style="color: #BB0000; font-weight: bold;">/tmp/RtmpEFRbN0/dir1ada3591d95f/file1ada49d462ad</span>.</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> <span style="color: #00BBBB;">ℹ</span> Unlocked file written at <span style="color: #BB0000; font-weight: bold;">/tmp/RtmpjlNzSx/dir19d817a33900/file19d81ec98173</span>.</span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html" class="external-link">list.files</a></span><span class="op">(</span><span class="va">temp_dir</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "file1ada49d462ad" "id_rsa"           "id_rsa.pub"      </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> [1] "file19d81ec98173" "id_rsa"           "id_rsa.pub"      </span>
 <span class="r-in"><span><span class="va">con</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/connections.html" class="external-link">file</a></span><span class="op">(</span><span class="va">temp_file</span>, <span class="st">"r+"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/base/readLines.html" class="external-link">readLines</a></span><span class="op">(</span><span class="va">con</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Test"</span>

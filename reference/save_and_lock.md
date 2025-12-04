@@ -71,7 +71,7 @@ temp_dir <- tempfile("dir")
 dir.create(temp_dir)
 
 rsa_keygen(temp_dir)
-#> ℹ Keys successfully created at /tmp/RtmpEFRbN0/dir1ada26669e6a.
+#> ℹ Keys successfully created at /tmp/RtmpjlNzSx/dir19d851557668.
 
 x <- letters
 
@@ -83,6 +83,6 @@ x |>
     type = "rds",
     public_key = file.path(temp_dir, "id_rsa.pub")
   )
-#> ℹ Locked file written at /tmp/RtmpEFRbN0/file1ada15a8e6fd.lockr.
-#> [1] "/tmp/RtmpEFRbN0/file1ada15a8e6fd.lockr"
+#> ℹ Locked file written at /tmp/RtmpjlNzSx/file19d824849281.lockr.
+#> [1] "/tmp/RtmpjlNzSx/file19d824849281.lockr"
 ```

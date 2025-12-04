@@ -76,6 +76,13 @@ Functions to encrypt and decrypt files using RSA encryption.
 - [`save_and_lock()`](https://danielvartan.github.io/lockr/reference/save_and_lock.md)
   : Save and lock a file
 
+## StatiCrypt
+
+Functions to interface with the StatiCrypt encryption tool.
+
+- [`staticrypt()`](https://danielvartan.github.io/lockr/reference/staticrypt.md)
+  : Encrypt or Decrypt HTML Files with StatiCrypt
+
 ## Utilities
 
 Helper functions for key generation and management.

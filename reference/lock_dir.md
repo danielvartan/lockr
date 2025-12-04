@@ -70,10 +70,10 @@ unlock_dir(
 - password:
 
   (optional) A [`character`](https://rdrr.io/r/base/character.html)
-  string specifying the password to read the private key (**only for
-  protected keys**). Don´t type passwords on the console, use
-  [askpass()](https://r-lib.r-universe.dev/askpass/reference/askpass.html)
-  instead (default: `NULL`).
+  string specifying the password for decrypting a protected private key.
+  For security, avoid hardcoding passwords in scripts. Use
+  [`askpass()`](https://r-lib.r-universe.dev/askpass/reference/askpass.html)
+  to prompt for secure input (default: `NULL`).
 
 ## Value
 
@@ -95,7 +95,7 @@ ssh_dir <- tempfile("ssh")
 dir.create(ssh_dir)
 
 rsa_keygen(ssh_dir)
-#> ℹ Keys successfully created at /tmp/RtmpEFRbN0/ssh1ada5063173d.
+#> ℹ Keys successfully created at /tmp/RtmpjlNzSx/ssh19d841ffe827.
 
 temp_dir <- tempfile("dir")
 dir.create(temp_dir)
@@ -103,18 +103,18 @@ dir.create(temp_dir)
 for (i in seq_len(5)) file.create(tempfile(tmpdir = temp_dir))
 
 list.files(temp_dir)
-#> [1] "file1ada2a514280" "file1ada3ca668b5" "file1ada4b0f4971" "file1ada582beba2"
-#> [5] "file1ada7d99e5b9"
+#> [1] "file19d830987cd1" "file19d83ba086c3" "file19d849b88c4"  "file19d8504aed18"
+#> [5] "file19d86ae7f57f"
 
 temp_dir |>
   lock_dir(
     public_key = file.path(ssh_dir, "id_rsa.pub")
   )
-#> ℹ Locked file written at /tmp/RtmpEFRbN0/dir1ada9f42f5b/file1ada2a514280.lockr.
-#> ℹ Locked file written at /tmp/RtmpEFRbN0/dir1ada9f42f5b/file1ada3ca668b5.lockr.
-#> ℹ Locked file written at /tmp/RtmpEFRbN0/dir1ada9f42f5b/file1ada4b0f4971.lockr.
-#> ℹ Locked file written at /tmp/RtmpEFRbN0/dir1ada9f42f5b/file1ada582beba2.lockr.
-#> ℹ Locked file written at /tmp/RtmpEFRbN0/dir1ada9f42f5b/file1ada7d99e5b9.lockr.
+#> ℹ Locked file written at /tmp/RtmpjlNzSx/dir19d87cce470/file19d830987cd1.lockr.
+#> ℹ Locked file written at /tmp/RtmpjlNzSx/dir19d87cce470/file19d83ba086c3.lockr.
+#> ℹ Locked file written at /tmp/RtmpjlNzSx/dir19d87cce470/file19d849b88c4.lockr.
+#> ℹ Locked file written at /tmp/RtmpjlNzSx/dir19d87cce470/file19d8504aed18.lockr.
+#> ℹ Locked file written at /tmp/RtmpjlNzSx/dir19d87cce470/file19d86ae7f57f.lockr.
 
 ## Unlocking files -----
 
@@ -122,9 +122,9 @@ temp_dir |>
   unlock_dir(
     private_key = file.path(ssh_dir, "id_rsa")
   )
-#> ℹ Unlocked file written at /tmp/RtmpEFRbN0/dir1ada9f42f5b/file1ada2a514280.
-#> ℹ Unlocked file written at /tmp/RtmpEFRbN0/dir1ada9f42f5b/file1ada3ca668b5.
-#> ℹ Unlocked file written at /tmp/RtmpEFRbN0/dir1ada9f42f5b/file1ada4b0f4971.
-#> ℹ Unlocked file written at /tmp/RtmpEFRbN0/dir1ada9f42f5b/file1ada582beba2.
-#> ℹ Unlocked file written at /tmp/RtmpEFRbN0/dir1ada9f42f5b/file1ada7d99e5b9.
+#> ℹ Unlocked file written at /tmp/RtmpjlNzSx/dir19d87cce470/file19d830987cd1.
+#> ℹ Unlocked file written at /tmp/RtmpjlNzSx/dir19d87cce470/file19d83ba086c3.
+#> ℹ Unlocked file written at /tmp/RtmpjlNzSx/dir19d87cce470/file19d849b88c4.
+#> ℹ Unlocked file written at /tmp/RtmpjlNzSx/dir19d87cce470/file19d8504aed18.
+#> ℹ Unlocked file written at /tmp/RtmpjlNzSx/dir19d87cce470/file19d86ae7f57f.
 ```
