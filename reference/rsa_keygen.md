@@ -45,7 +45,7 @@ temp_dir |>
     password = "test",
     bits = 2048
   )
-#> ℹ Keys successfully created at /tmp/RtmpBG40kY/dir19ba6a570215.
+#> ℹ Keys successfully created at /tmp/RtmpGfFehy/dir197f15c2eff8.
 
 list.files(temp_dir)
 #> [1] "id_rsa"     "id_rsa.pub"
