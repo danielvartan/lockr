@@ -1,4 +1,5 @@
 #' @param password (optional) A [`character`][base::character()] string
-#'   specifying the password to read the private key (**only for protected
-#'   keys**). Don´t type passwords on the console, use
-#'   [askpass()][askpass::askpass()] instead (default: `NULL`).
+#'   specifying the password for decrypting a protected private key.
+#'   For security, avoid hardcoding passwords in scripts. Use
+#'   [`askpass()`][askpass::askpass()] to prompt for secure input
+#'   (default: `NULL`).

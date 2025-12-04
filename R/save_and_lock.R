@@ -1,5 +1,7 @@
 #' Save and lock a file
 #'
+#' @description
+#'
 #' `save_and_lock()` saves a data frame or R object to a file and then locks
 #'   it using [RSA](https://en.wikipedia.org/wiki/RSA_cryptosystem) encryption.
 #'

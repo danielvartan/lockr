@@ -76,3 +76,33 @@ assert_private_key <- function(
 
   invisible(NULL)
 }
+
+assert_staticrypt <- function() {
+  test <- staticrypt_command()
+
+  if (test == "") {
+    if (isTRUE(attr(test, "npm_missing"))) {
+      cli::cli_abort(
+        paste0(
+          "The {.strong {cli::col_red('npm')}} command from ",
+          "Node.js is not available. ",
+          "Please install Node.js from https://nodejs.org ",
+          "to use the staticrypt functionality."
+        )
+      )
+    } else {
+      cli::cli_abort(
+        paste0(
+          "The {.strong {cli::col_red('staticrypt')}} package is not ",
+          "installed. Please run ",
+          "{.strong {cli::col_blue('npm install staticrypt')}} ",
+          "in a terminal to install it locally, or ",
+          "{.strong {cli::col_blue('npm install -g staticrypt')}} ",
+          "to install it globally."
+        )
+      )
+    }
+  } else {
+    TRUE
+  }
+}

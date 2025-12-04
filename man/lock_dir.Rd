@@ -43,9 +43,10 @@ private key path. See \code{\link[=rsa_keygen]{rsa_keygen()}} to learn how to cr
 (default: \code{here::here("_ssh", "id_rsa")}).}
 
 \item{password}{(optional) A \code{\link[base:character]{character}} string
-specifying the password to read the private key (\strong{only for protected
-keys}). Don´t type passwords on the console, use
-\link[askpass:askpass]{askpass()} instead (default: \code{NULL}).}
+specifying the password for decrypting a protected private key.
+For security, avoid hardcoding passwords in scripts. Use
+\code{\link[askpass:askpass]{askpass()}} to prompt for secure input
+(default: \code{NULL}).}
 }
 \value{
 An \link[base:invisible]{invisible} \code{NULL}. These functions are called

@@ -1,5 +1,7 @@
 #' Generate and write a pair of RSA keys
 #'
+#' @description
+#'
 #' `rsa_keygen()` generates a pair of [OpenSSL](https://www.openssl.org/)
 #' [RSA](https://en.wikipedia.org/wiki/RSA_cryptosystem) (Rivest-Shamir-Adleman)
 #' private and public keys.

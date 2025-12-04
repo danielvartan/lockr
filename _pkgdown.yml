@@ -39,6 +39,12 @@ reference:
   - lock_dir
   - save_and_lock
 
+- title: StatiCrypt
+  desc: >
+    Functions to interface with the StatiCrypt encryption tool.
+  contents:
+  - staticrypt
+
 - title: Utilities
   desc: >
     Helper functions for key generation and management.
