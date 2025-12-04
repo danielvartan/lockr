@@ -106,7 +106,8 @@ staticrypt <- function(
 
   checkmate::assert_string(file)
   checkmate::assert_file_exists(file)
-  checkmate::assert_string(password)
+  checkmate::assert_multi_class(password, c("numeric", "character"))
+  checkmate::assert_vector(password, len = 1)
   checkmate::assert_string(config, null.ok = TRUE)
   checkmate::assert_string(directory)
   checkmate::assert_flag(decrypt)
@@ -133,10 +134,6 @@ staticrypt <- function(
     null.ok = TRUE
   )
 
-  if (!is.null(config)) {
-    checkmate::assert_path_for_output(config)
-  }
-
   if (is.numeric(remember)) {
     remember <- ceiling(remember)
   }
@@ -147,81 +144,81 @@ staticrypt <- function(
 
   command <- staticrypt_command()
 
-  if (command == "") {
-    assert_staticrypt()
+  assert_staticrypt()
+
+  args <- c()
+
+  options <-
+    ls() |>
+    stringr::str_subset(
+      "command|file|pattern_hex",
+      negate = TRUE
+    )
+
+  for (i in options) {
+    value <- get(i)
+
+    i <- stringr::str_replace_all(i, "_", "-")
+
+    if (is.logical(value)) {
+      args <- c(args, paste0("--", i, " ", tolower(value)))
+    } else if (is.numeric(value)) {
+      args <- c(args, paste0("--", i, " ", value))
+    } else if (!is.null(value)) {
+      args <- c(args, paste0("--", i, ' "', value, '"'))
+    }
+  }
+
+  if (stringr::str_detect(command, "^npx")) {
+    args <- c(
+      "staticrypt",
+      paste0('"', file, '"'),
+      "--short",
+      paste0(args, collapse = " ")
+    )
+
+    command <- "npx"
   } else {
-    args <- c()
+    args <- c(
+      paste0('"', file, '"'),
+      "--short",
+      paste0(args, collapse = " ")
+    )
+  }
 
-    options <-
-      ls() |>
-      stringr::str_subset(
-        "command|file|pattern_hex",
-        negate = TRUE
+  # return(paste(command, paste(args, collapse = " ")))
+
+  system2_output <-
+    command |>
+    system2(
+      args = args,
+      stdout = TRUE,
+      stderr = TRUE
+    ) |>
+    suppressMessages() |>
+    suppressWarnings()
+
+  status <-
+    system2_output |>
+    attributes() |>
+    magrittr::extract2("status")
+
+  if (!is.null(status)) {
+    if (status == 124) {
+      cli::cli_alert_warning(
+        paste0(
+          "Staticrypt timed out after ",
+          "{.strong {cli::col_red(timeout)}} seconds."
+        )
       )
-
-    for (i in options) {
-      value <- get(i)
-
-      if (is.logical(value)) {
-        args <- c(args, paste0("--", i, " ", tolower(value)))
-      } else if (is.numeric(value)) {
-        args <- c(args, paste0("--", i, " ", value))
-      } else if (!is.null(value)) {
-        args <- c(args, paste0("--", i, ' "', value, '"'))
-      }
-    }
-
-    if (stringr::str_detect(command, "^npx")) {
-      args <- c(
-        "staticrypt",
-        paste0('"', file, '"'),
-        "--short",
-        paste0(args, collapse = " ")
-      )
-
-      command <- "npx"
     } else {
-      args <- c(
-        paste0('"', file, '"'),
-        "--short",
-        paste0(args, collapse = " ")
+      cli::cli_abort(
+        c(
+          "Staticrypt produced the following error:",
+          "",
+          paste(system2_output)
+        )
       )
-    }
-
-    # return(paste(command, paste(args, collapse = " ")))
-
-    system2_output <-
-      command |>
-      system2(
-        args = args,
-        stdout = TRUE,
-        stderr = TRUE
-      ) |>
-      suppressMessages() |>
-      suppressWarnings()
-
-    status <-
-      system2_output |>
-      attributes() |>
-      magrittr::extract2("status")
-
-    if (!is.null(status)) {
-      if (status == 124) {
-        cli::cli_alert_warning(
-          paste0(
-            "Staticrypt timed out after ",
-            "{.strong {cli::col_red(timeout)}} seconds."
-          )
-        )
-      } else {
-        cli::cli_abort(
-          c(
-            "Staticrypt produced the following error:",
-            "",
-            paste(system2_output)
-          )
-        )
-      }
     }
   }
 

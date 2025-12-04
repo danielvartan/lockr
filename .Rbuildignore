@@ -1,4 +1,3 @@
-^_brand\.yml$
 ^_pkgdown\.yml$
 ^_quarto\.yml$
 ^.quarto$
@@ -6,6 +5,8 @@
 ^\.github$
 ^\.lintr$
 ^\.Rproj\.user$
+^\.staticrypt.json$
+^^_brand\.yml$
 ^air\.toml$
 ^CITATION\.cff$
 ^CODE_OF_CONDUCT\.md$
@@ -16,8 +17,8 @@
 ^data-raw$
 ^doc$
 ^docs$
-^LICENSE$
 ^LICENSE\.md$
+^LICENSE$
 ^man-roxygen$
 ^Meta$
 ^pkgdown$
