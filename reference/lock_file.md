@@ -94,12 +94,12 @@ dir.create(temp_dir)
 temp_file <- tempfile(tmpdir = temp_dir)
 
 rsa_keygen(temp_dir)
-#> ℹ Keys successfully created at /tmp/RtmpHVkJPh/dir199e22bb1feb.
+#> ℹ Keys successfully created at /tmp/RtmpfEtUMP/dir19851efab48b.
 
 con <- file(temp_file, "w+")
 cat("Test", file = temp_file, sep = "\n")
 list.files(temp_dir)
-#> [1] "file199e2f71d34f" "id_rsa"           "id_rsa.pub"      
+#> [1] "file1985726510bf" "id_rsa"           "id_rsa.pub"      
 suppressWarnings(readLines(con))
 #> [1] "Test"
 close(con)
@@ -110,18 +110,18 @@ temp_file |>
   lock_file(
     public_key = file.path(temp_dir, "id_rsa.pub")
   )
-#> ℹ Locked file written at /tmp/RtmpHVkJPh/dir199e22bb1feb/file199e2f71d34f.lockr.
+#> ℹ Locked file written at /tmp/RtmpfEtUMP/dir19851efab48b/file1985726510bf.lockr.
 
 temp_file_locked <- paste0(temp_file, ".lockr")
 
 con <- file(temp_file_locked, "rb")
 list.files(temp_dir)
-#> [1] "file199e2f71d34f.lockr" "id_rsa"                 "id_rsa.pub"            
+#> [1] "file1985726510bf.lockr" "id_rsa"                 "id_rsa.pub"            
 suppressWarnings(readLines(con))
-#> [1] "\037\x8b\b"                                                                                                                                                                                                                                                                                  
-#> [2] "\xdf\xe8)<2V}ǰ\xe2\x9b\xe7\xa4\xfb[/\030\t\xde\021728\xb0\xbf3\xf6\xfa\002\xeb\xe9\xa9u\xe1敜\xbd\xa2\xf1\xdb\xfa\xee\xacr*\xaf>\031\021\xf4&\xb54cSݼ\x83[y\xeb\xacv,"                                                                                                                       
-#> [3] "\x9be \xf3\xfe\x96\xf6w\x8f\020&\xbf\xd4\035\177N\177\x9e\xf7\xe1\x8c\xc8C\xa7\x8d;\xc2\031\xddZ,Nw\xc4\xce| \037j\xd7t\x9b}\xab.?îJ\x8d;\xb3\xa2\027p/\xf5"                                                                                                                                 
-#> [4] "\xbd.\xf3?q\xcf\003\033\xfd\x8f\x97\xf3\xef\vod\xe38\xb5(\xeb\020\xe3\x84\t.6\xef4\xde\xf8\xc6,UQ\xb0۳\x8b)\xe4\xd9\xff\xa4\x87=\xd9U\x82\xae|\006\177\027L\xee8\xf94\xe6\xc8\"\xf3u\xbb\xa2*?\xbb\x89g\xae\xfe4\xf9\xf8\x99u_y\xdf$m\xd9xnb\xa9\xb0\xf3\xd9K\xa2k\x8aN\x9f\xfa\xb1\xf3\xd4Ԩ"
+#> [1] "\037\x8b\b"                                                                                                                                                                                                                                                                                                                                                               
+#> [2] "\x98x\xea\xb6\xd6c\xae}\x99\017g\x9fZq\xf5p\xfa\xea\x8bΥv\027L\xb3'\xf5\xb2.t\xda\xca\xd3Uw\xfb|f_\xe8O\037c\xb9\xf2u\xfa\xaaVa\xbe1\xb3\xae\xee>\xd5\\9g\x87\xd3)\xa3\xa4\xb7\xc6\xe1b\xbfu\xe2\x94R4\xb7zl\f\x94"                                                                                                                                                       
+#> [3] "\xbf\xfa\xf8\xfc\xee\xd9\xecѱ\006\022B\x9e\xab\xc25\f6\037\xf2ʘh\030\xb0\xb8yV\xdaM\xee\022\xee)\xb3n\x9e\xaf\xca_(}5\xec]yP\xbd\xe8κM\x91\xa7\024\016\xc9|4\xf1\xfcb,^\xf9\xb3\xaa\xf2\x83\xb7h\xcc\xd7\xc8=[\x8f\xed\xf9\xf5\xb6p\xd7\xe5m6ۄ-Y\034-S\xde\xcf\xf4\021?\x9d5\xf9\x8b\035,|\xaeeM\xe1;\xe8w\xae\x8be\xcb\037㛡\xda\017\030\030X\x98\030@\001\xc4\xc2\xc0\t"
+#> [4] "Լ\xc4\xdc\xd4b\x90BHh\x83\005\x992ˠ,\xf6\xe2\xd4\xe2\xe2\xcc\xfc<(\x97%%\xb1$\021H\xff\003"                                                                                                                                                                                                                                                                               
 close(con)
 
 ## Unlocking Files -----
@@ -130,10 +130,10 @@ temp_file_locked |>
   unlock_file(
     private_key = file.path(temp_dir, "id_rsa")
   )
-#> ℹ Unlocked file written at /tmp/RtmpHVkJPh/dir199e22bb1feb/file199e2f71d34f.
+#> ℹ Unlocked file written at /tmp/RtmpfEtUMP/dir19851efab48b/file1985726510bf.
 
 list.files(temp_dir)
-#> [1] "file199e2f71d34f" "id_rsa"           "id_rsa.pub"      
+#> [1] "file1985726510bf" "id_rsa"           "id_rsa.pub"      
 con <- file(temp_file, "r+")
 readLines(con)
 #> [1] "Test"
