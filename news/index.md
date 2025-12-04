@@ -2,6 +2,8 @@
 
 ## lockr (development version)
 
+## lockr 0.4.0 (2025-12-04)
+
 - The package code was refactored to improve readability and
   maintainability.
 - [`save_and_lock()`](https://danielvartan.github.io/lockr/reference/save_and_lock.md)

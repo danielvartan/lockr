@@ -95,7 +95,7 @@ ssh_dir <- tempfile("ssh")
 dir.create(ssh_dir)
 
 rsa_keygen(ssh_dir)
-#> ℹ Keys successfully created at /tmp/RtmpGfFehy/ssh197f5cb32d13.
+#> ℹ Keys successfully created at /tmp/RtmpHVkJPh/ssh199e96e8880.
 
 temp_dir <- tempfile("dir")
 dir.create(temp_dir)
@@ -103,18 +103,18 @@ dir.create(temp_dir)
 for (i in seq_len(5)) file.create(tempfile(tmpdir = temp_dir))
 
 list.files(temp_dir)
-#> [1] "file197f2a6b5c53" "file197f2e8558b1" "file197f43f0a989" "file197f4cd298ca"
-#> [5] "file197f5a3d24d5"
+#> [1] "file199e4d3ecae1" "file199e4dd55f81" "file199e6bc21bfe" "file199e96e4bf4" 
+#> [5] "file199ebd9ffa5" 
 
 temp_dir |>
   lock_dir(
     public_key = file.path(ssh_dir, "id_rsa.pub")
   )
-#> ℹ Locked file written at /tmp/RtmpGfFehy/dir197f182f772d/file197f2a6b5c53.lockr.
-#> ℹ Locked file written at /tmp/RtmpGfFehy/dir197f182f772d/file197f2e8558b1.lockr.
-#> ℹ Locked file written at /tmp/RtmpGfFehy/dir197f182f772d/file197f43f0a989.lockr.
-#> ℹ Locked file written at /tmp/RtmpGfFehy/dir197f182f772d/file197f4cd298ca.lockr.
-#> ℹ Locked file written at /tmp/RtmpGfFehy/dir197f182f772d/file197f5a3d24d5.lockr.
+#> ℹ Locked file written at /tmp/RtmpHVkJPh/dir199e3bd20db6/file199e4d3ecae1.lockr.
+#> ℹ Locked file written at /tmp/RtmpHVkJPh/dir199e3bd20db6/file199e4dd55f81.lockr.
+#> ℹ Locked file written at /tmp/RtmpHVkJPh/dir199e3bd20db6/file199e6bc21bfe.lockr.
+#> ℹ Locked file written at /tmp/RtmpHVkJPh/dir199e3bd20db6/file199e96e4bf4.lockr.
+#> ℹ Locked file written at /tmp/RtmpHVkJPh/dir199e3bd20db6/file199ebd9ffa5.lockr.
 
 ## Unlocking files -----
 
@@ -122,9 +122,9 @@ temp_dir |>
   unlock_dir(
     private_key = file.path(ssh_dir, "id_rsa")
   )
-#> ℹ Unlocked file written at /tmp/RtmpGfFehy/dir197f182f772d/file197f2a6b5c53.
-#> ℹ Unlocked file written at /tmp/RtmpGfFehy/dir197f182f772d/file197f2e8558b1.
-#> ℹ Unlocked file written at /tmp/RtmpGfFehy/dir197f182f772d/file197f43f0a989.
-#> ℹ Unlocked file written at /tmp/RtmpGfFehy/dir197f182f772d/file197f4cd298ca.
-#> ℹ Unlocked file written at /tmp/RtmpGfFehy/dir197f182f772d/file197f5a3d24d5.
+#> ℹ Unlocked file written at /tmp/RtmpHVkJPh/dir199e3bd20db6/file199e4d3ecae1.
+#> ℹ Unlocked file written at /tmp/RtmpHVkJPh/dir199e3bd20db6/file199e4dd55f81.
+#> ℹ Unlocked file written at /tmp/RtmpHVkJPh/dir199e3bd20db6/file199e6bc21bfe.
+#> ℹ Unlocked file written at /tmp/RtmpHVkJPh/dir199e3bd20db6/file199e96e4bf4.
+#> ℹ Unlocked file written at /tmp/RtmpHVkJPh/dir199e3bd20db6/file199ebd9ffa5.
 ```
