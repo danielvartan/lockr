@@ -14,7 +14,7 @@
 #'   prompt for secure input.
 #' @param config A [`character`][base::character] string specifying the path to
 #'   the configuration file. If `NULL`, defaults to a `.staticrypt.json`
-#'   in the same directory as `file` (default: `NULL`).
+#'   file in the working directory (default: `NULL`).
 #' @param directory A [`character`][base::character] string indicating the
 #'   output directory for the encrypted or decrypted file (default: a subdirectory
 #'   named `encrypted` in the same directory as `file`). Use `dirname(file)`
@@ -133,13 +133,7 @@ staticrypt <- function(
     null.ok = TRUE
   )
 
-  if (is.null(config)) {
-    config <-
-      file |>
-      dirname() |>
-      fs::path(".staticrypt.json") |>
-      fs::path_rel(here::here())
-  } else {
+  if (!is.null(config)) {
     checkmate::assert_path_for_output(config)
   }
 

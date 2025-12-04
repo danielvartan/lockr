@@ -39,7 +39,7 @@ prompt for secure input.}
 
 \item{config}{A \code{\link[base:character]{character}} string specifying the path to
 the configuration file. If \code{NULL}, defaults to a \code{.staticrypt.json}
-in the same directory as \code{file} (default: \code{NULL}).}
+file in the working directory (default: \code{NULL}).}
 
 \item{directory}{A \code{\link[base:character]{character}} string indicating the
 output directory for the encrypted or decrypted file (default: a subdirectory
