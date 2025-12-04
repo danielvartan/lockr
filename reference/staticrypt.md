@@ -51,8 +51,7 @@ staticrypt(
 
   A [`character`](https://rdrr.io/r/base/character.html) string
   specifying the path to the configuration file. If `NULL`, defaults to
-  a `.staticrypt.json` in the same directory as `file` (default:
-  `NULL`).
+  a `.staticrypt.json` file in the working directory (default: `NULL`).
 
 - directory:
 

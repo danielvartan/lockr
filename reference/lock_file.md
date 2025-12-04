@@ -94,12 +94,12 @@ dir.create(temp_dir)
 temp_file <- tempfile(tmpdir = temp_dir)
 
 rsa_keygen(temp_dir)
-#> ℹ Keys successfully created at /tmp/RtmpjlNzSx/dir19d817a33900.
+#> ℹ Keys successfully created at /tmp/RtmpBG40kY/dir19ba1a5e0b3.
 
 con <- file(temp_file, "w+")
 cat("Test", file = temp_file, sep = "\n")
 list.files(temp_dir)
-#> [1] "file19d81ec98173" "id_rsa"           "id_rsa.pub"      
+#> [1] "file19ba4f650524" "id_rsa"           "id_rsa.pub"      
 suppressWarnings(readLines(con))
 #> [1] "Test"
 close(con)
@@ -110,19 +110,18 @@ temp_file |>
   lock_file(
     public_key = file.path(temp_dir, "id_rsa.pub")
   )
-#> ℹ Locked file written at /tmp/RtmpjlNzSx/dir19d817a33900/file19d81ec98173.lockr.
+#> ℹ Locked file written at /tmp/RtmpBG40kY/dir19ba1a5e0b3/file19ba4f650524.lockr.
 
 temp_file_locked <- paste0(temp_file, ".lockr")
 
 con <- file(temp_file_locked, "rb")
 list.files(temp_dir)
-#> [1] "file19d81ec98173.lockr" "id_rsa"                 "id_rsa.pub"            
+#> [1] "file19ba4f650524.lockr" "id_rsa"                 "id_rsa.pub"            
 suppressWarnings(readLines(con))
-#> [1] "\037\x8b\b"                                                                                                                                                                                                                                                                                                 
-#> [2] "\xf5\xb57\a]\x90n\027d{\xfb<\xa4\x93\xebȊ\xa7M.\xabrE\xeb~Y\xe6\x88>\xf6I\xbd`i\xc7\032\xbcY$\xdel\xcb\xc1\xad\xe6\f\xfb\x9fm\xf8\xc8\xc1\xc3x\x8c]\xe6S\xf0\xab2\xcešj\xf1rf>\xa5S\xba\xccB-\xe7\u07be\xd1ȷ\xa8\xad\xe0\xb07\xdbO+\xa6\xc3\002\xa6u\x92\xd6'\xaf|m"                                        
-#> [3] "\022Ov\xb2/] \xc9|\xff\x9d\xcda\xf3\xb9\023\x9e\x9d;6_\xe7/S\xce\xe1\033\x9a\xa9B\xc1\x8d{v%E\xb4\037\xf3N\xbb\xf4t\x93\xf0|\xf3\xd4\xc97\177\xcb\xdc\xe9џ\xff+L\x80y\xc6S\xb5ç?=\xe7\xd0f\xbc\xd8w \xf0>\x9fD\x8a\x92\xac\x9f\xb2ّ\\A\xc9e\x9eO\xb9a\xe1S\xb7\xfb\xb8W\026\xdf\027\xfdǛk\x8d\xefpn\x90a``ab"
-#> [4] "!\xa1"                                                                                                                                                                                                                                                                                                      
-#> [5] "\026d\xca,\x83\xb2؋S\x8b\x8b3\xf3\xf3\xa0\\\x96\x94ĒD \xfd\017"                                                                                                                                                                                                                                             
+#> [1] "\037\x8b\b"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+#> [2] "u\xabW.ؘ\xfb\xf1\xd1ͅo"                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+#> [3] "u\xf3\xaej\033:mxg[!\xb2\x95'\xbc\xff\xad\x97\xd0-\xbf\xdc]a\006k\xdd\xf2\xd7\xf1Tj[}\\\x91\xefZ|$\xd5\xf6\xd3_\xddOɓ\xa7|\xbc\\\xd7,\xf2\xa0\xf2\xa5\xabiD\xea\x95\xe2\024\t\xfeW\xb3\xaa\xd9\xf7>s\\shբ\xf8\x9f\x97\x92e\002\xc4\xe6\xb8ι^-\x98\xf9\xe69/\xdbJk\xd9\025\xfd\xca7\x83\xfdW\xae\xbe\xfd\xe8%\xb7\xf0\xd4D\xd5/\x9e\037\x8dk\xb2\037լ\xb4Q}s\xa6\xe4\xc1\xa4\xb7\xc1\037\xb5~~^w\xb4Y̔\xb3\xb8\x8fq\xa1\u05f5\036\x86DX\xf8\030*m].\xcaњ\xac:\xe1\xe1%\xf7\xc3{t\030\030X\x98\030@\001\xc4\xc2\xc0\t"
+#> [4] "Լ\xc4\xdc\xd4b\x90BHh\x83\005\x992ˠ,\xf6\xe2\xd4\xe2\xe2\xcc\xfc<(\x97%%\xb1\004d\xf2?"                                                                                                                                                                                                                                                                                                                                                                                                                            
 close(con)
 
 ## Unlocking Files -----
@@ -131,10 +130,10 @@ temp_file_locked |>
   unlock_file(
     private_key = file.path(temp_dir, "id_rsa")
   )
-#> ℹ Unlocked file written at /tmp/RtmpjlNzSx/dir19d817a33900/file19d81ec98173.
+#> ℹ Unlocked file written at /tmp/RtmpBG40kY/dir19ba1a5e0b3/file19ba4f650524.
 
 list.files(temp_dir)
-#> [1] "file19d81ec98173" "id_rsa"           "id_rsa.pub"      
+#> [1] "file19ba4f650524" "id_rsa"           "id_rsa.pub"      
 con <- file(temp_file, "r+")
 readLines(con)
 #> [1] "Test"
