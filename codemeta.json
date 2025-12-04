@@ -8,7 +8,7 @@
   "codeRepository": "https://github.com/danielvartan/lockr/",
   "issueTracker": "https://github.com/danielvartan/lockr/issues/",
   "license": "https://spdx.org/licenses/GPL-3.0",
-  "version": "0.3.0.9000",
+  "version": "0.4.0",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
@@ -94,19 +94,6 @@
         "url": "https://cran.r-project.org"
       },
       "sameAs": "https://CRAN.R-project.org/package=knitr"
-    },
-    {
-      "@type": "SoftwareApplication",
-      "identifier": "magrittr",
-      "name": "magrittr",
-      "version": ">= 2.0.4",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=magrittr"
     },
     {
       "@type": "SoftwareApplication",
@@ -235,6 +222,19 @@
     },
     "7": {
       "@type": "SoftwareApplication",
+      "identifier": "magrittr",
+      "name": "magrittr",
+      "version": ">= 2.0.4",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=magrittr"
+    },
+    "8": {
+      "@type": "SoftwareApplication",
       "identifier": "openssl",
       "name": "openssl",
       "version": ">= 2.3.4",
@@ -246,7 +246,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=openssl"
     },
-    "8": {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "readr",
       "name": "readr",
@@ -259,7 +259,7 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=readr"
     },
-    "9": {
+    "10": {
       "@type": "SoftwareApplication",
       "identifier": "stringr",
       "name": "stringr",
@@ -274,7 +274,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "136.057KB",
+  "fileSize": "150.789KB",
   "citation": [
     {
       "@type": "CreativeWork",
@@ -297,5 +297,5 @@
   "readme": "https://github.com/danielvartan/lockr/blob/main/README.md",
   "contIntegration": ["https://github.com/danielvartan/lockr/actions", "https://app.codecov.io/gh/danielvartan/lockr"],
   "developmentStatus": "https://www.repostatus.org/#active",
-  "keywords": ["r-package", "encryption", "r", "rstats"]
+  "keywords": ["r-package", "encryption", "r", "rstats", "criptography", "decryption", "secre", "staticrypt"]
 }

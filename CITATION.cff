@@ -8,7 +8,7 @@ message: 'To cite package "lockr" in publications use:'
 type: software
 license: GPL-3.0-or-later
 title: 'lockr: Easily Encrypt and Decrypt Files'
-version: 0.3.0.9000
+version: 0.4.0
 identifiers:
 - type: url
   value: https://github.com/danielvartan/lockr/
@@ -134,6 +134,22 @@ references:
   doi: 10.32614/CRAN.package.here
   version: '>= 1.0.2'
 - type: software
+  title: magrittr
+  abstract: 'magrittr: A Forward-Pipe Operator for R'
+  notes: Imports
+  url: https://magrittr.tidyverse.org
+  repository: https://CRAN.R-project.org/package=magrittr
+  authors:
+  - family-names: Bache
+    given-names: Stefan Milton
+    email: stefan@stefanbache.dk
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  year: '2025'
+  doi: 10.32614/CRAN.package.magrittr
+  version: '>= 2.0.4'
+- type: software
   title: openssl
   abstract: 'openssl: Toolkit for Encryption, Signatures and Certificates Based on
     OpenSSL'
@@ -242,22 +258,6 @@ references:
   year: '2025'
   doi: 10.32614/CRAN.package.knitr
   version: '>= 1.50'
-- type: software
-  title: magrittr
-  abstract: 'magrittr: A Forward-Pipe Operator for R'
-  notes: Suggests
-  url: https://magrittr.tidyverse.org
-  repository: https://CRAN.R-project.org/package=magrittr
-  authors:
-  - family-names: Bache
-    given-names: Stefan Milton
-    email: stefan@stefanbache.dk
-  - family-names: Wickham
-    given-names: Hadley
-    email: hadley@posit.co
-  year: '2025'
-  doi: 10.32614/CRAN.package.magrittr
-  version: '>= 2.0.4'
 - type: software
   title: mockr
   abstract: 'mockr: Mocking in R'

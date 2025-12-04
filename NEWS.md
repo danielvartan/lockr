@@ -1,5 +1,7 @@
 # lockr (development version)
 
+# lockr 0.4.0 (2025-12-04)
+
 - The package code was refactored to improve readability and maintainability.
 - `save_and_lock()` was added. This function combines saving and locking data into a single step.
 - `staticrypt()` was added. This function creates an interface with the [Staticrypt](https://github.com/robinmoisson/staticrypt) tool for encrypting HTML files.
