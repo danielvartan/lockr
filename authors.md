@@ -9,7 +9,7 @@
 ## Citation
 
 Source:
-[`inst/CITATION`](https://github.com/danielvartan/lockr/blob/v0.4.0/inst/CITATION)
+[`inst/CITATION`](https://github.com/danielvartan/lockr/blob/main/inst/CITATION)
 
 Vartanian, D. (2025). lockr: Easily encrypt and decrypt files \[Computer
 software\]. https://danielvartan.github.io/lockr/

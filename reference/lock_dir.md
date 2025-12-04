@@ -95,7 +95,7 @@ ssh_dir <- tempfile("ssh")
 dir.create(ssh_dir)
 
 rsa_keygen(ssh_dir)
-#> ℹ Keys successfully created at /tmp/RtmpfEtUMP/ssh19857ab5dd16.
+#> ℹ Keys successfully created at /tmp/Rtmpu67Iup/ssh19f64f18f216.
 
 temp_dir <- tempfile("dir")
 dir.create(temp_dir)
@@ -103,18 +103,18 @@ dir.create(temp_dir)
 for (i in seq_len(5)) file.create(tempfile(tmpdir = temp_dir))
 
 list.files(temp_dir)
-#> [1] "file198533f534cc" "file1985519cb043" "file198570c4c9b"  "file198580b219d" 
-#> [5] "file1985d226a58" 
+#> [1] "file19f612e48730" "file19f625d46003" "file19f62e93c8f8" "file19f665db8d77"
+#> [5] "file19f67d620525"
 
 temp_dir |>
   lock_dir(
     public_key = file.path(ssh_dir, "id_rsa.pub")
   )
-#> ℹ Locked file written at /tmp/RtmpfEtUMP/dir19857a91e503/file198533f534cc.lockr.
-#> ℹ Locked file written at /tmp/RtmpfEtUMP/dir19857a91e503/file1985519cb043.lockr.
-#> ℹ Locked file written at /tmp/RtmpfEtUMP/dir19857a91e503/file198570c4c9b.lockr.
-#> ℹ Locked file written at /tmp/RtmpfEtUMP/dir19857a91e503/file198580b219d.lockr.
-#> ℹ Locked file written at /tmp/RtmpfEtUMP/dir19857a91e503/file1985d226a58.lockr.
+#> ℹ Locked file written at /tmp/Rtmpu67Iup/dir19f659a1a2f1/file19f612e48730.lockr.
+#> ℹ Locked file written at /tmp/Rtmpu67Iup/dir19f659a1a2f1/file19f625d46003.lockr.
+#> ℹ Locked file written at /tmp/Rtmpu67Iup/dir19f659a1a2f1/file19f62e93c8f8.lockr.
+#> ℹ Locked file written at /tmp/Rtmpu67Iup/dir19f659a1a2f1/file19f665db8d77.lockr.
+#> ℹ Locked file written at /tmp/Rtmpu67Iup/dir19f659a1a2f1/file19f67d620525.lockr.
 
 ## Unlocking files -----
 
@@ -122,9 +122,9 @@ temp_dir |>
   unlock_dir(
     private_key = file.path(ssh_dir, "id_rsa")
   )
-#> ℹ Unlocked file written at /tmp/RtmpfEtUMP/dir19857a91e503/file198533f534cc.
-#> ℹ Unlocked file written at /tmp/RtmpfEtUMP/dir19857a91e503/file1985519cb043.
-#> ℹ Unlocked file written at /tmp/RtmpfEtUMP/dir19857a91e503/file198570c4c9b.
-#> ℹ Unlocked file written at /tmp/RtmpfEtUMP/dir19857a91e503/file198580b219d.
-#> ℹ Unlocked file written at /tmp/RtmpfEtUMP/dir19857a91e503/file1985d226a58.
+#> ℹ Unlocked file written at /tmp/Rtmpu67Iup/dir19f659a1a2f1/file19f612e48730.
+#> ℹ Unlocked file written at /tmp/Rtmpu67Iup/dir19f659a1a2f1/file19f625d46003.
+#> ℹ Unlocked file written at /tmp/Rtmpu67Iup/dir19f659a1a2f1/file19f62e93c8f8.
+#> ℹ Unlocked file written at /tmp/Rtmpu67Iup/dir19f659a1a2f1/file19f665db8d77.
+#> ℹ Unlocked file written at /tmp/Rtmpu67Iup/dir19f659a1a2f1/file19f67d620525.
 ```
