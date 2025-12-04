@@ -6,80 +6,87 @@
 \title{Encrypt or decrypt all files in a directory}
 \usage{
 lock_dir(
-  dir = "./inst/extdata",
-  public_key = "./inst/ssh/id_rsa.pub",
+  dir,
+  public_key = here::here("_ssh", "id_rsa.pub"),
   suffix = ".lockr",
   remove_file = TRUE
 )
 
 unlock_dir(
-  dir = "./inst/extdata",
-  private_key = "./inst/ssh/id_rsa",
+  dir,
+  private_key = here::here("_ssh", "id_rsa"),
   suffix = ".lockr",
   remove_file = TRUE,
   password = NULL
 )
 }
 \arguments{
-\item{dir}{A string indicating the directory to encrypt/decrypt. (default:
-\code{"./inst/extdata"}).}
+\item{dir}{A \code{\link[base:character]{character}} string indicating the directory
+to encrypt or decrypt.}
 
-\item{public_key}{(optional) an \code{\link[openssl:keygen]{openssl}} RSA
-public key or a string specifying the public key path. See \code{\link[=rsa_keygen]{rsa_keygen()}}
-to learn how to create an RSA key pair (default:
-\code{"./inst/ssh/id_rsa.pub"}).}
+\item{public_key}{(optional) An \code{\link[openssl:keygen]{openssl}} RSA public
+key or a \code{\link[base:character]{character}} string specifying the public key
+path. See \code{\link[=rsa_keygen]{rsa_keygen()}} to learn how to create an RSA key pair
+(default: \code{here::here("_ssh", "id_rsa.pub")}).}
 
-\item{suffix}{(optional) a string specifying the suffix to be added (when
-encrypting)/removed (when decrypting) to/of the file. It must start with
-\code{.} (default: \code{".lockr"}).}
+\item{suffix}{(optional) A \code{\link[base:character]{character}} string specifying
+the suffix to add when encrypting or remove when decrypting. Must start
+with \code{.} (default: \code{".lockr"}).}
 
-\item{remove_file}{(optional) a \code{\link[=logical]{logical}} value indicating if
-the original file must be removed after the encryption/decryption process
-(default: \code{TRUE}).}
+\item{remove_file}{(optional) A \code{\link[base:logical]{logical}} value indicating
+if the original file must be removed after the encryption/decryption
+process (default: \code{TRUE}).}
 
-\item{private_key}{(optional) an \code{\link[openssl:keygen]{openssl}} RSA
-private key or a string specifying the private key path. See \code{\link[=rsa_keygen]{rsa_keygen()}}
-to learn how to create an RSA key pair (default: \code{"./inst/ssh/id_rsa"}).}
+\item{private_key}{(optional) An \code{\link[openssl:keygen]{openssl}} RSA
+private key or a \code{\link[base:character]{character}} string specifying the
+private key path. See \code{\link[=rsa_keygen]{rsa_keygen()}} to learn how to create an RSA key pair
+(default: \code{here::here("_ssh", "id_rsa")}).}
 
-\item{password}{(optional) only for protected keys. A string specifying
-the password to read the private key. Avoid typing passwords on the
-console, use \link[askpass:askpass]{askpass()} instead (default: \code{NULL}).}
+\item{password}{(optional) A \code{\link[base:character]{character}} string
+specifying the password to read the private key (\strong{only for protected
+keys}). Don´t type passwords on the console, use
+\link[askpass:askpass]{askpass()} instead (default: \code{NULL}).}
 }
 \value{
-An invisible \code{NULL}. These functions are called just for side
-effects.
+An \link[base:invisible]{invisible} \code{NULL}. These functions are called
+for side effects only.
 }
 \description{
-\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
+\strong{WARNING}: Use this function with caution! Check the parameters carefully.
 
-\strong{WARNING}: This function must be used with caution! Check the parameters
-carefully.
-
-\code{lock_dir()} and \code{unlock_dir()} can encrypt or decrypt all files from a given
-directory.
+\code{lock_dir()} and \code{unlock_dir()} encrypt or decrypt all files from a given
+directory using an \href{https://www.openssl.org/}{OpenSSL} RSA key pair.
 }
 \examples{
-## Locking files
+## Locking files -----
 
 ssh_dir <- tempfile("ssh")
 dir.create(ssh_dir)
+
 rsa_keygen(ssh_dir)
 
 temp_dir <- tempfile("dir")
 dir.create(temp_dir)
-for (i in seq(5)) {
-    file.create(tempfile(tmpdir = temp_dir))
-}
+
+for (i in seq_len(5)) file.create(tempfile(tmpdir = temp_dir))
+
 list.files(temp_dir)
 
-lock_dir(temp_dir, public_key = file.path(ssh_dir, "id_rsa.pub"))
+temp_dir |>
+  lock_dir(
+    public_key = file.path(ssh_dir, "id_rsa.pub")
+  )
 
-## Unlocking files
+## Unlocking files -----
 
-unlock_dir(temp_dir, private_key = file.path(ssh_dir, "id_rsa"))
+temp_dir |>
+  unlock_dir(
+    private_key = file.path(ssh_dir, "id_rsa")
+  )
 }
 \seealso{
 Other lock/unlock functions: 
-\code{\link{lock_file}()}
+\code{\link{lock_file}()},
+\code{\link{save_and_lock}()}
 }
 \concept{lock/unlock functions}

@@ -1,13 +1,15 @@
-# (2025-03-02) You may have to install the development version of `bslib` to
-# use `_brands.yml` (`remotes::install_github("rstudio/bslib", force = TRUE)`).
-
 url: https://danielvartan.github.io/lockr/
 
 template:
   bslib:
     version: 5
+    brand: "./_brand.yml"
   math-rendering: mathjax
   light-switch: true
+  opengraph:
+    image:
+      src: man/figures/og-image.png
+      alt: "lockr"
   params:
     noindex: false
 
@@ -30,11 +32,16 @@ navbar:
 
 reference:
 - title: Lock/Unlock
+  desc: >
+    Functions to encrypt and decrypt files using RSA encryption.
   contents:
   - lock_file
   - lock_dir
+  - save_and_lock
 
 - title: Utilities
+  desc: >
+    Helper functions for key generation and management.
   contents:
   - rsa_keygen
 
@@ -43,5 +50,5 @@ authors:
     href: https://github.com/danielvartan/
 
 development:
-  mode: unreleased
+  mode: release
   version_label: warning

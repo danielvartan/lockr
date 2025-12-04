@@ -1,5 +1,3 @@
-# See https://git-scm.com/docs/gitignore to learn more.
-
 *
 !.gitignore
 !*.R

@@ -1,9 +1,8 @@
 Adleman
-CMD
-Codecov
 Decrypt
-Lifecycle
+GPLv
 ORCID
+OpenSSL
 RSA
 Rivest
 Shamir
@@ -12,4 +11,3 @@ decrypt
 decrypted
 decrypting
 encryptrpak
-yaml

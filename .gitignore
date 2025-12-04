@@ -1,16 +1,15 @@
-# See https://git-scm.com/docs/gitignore to learn more.
-
+**/*.quarto_ipynb
+*.knit.md
+*.utf8.md
 .Rapp.history
 .RData
 .Renviron
 .Rhistory
 .Ruserdata
-*.knit.md
-*.utf8.md
+/*.Rcheck/
+/*_cache/
 /.quarto/
 /.Rproj.user/
-/*_cache/
-/*.Rcheck/
 /cache/
 /docs/
 /revdep/

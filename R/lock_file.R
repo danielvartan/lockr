@@ -2,38 +2,32 @@
 #'
 #' @description
 #'
-#' `r lifecycle::badge("maturing")`
+#' `lock_file()` and `unlock_file` encrypt or decrypt any kind of file using an
+#' [OpenSSL](https://www.openssl.org/) RSA key pair.
 #'
-#' `lock_file()` and `unlock_file` can encrypt/decrypt any kind of file using an
-#' RSA key pair. If your project doesn't have an RSA key pair, you can use
-#' [rsa_keygen()] to create one.
+#' @param file A [`character`][base::character] string with the file path to be
+#'   encrypted/decrypted. For security reasons, encrypted files must end with
+#'   the suffix parameter.
+#' @template params-public_key
+#' @template params-private_key
+#' @template params-suffix
+#' @template params-remove_file
+#' @template params-password
 #'
-#' These functions use
-#' [encrypt_envelope()][openssl::encrypt_envelope()] /
-#' [decrypt_envelope()][openssl::decrypt_envelope()] to perform file
-#' encryption/decryption. See those functions to learn more about the
-#' encrypting/decrypting process.
-#'
-#' @param file A string with the file path to be encrypted/decrypted. For
-#'   security reasons, encrypted files must end with the suffix parameter.
-#'
-#' @return An invisible string containing the locked/unlocked file path.
-#'
-#' @template param_private_key
-#' @template param_public_key
-#' @template param_remove_file
-#' @template param_suffix
-#' @template param_password
+#' @return An [invisible][base::invisible()] string containing the
+#'   locked/unlocked file path.
 #'
 #' @family lock/unlock functions
 #' @export
 #'
 #' @examples
-#' ## Locking files
+#' ## Creating Test Files and Keys -----
 #'
 #' temp_dir <- tempfile("dir")
 #' dir.create(temp_dir)
+#'
 #' temp_file <- tempfile(tmpdir = temp_dir)
+#'
 #' rsa_keygen(temp_dir)
 #'
 #' con <- file(temp_file, "w+")
@@ -42,26 +36,37 @@
 #' suppressWarnings(readLines(con))
 #' close(con)
 #'
-#' lock_file(temp_file, public_key = file.path(temp_dir, "id_rsa.pub"))
+#' ## Locking Files -----
+#'
+#' temp_file |>
+#'   lock_file(
+#'     public_key = file.path(temp_dir, "id_rsa.pub")
+#'   )
 #'
 #' temp_file_locked <- paste0(temp_file, ".lockr")
+#'
 #' con <- file(temp_file_locked, "rb")
 #' list.files(temp_dir)
 #' suppressWarnings(readLines(con))
 #' close(con)
 #'
-#' ## Unlocking files
+#' ## Unlocking Files -----
 #'
-#' unlock_file(temp_file_locked, private_key = file.path(temp_dir, "id_rsa"))
+#' temp_file_locked |>
+#'   unlock_file(
+#'     private_key = file.path(temp_dir, "id_rsa")
+#'   )
 #'
 #' list.files(temp_dir)
 #' con <- file(temp_file, "r+")
 #' readLines(con)
 #' close(con)
 lock_file <- function(
-    file, public_key = "./inst/ssh/id_rsa.pub", #nolint
-    suffix = ".lockr", remove_file = TRUE
-  ) {
+  file,
+  public_key = here::here("_ssh", "id_rsa.pub"), #nolint
+  suffix = ".lockr",
+  remove_file = TRUE
+) {
   checkmate::assert_string(file)
   checkmate::assert_file_exists(file)
   checkmate::assert_string(suffix, pattern = "^\\.")
@@ -74,7 +79,7 @@ lock_file <- function(
     cli::cli_abort(
       paste0(
         "The file ",
-        "'{.strong {cli::col_red(basename(file))}}' ",
+        "{.strong {cli::col_red(basename(file))}} ",
         "already has the lock suffix ({.strong '{suffix}'})."
       )
     )
@@ -84,22 +89,25 @@ lock_file <- function(
     cli::cli_abort(
       paste0(
         "A locked file named ",
-        "'{.strong {cli::col_red(basename(locked_file_name))}}' ",
+        "{.strong {cli::col_red(basename(locked_file_name))}} ",
         "already exists. Delete it or rename it."
       )
     )
   }
 
-  openssl::encrypt_envelope(data = file, pubkey = public_key) |>
-    saveRDS(file = locked_file_name)
+  file |>
+    openssl::encrypt_envelope(public_key) |>
+    saveRDS(locked_file_name)
 
-  if (isTRUE(remove_file)) file.remove(file)
+  if (isTRUE(remove_file)) {
+    file.remove(file)
+  }
 
   if (file.exists(locked_file_name)) {
-    cli::cli_inform(
+    cli::cli_alert_info(
       paste0(
         "Locked file written at ",
-        "'{.strong {cli::col_red(locked_file_name)}}'."
+        "{.strong {cli::col_red(locked_file_name)}}."
       )
     )
   }
@@ -110,13 +118,15 @@ lock_file <- function(
 #' @rdname lock_file
 #' @export
 unlock_file <- function(
-    file, private_key = "./inst/ssh/id_rsa", #nolint
-    suffix = ".lockr", remove_file = TRUE,
-    password = NULL
-  ) {
-  checkmate::assert_string(suffix, pattern = "^\\.")
+  file,
+  private_key = here::here("_ssh", "id_rsa"), #nolint
+  suffix = ".lockr",
+  remove_file = TRUE,
+  password = NULL
+) {
   pattern <- paste0(stringr::str_escape(suffix), "$")
 
+  checkmate::assert_string(suffix, pattern = "^\\.")
   checkmate::assert_string(file)
   checkmate::assert_string(file, pattern = pattern)
   checkmate::assert_file_exists(file)
@@ -130,7 +140,7 @@ unlock_file <- function(
     cli::cli_abort(
       paste0(
         "A file named ",
-        "'{.strong {cli::col_red(basename(unlock_file_name))}}' ",
+        "{.strong {cli::col_red(basename(unlock_file_name))}} ",
         "already exists. Delete it or rename it."
       )
     )
@@ -139,22 +149,26 @@ unlock_file <- function(
   data <- readRDS(file)
   con <- file(unlock_file_name, "wb")
 
-  openssl::decrypt_envelope(
-    data$data, data$iv, data$session,
-    key = private_key,
-    password = password
-  ) |>
+  data$data |>
+    openssl::decrypt_envelope(
+      data$iv,
+      data$session,
+      key = private_key,
+      password = password
+    ) |>
     writeBin(con)
 
   close(con)
 
-  if (isTRUE(remove_file)) file.remove(file)
+  if (isTRUE(remove_file)) {
+    file.remove(file)
+  }
 
   if (file.exists(unlock_file_name)) {
-    cli::cli_inform(
+    cli::cli_alert_info(
       paste0(
         "Unlocked file written at ",
-        "'{.strong {cli::col_red(unlock_file_name)}}'."
+        "{.strong {cli::col_red(unlock_file_name)}}."
       )
     )
   }

@@ -4,31 +4,37 @@
 \alias{rsa_keygen}
 \title{Generate and write a pair of RSA keys}
 \usage{
-rsa_keygen(dir = "./inst/ssh", password = NULL, bits = 2048)
+rsa_keygen(dir = here::here("_ssh"), password = NULL, bits = 2048)
 }
 \arguments{
-\item{dir}{(optional) a string specifying the directory to save the generated
-keys (default: \code{"./inst/ssh"})}
+\item{dir}{(optional) A \code{\link[base:character]{character}} string specifying the
+directory to save the generated keys (default: \code{here::here("_ssh")})}
 
-\item{password}{(optional) a string specifying the password to protect the
-private key. If \code{NULL}, the private key will not be protected (default:
-\code{NULL}).}
+\item{password}{(optional) A \code{\link[base:character]{character}} string specifying
+the password to protect the private key. If \code{NULL}, the private key will
+not be protected (default: \code{NULL}).}
 
-\item{bits}{(optional) an integer number specifying the length of the RSA key
-in bits (default: \code{2048}).}
+\item{bits}{(optional) An integer number specifying the length of the RSA key
+in bits (default: \code{4096}).}
 }
 \value{
-An invisible \code{NULL}. This function is called  for side effects only.
+An \link[base:invisible]{invisible} \code{NULL}. This function is called
+for side effects only.
 }
 \description{
-\code{rsa_keygen()} generates a pair of RSA (Rivest-Shamir-Adleman) private and
-public keys for your project.
+\code{rsa_keygen()} generates a pair of \href{https://www.openssl.org/}{OpenSSL}
+\href{https://en.wikipedia.org/wiki/RSA_cryptosystem}{RSA} (Rivest-Shamir-Adleman)
+private and public keys.
 }
 \examples{
-temp_dir = tempfile("dir")
+temp_dir <- tempfile("dir")
 dir.create(temp_dir)
 
-rsa_keygen(dir = temp_dir, password = "test", bits = 2048)
+temp_dir |>
+  rsa_keygen(
+    password = "test",
+    bits = 2048
+  )
 
 list.files(temp_dir)
 }

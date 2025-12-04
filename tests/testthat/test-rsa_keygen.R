@@ -2,8 +2,13 @@ test_that("rsa_keygen() | general test", {
   temp_dir <- tempfile("dir")
   dir.create(temp_dir)
 
-  rsa_keygen(dir = temp_dir, password = "test", bits = 2048) %>%
-    shush()
+  rsa_keygen(
+    dir = temp_dir,
+    password = "test",
+    bits = 2048
+  ) |>
+    suppressMessages() |>
+    suppressWarnings()
 
   file.path(temp_dir, "id_rsa") %>%
     checkmate::expect_file_exists()

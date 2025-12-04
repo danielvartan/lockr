@@ -1,16 +1,16 @@
 utils::bibentry(
-  header = "To cite {lockr} in publications use:",
+  header = "To cite lockr in publications use:",
   bibtype = "Misc",
   title = paste0(
-    "{lockr}:", " ",
-    "Easily encrypt/decrypt files"
+    "lockr: ",
+    "Easily encrypt and decrypt files"
   ),
   author = c(
-    person(
+    utils::person(
       given = "Daniel",
       family = "Vartanian",
       role = c("aut", "cre", "ccp", "cph"),
-      email = "danvartan@gmail.com",
+      email = "danielvartan@proton.me",
       comment = c(ORCID = "0000-0001-7782-759X")
     )
   ),
@@ -19,13 +19,13 @@ utils::bibentry(
     "https://danielvartan.github.io/",
     "lockr/"
   ),
-  note = "R package",
+  note = "Computer software",
   textVersion = paste0(
-    "Vartanian, D.", ". ",
-    "(2025)", ". ",
-    "{lockr}:", " ",
-    "Easily encrypt/decrypt files", ". ",
-    "R package", ". ",
+    "Vartanian, D. ",
+    "(2025). ",
+    "lockr: ",
+    "Easily encrypt and decrypt files ",
+    "[Computer software]. ",
     "https://danielvartan.github.io/",
     "lockr/"
   )

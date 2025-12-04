@@ -6,36 +6,35 @@
 cff-version: 1.2.0
 message: 'To cite package "lockr" in publications use:'
 type: software
-license: MIT
-title: 'lockr: Easily Encrypt/Decrypt Files'
+license: GPL-3.0-or-later
+title: 'lockr: Easily Encrypt and Decrypt Files'
 version: 0.3.0.9000
 identifiers:
 - type: url
   value: https://github.com/danielvartan/lockr/
-abstract: A user-friendly toolkit to encrypt/decrypt files, specially made for research
-  compendiums.
+abstract: A simple and user-friendly toolkit to encrypt or decrypt files.
 authors:
 - family-names: Vartanian
   given-names: Daniel
-  email: danvartan@gmail.com
+  email: danielvartan@proton.me
   orcid: https://orcid.org/0000-0001-7782-759X
 preferred-citation:
   type: generic
-  title: 'lockr: Easily encrypt/decrypt files'
+  title: 'lockr: Easily encrypt and decrypt files'
   authors:
   - family-names: Vartanian
     given-names: Daniel
-    email: danvartan@gmail.com
+    email: danielvartan@proton.me
     orcid: https://orcid.org/0000-0001-7782-759X
   year: '2025'
   url: https://danielvartan.github.io/lockr/
-  notes: R package
+  notes: Computer software
 repository-code: https://github.com/danielvartan/lockr/issues/
 url: https://danielvartan.github.io/lockr/
 contact:
 - family-names: Vartanian
   given-names: Daniel
-  email: danvartan@gmail.com
+  email: danielvartan@proton.me
   orcid: https://orcid.org/0000-0001-7782-759X
 references:
 - type: software
@@ -48,7 +47,7 @@ references:
     name: R Foundation for Statistical Computing
     address: Vienna, Austria
   year: '2025'
-  version: '>= 4.3'
+  version: '>= 4.4'
 - type: software
   title: checkmate
   abstract: 'checkmate: Fast and Versatile Argument Checks'
@@ -62,7 +61,7 @@ references:
     orcid: https://orcid.org/0000-0001-9754-0393
   year: '2025'
   doi: 10.32614/CRAN.package.checkmate
-  version: '>= 2.3.2'
+  version: '>= 2.3.3'
 - type: software
   title: cli
   abstract: 'cli: Helpers for Developing Command Line Interfaces'
@@ -72,10 +71,10 @@ references:
   authors:
   - family-names: Csárdi
     given-names: Gábor
-    email: csardi.gabor@gmail.com
+    email: gabor@posit.co
   year: '2025'
   doi: 10.32614/CRAN.package.cli
-  version: '>= 3.6.3'
+  version: '>= 3.6.5'
 - type: software
   title: dplyr
   abstract: 'dplyr: A Grammar of Data Manipulation'
@@ -119,7 +118,7 @@ references:
     email: csardi.gabor@gmail.com
   year: '2025'
   doi: 10.32614/CRAN.package.fs
-  version: '>= 1.6.5'
+  version: '>= 1.6.6'
 - type: software
   title: here
   abstract: 'here: A Simpler Way to Find Your Files'
@@ -129,28 +128,11 @@ references:
   authors:
   - family-names: Müller
     given-names: Kirill
-    email: krlmlr+r@mailbox.org
+    email: kirill@cynkra.com
     orcid: https://orcid.org/0000-0002-1416-3412
   year: '2025'
   doi: 10.32614/CRAN.package.here
-  version: '>= 1.0.1'
-- type: software
-  title: lifecycle
-  abstract: 'lifecycle: Manage the Life Cycle of your Package Functions'
-  notes: Imports
-  url: https://lifecycle.r-lib.org/
-  repository: https://CRAN.R-project.org/package=lifecycle
-  authors:
-  - family-names: Henry
-    given-names: Lionel
-    email: lionel@posit.co
-  - family-names: Wickham
-    given-names: Hadley
-    email: hadley@posit.co
-    orcid: https://orcid.org/0000-0003-4757-117X
-  year: '2025'
-  doi: 10.32614/CRAN.package.lifecycle
-  version: '>= 1.0.4'
+  version: '>= 1.0.2'
 - type: software
   title: openssl
   abstract: 'openssl: Toolkit for Encryption, Signatures and Certificates Based on
@@ -165,7 +147,7 @@ references:
     orcid: https://orcid.org/0000-0002-4035-0289
   year: '2025'
   doi: 10.32614/CRAN.package.openssl
-  version: '>= 2.3.2'
+  version: '>= 2.3.4'
 - type: software
   title: readr
   abstract: 'readr: Read Rectangular Text Data'
@@ -184,7 +166,7 @@ references:
     orcid: https://orcid.org/0000-0002-6983-2759
   year: '2025'
   doi: 10.32614/CRAN.package.readr
-  version: '>= 2.1.5'
+  version: '>= 2.1.6'
 - type: software
   title: stringr
   abstract: 'stringr: Simple, Consistent Wrappers for Common String Operations'
@@ -197,7 +179,7 @@ references:
     email: hadley@posit.co
   year: '2025'
   doi: 10.32614/CRAN.package.stringr
-  version: '>= 1.5.1'
+  version: '>= 1.6.0'
 - type: software
   title: askpass
   abstract: 'askpass: Password Entry Utilities for R, Git, and SSH'
@@ -213,6 +195,27 @@ references:
   doi: 10.32614/CRAN.package.askpass
   version: '>= 1.2.1'
 - type: software
+  title: bslib
+  abstract: 'bslib: Custom ''Bootstrap'' ''Sass'' Themes for ''shiny'' and ''rmarkdown'''
+  notes: Suggests
+  url: https://rstudio.github.io/bslib/
+  repository: https://CRAN.R-project.org/package=bslib
+  authors:
+  - family-names: Sievert
+    given-names: Carson
+    email: carson@posit.co
+    orcid: https://orcid.org/0000-0002-4958-2844
+  - family-names: Cheng
+    given-names: Joe
+    email: joe@posit.co
+  - family-names: Aden-Buie
+    given-names: Garrick
+    email: garrick@posit.co
+    orcid: https://orcid.org/0000-0002-7111-0077
+  year: '2025'
+  doi: 10.32614/CRAN.package.bslib
+  version: '>= 0.9.0'
+- type: software
   title: covr
   abstract: 'covr: Test Coverage for Packages'
   notes: Suggests
@@ -224,7 +227,7 @@ references:
     email: james.f.hester@gmail.com
   year: '2025'
   doi: 10.32614/CRAN.package.covr
-  version: '>= 3.6.4'
+  version: '>= 3.6.5'
 - type: software
   title: knitr
   abstract: 'knitr: A General-Purpose Package for Dynamic Report Generation in R'
@@ -238,7 +241,23 @@ references:
     orcid: https://orcid.org/0000-0003-0645-5666
   year: '2025'
   doi: 10.32614/CRAN.package.knitr
-  version: '>= 1.49'
+  version: '>= 1.50'
+- type: software
+  title: magrittr
+  abstract: 'magrittr: A Forward-Pipe Operator for R'
+  notes: Suggests
+  url: https://magrittr.tidyverse.org
+  repository: https://CRAN.R-project.org/package=magrittr
+  authors:
+  - family-names: Bache
+    given-names: Stefan Milton
+    email: stefan@stefanbache.dk
+  - family-names: Wickham
+    given-names: Hadley
+    email: hadley@posit.co
+  year: '2025'
+  doi: 10.32614/CRAN.package.magrittr
+  version: '>= 2.0.4'
 - type: software
   title: mockr
   abstract: 'mockr: Mocking in R'
@@ -251,7 +270,7 @@ references:
     email: kirill@cynkra.com
   year: '2025'
   doi: 10.32614/CRAN.package.mockr
-  version: '>= 0.2.1'
+  version: '>= 0.2.2'
 - type: software
   title: rmarkdown
   abstract: 'rmarkdown: Dynamic Documents for R'
@@ -296,7 +315,7 @@ references:
     orcid: https://orcid.org/0000-0003-3925-190X
   year: '2025'
   doi: 10.32614/CRAN.package.rmarkdown
-  version: '>= 2.29'
+  version: '>= 2.30'
 - type: software
   title: spelling
   abstract: 'spelling: Tools for Spell Checking in R'
@@ -312,11 +331,8 @@ references:
     given-names: Jim
     email: james.hester@rstudio.com
   year: '2025'
-  identifiers:
-  - type: url
-    value: https://docs.ropensci.org/spelling/
   doi: 10.32614/CRAN.package.spelling
-  version: '>= 2.3.1'
+  version: '>= 2.3.2'
 - type: software
   title: testthat
   abstract: 'testthat: Unit Testing for R'
@@ -329,5 +345,5 @@ references:
     email: hadley@posit.co
   year: '2025'
   doi: 10.32614/CRAN.package.testthat
-  version: '>= 3.2.2'
+  version: '>= 3.3.0'
 

@@ -1,54 +1,122 @@
-# lockr
+# lockr <a href = "https://danielvartan.github.io/lockr/"><img src = "man/figures/logo.svg" align="right" width="120" /></a>
 
 <!-- quarto render -->
+
+<!-- Install the package before rendering this file: `devtools::install()` -->
 
 ```{r}
 #| label: setup
 #| include: false
 
-# Related to './R/.post-render.R'
-library(beepr)
-library(cffr)
-library(codemetar)
-library(groomr) # https://github.com/danielvartan/groomr
+library(lockr)
+
+library(badger)
 library(here)
-library(rutils) # https://github.com/danielvartan/rutils
+
+badge_codecov() |> invisible() # To avoid unnecessary messages.
+
+source(here("R", ".setup.R"))
 ```
 
 <!-- badges: start -->
-[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
-[![Lifecycle: maturing](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://lifecycle.r-lib.org/articles/stages.html#maturing)
-[![R-CMD-check.yaml](https://github.com/danielvartan/lockr/actions/workflows/check-standard.yaml/badge.svg)](https://github.com/danielvartan/lockr/actions/workflows/check-standard.yaml)
-[![Codecov test coverage](https://codecov.io/gh/danielvartan/lockr/branch/main/graph/badge.svg)](https://app.codecov.io/gh/danielvartan/lockr?branch=main)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green)](https://choosealicense.com/licenses/mit/)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](https://www.contributor-covenant.org/version/2/1/code_of_conduct/)
+```{r}
+#| echo: false
+#| output: asis
+#| message: false
+#| warning: false
+
+cat(
+  badge_repostatus("active"),
+  badge_github_actions(action = "R-CMD-check.yaml"),
+  badge_codecov(),
+  badge_license(
+    license = "GPLv3",
+    color = "bd0000",
+    url = "https://www.gnu.org/licenses/gpl-3.0",
+    alt = "GNU GPLv3 License"
+  ),
+  badge_custom(
+    x = "Contributor%20Covenant",
+    y = "3.0",
+    color = "4baaaa",
+    url = "https://www.contributor-covenant.org/version/3/0/code_of_conduct/",
+    alt = "Contributor Covenant 3.0 Code of Conduct"
+  )
+)
+```
 <!-- badges: end -->
 
 ## Overview
 
-`lockr` is a user-friendly R package designed for encrypting/decrypting files.
+`lockr` is a simple and user-friendly R package designed for encrypting and decrypting files.
 
 ## Installation
 
 You can install `lockr` using the [`remotes`](https://github.com/r-lib/remotes) package:
 
 ``` r
+# install.packages("remotes")
 remotes::install_github("danielvartan/lockr")
 ```
 
+## Usage
+
+`lockr` usage is very straightforward. The main functions are:
+
+- [`lock_file`](https://danielvartan.github.io/lockr/reference/lock_file.html): Encrypt a file.
+- [`unlock_file`](https://danielvartan.github.io/lockr/reference/unlock_file.html): Decrypt a locked file.
+
+Along with these, there are helper functions to facilitate key management and other tasks. Click [here](https://danielvartan.github.io/lockr/reference/) to see the full list of `lockr` functions.
+
 ## License
 
-[![License:
-MIT](https://img.shields.io/badge/license-MIT-green)](https://opensource.org/license/mit)
+```{r}
+#| echo: false
+#| output: asis
 
-`lockr` code is released under the [MIT license](https://opensource.org/license/mit).
+cat(
+  badge_license(
+    license = "GPLv3",
+    color = "bd0000",
+    url = "https://www.gnu.org/licenses/gpl-3.0",
+    alt = "GNU GPLv3 License"
+  )
+)
+```
+
+```text
+Copyright (C) 2025 Daniel Vartanian
+
+lockr is free software: you can redistribute it and/or modify it under the
+terms of the GNU General Public License as published by the Free Software
+Foundation, either version 3 of the License, or (at your option) any later
+version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY
+WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with
+this program. If not, see <https://www.gnu.org/licenses/>.
+```
 
 ## Contributing
 
-Contributions are welcome, including bug reports. Take a moment to review our [Guidelines for Contributing](https://danielvartan.github.io/lockr/CONTRIBUTING.html).
+```{r}
+#| echo: false
+#| output: asis
 
-`<br>`{=html}
+cat(
+  badge_custom(
+    x = "Contributor%20Covenant",
+    y = "3.0",
+    color = "4baaaa",
+    url = "https://www.contributor-covenant.org/version/3/0/code_of_conduct/",
+    alt = "Contributor Covenant 3.0 Code of Conduct"
+  )
+)
+```
 
-Become a `lockr` supporter!
+Contributions are always welcome! Whether you want to report bugs, suggest new features, or help improve the code or documentation, your input makes a difference.
 
-Click [here](https://github.com/sponsors/danielvartan) to make a donation. Please indicate the `lockr` package in your donation message.
+Before opening a new issue, please check the [issues tab](https://github.com/danielvartan/lockr/issues) to see if your topic has already been reported.

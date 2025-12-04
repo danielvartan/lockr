@@ -1,0 +1,111 @@
+# Based on: https://www.cia.gov
+
+meta:
+  name:
+    short: "lockr"
+    long: "lockr: Easily Encrypt and Decrypt Files"
+  link:
+    home: https://danielvartan.github.io/lockr
+    github: https://github.com/danielvartan/lockr
+  description: A simple and user-friendly toolkit to encrypt or decrypt files.
+
+logo:
+  images:
+    logo:
+      path: man/figures/logo.png
+      alt: "Hex logo"
+    og-image:
+      path: man/figures/og-image.png
+      alt: "Open Graph Image"
+
+color:
+  palette:
+    black: "#161618"
+    gray: "#414143"
+    red: "#e21a41"
+    white: "#ffffff"
+  background: white
+  primary: black
+  secondary: gray
+  tertiary: red
+  success: red
+  info: red
+  warning: red
+  danger: red
+  light: white
+  dark: black
+
+typography:
+  fonts:
+    - family: Montserrat
+      source: google
+    - family: IBM Plex Mono
+      source: google
+  base:
+    family: Montserrat
+    line-height: 1.5
+    weight: light
+  headings:
+    color: black
+    family: Montserrat
+    weight: 900
+  link:
+    color: gray
+  monospace:
+    family: IBM Plex Mono
+    size: 1em
+  monospace-inline:
+    family: IBM Plex Mono
+    color: red
+    background-color: black
+  monospace-block:
+    family: IBM Plex Mono
+    background-color: gray
+
+defaults:
+  bootstrap:
+    defaults:
+      navbar-bg: $brand-black
+    rules: |
+      pre, .nav-link, .navbar-brand {
+        color: var(--bs-navbar-brand-color) !important;
+      }
+
+      [data-bs-theme="light"] code {
+        color: #ffffff;
+        background-color: #161618;
+      }
+
+      [data-bs-theme="light"] a code {
+        color: #ffffff;
+        background-color: #161618;
+      }
+
+      [data-bs-theme="light"] pre code {
+        color: #161618;
+        background-color: #f1f3f5;;
+      }
+
+      [data-bs-theme="light"] ::selection {
+        background: #161618;
+        color: #ffffff;
+      }
+
+      [data-bs-theme="dark"] p code {
+        color: #161618;
+        background-color: #ffffff;
+      }
+
+      [data-bs-theme="dark"] a {
+        color: #ffffff;
+      }
+
+      [data-bs-theme="dark"] a code {
+        color: #161618;
+        background-color: #ffffff;
+      }
+
+      [data-bs-theme="dark"] ::selection {
+        background: #ffffff;
+        color: #161618;
+      }

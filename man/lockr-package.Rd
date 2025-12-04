@@ -4,9 +4,9 @@
 \name{lockr-package}
 \alias{lockr}
 \alias{lockr-package}
-\title{lockr: Easily Encrypt/Decrypt Files}
+\title{lockr: Easily Encrypt and Decrypt Files}
 \description{
-A user-friendly toolkit to encrypt/decrypt files, specially made for research compendiums.
+A simple and user-friendly toolkit to encrypt or decrypt files.
 }
 \seealso{
 Useful links:
@@ -18,7 +18,7 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Daniel Vartanian \email{danvartan@gmail.com} (\href{https://orcid.org/0000-0001-7782-759X}{ORCID}) [conceptor, copyright holder]
+\strong{Maintainer}: Daniel Vartanian \email{danielvartan@proton.me} (\href{https://orcid.org/0000-0001-7782-759X}{ORCID}) [conceptor, copyright holder]
 
 }
 \keyword{internal}

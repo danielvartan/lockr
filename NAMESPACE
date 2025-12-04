@@ -3,7 +3,7 @@
 export(lock_dir)
 export(lock_file)
 export(rsa_keygen)
+export(save_and_lock)
 export(unlock_dir)
 export(unlock_file)
 importFrom(dplyr,"%>%")
-importFrom(lifecycle,deprecate_soft)

@@ -8,7 +8,11 @@ test_that("test_public_key() | general test", {
     expect_false()
 
   temp_dir <- tempdir()
-  shush(rsa_keygen(temp_dir))
+
+  rsa_keygen(temp_dir) |>
+    suppressMessages() |>
+    suppressWarnings()
+
   file.path(temp_dir, "id_rsa.pub") %>%
     test_public_key() %>%
     expect_true()
@@ -42,7 +46,12 @@ test_that("test_private_key() | general test", {
     expect_false()
 
   temp_dir <- tempdir()
-  shush(rsa_keygen(temp_dir, password = "test"))
+
+  temp_dir |>
+    rsa_keygen(password = "test") |>
+    suppressMessages() |>
+    suppressWarnings()
+
   file.path(temp_dir, "id_rsa") %>%
     test_private_key(password = "test") %>%
     expect_true()

@@ -7,66 +7,63 @@
 \usage{
 lock_file(
   file,
-  public_key = "./inst/ssh/id_rsa.pub",
+  public_key = here::here("_ssh", "id_rsa.pub"),
   suffix = ".lockr",
   remove_file = TRUE
 )
 
 unlock_file(
   file,
-  private_key = "./inst/ssh/id_rsa",
+  private_key = here::here("_ssh", "id_rsa"),
   suffix = ".lockr",
   remove_file = TRUE,
   password = NULL
 )
 }
 \arguments{
-\item{file}{A string with the file path to be encrypted/decrypted. For
-security reasons, encrypted files must end with the suffix parameter.}
+\item{file}{A \code{\link[base:character]{character}} string with the file path to be
+encrypted/decrypted. For security reasons, encrypted files must end with
+the suffix parameter.}
 
-\item{public_key}{(optional) an \code{\link[openssl:keygen]{openssl}} RSA
-public key or a string specifying the public key path. See \code{\link[=rsa_keygen]{rsa_keygen()}}
-to learn how to create an RSA key pair (default:
-\code{"./inst/ssh/id_rsa.pub"}).}
+\item{public_key}{(optional) An \code{\link[openssl:keygen]{openssl}} RSA public
+key or a \code{\link[base:character]{character}} string specifying the public key
+path. See \code{\link[=rsa_keygen]{rsa_keygen()}} to learn how to create an RSA key pair
+(default: \code{here::here("_ssh", "id_rsa.pub")}).}
 
-\item{suffix}{(optional) a string specifying the suffix to be added (when
-encrypting)/removed (when decrypting) to/of the file. It must start with
-\code{.} (default: \code{".lockr"}).}
+\item{suffix}{(optional) A \code{\link[base:character]{character}} string specifying
+the suffix to add when encrypting or remove when decrypting. Must start
+with \code{.} (default: \code{".lockr"}).}
 
-\item{remove_file}{(optional) a \code{\link[=logical]{logical}} value indicating if
-the original file must be removed after the encryption/decryption process
-(default: \code{TRUE}).}
+\item{remove_file}{(optional) A \code{\link[base:logical]{logical}} value indicating
+if the original file must be removed after the encryption/decryption
+process (default: \code{TRUE}).}
 
-\item{private_key}{(optional) an \code{\link[openssl:keygen]{openssl}} RSA
-private key or a string specifying the private key path. See \code{\link[=rsa_keygen]{rsa_keygen()}}
-to learn how to create an RSA key pair (default: \code{"./inst/ssh/id_rsa"}).}
+\item{private_key}{(optional) An \code{\link[openssl:keygen]{openssl}} RSA
+private key or a \code{\link[base:character]{character}} string specifying the
+private key path. See \code{\link[=rsa_keygen]{rsa_keygen()}} to learn how to create an RSA key pair
+(default: \code{here::here("_ssh", "id_rsa")}).}
 
-\item{password}{(optional) only for protected keys. A string specifying
-the password to read the private key. Avoid typing passwords on the
-console, use \link[askpass:askpass]{askpass()} instead (default: \code{NULL}).}
+\item{password}{(optional) A \code{\link[base:character]{character}} string
+specifying the password to read the private key (\strong{only for protected
+keys}). Don´t type passwords on the console, use
+\link[askpass:askpass]{askpass()} instead (default: \code{NULL}).}
 }
 \value{
-An invisible string containing the locked/unlocked file path.
+An \link[base:invisible]{invisible} string containing the
+locked/unlocked file path.
 }
 \description{
-\ifelse{html}{\href{https://lifecycle.r-lib.org/articles/stages.html#maturing}{\figure{lifecycle-maturing.svg}{options: alt='[Maturing]'}}}{\strong{[Maturing]}}
-
-\code{lock_file()} and \code{unlock_file} can encrypt/decrypt any kind of file using an
-RSA key pair. If your project doesn't have an RSA key pair, you can use
-\code{\link[=rsa_keygen]{rsa_keygen()}} to create one.
-
-These functions use
-\link[openssl:encrypt_envelope]{encrypt_envelope()} /
-\link[openssl:encrypt_envelope]{decrypt_envelope()} to perform file
-encryption/decryption. See those functions to learn more about the
-encrypting/decrypting process.
+\code{lock_file()} and \code{unlock_file} encrypt or decrypt any kind of file using an
+\href{https://www.openssl.org/}{OpenSSL} RSA key pair.
 }
 \examples{
-## Locking files
+## Creating Test Files and Keys -----
 
 temp_dir <- tempfile("dir")
 dir.create(temp_dir)
+
 temp_file <- tempfile(tmpdir = temp_dir)
+
 rsa_keygen(temp_dir)
 
 con <- file(temp_file, "w+")
@@ -75,17 +72,26 @@ list.files(temp_dir)
 suppressWarnings(readLines(con))
 close(con)
 
-lock_file(temp_file, public_key = file.path(temp_dir, "id_rsa.pub"))
+## Locking Files -----
+
+temp_file |>
+  lock_file(
+    public_key = file.path(temp_dir, "id_rsa.pub")
+  )
 
 temp_file_locked <- paste0(temp_file, ".lockr")
+
 con <- file(temp_file_locked, "rb")
 list.files(temp_dir)
 suppressWarnings(readLines(con))
 close(con)
 
-## Unlocking files
+## Unlocking Files -----
 
-unlock_file(temp_file_locked, private_key = file.path(temp_dir, "id_rsa"))
+temp_file_locked |>
+  unlock_file(
+    private_key = file.path(temp_dir, "id_rsa")
+  )
 
 list.files(temp_dir)
 con <- file(temp_file, "r+")
@@ -94,6 +100,7 @@ close(con)
 }
 \seealso{
 Other lock/unlock functions: 
-\code{\link{lock_dir}()}
+\code{\link{lock_dir}()},
+\code{\link{save_and_lock}()}
 }
 \concept{lock/unlock functions}

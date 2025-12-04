@@ -2,25 +2,25 @@
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
   "identifier": "lockr",
-  "description": "A user-friendly toolkit to encrypt/decrypt files, specially made for research compendiums.",
-  "name": "lockr: Easily Encrypt/Decrypt Files",
+  "description": "A simple and user-friendly toolkit to encrypt or decrypt files.",
+  "name": "lockr: Easily Encrypt and Decrypt Files",
   "relatedLink": "https://danielvartan.github.io/lockr/",
   "codeRepository": "https://github.com/danielvartan/lockr/",
   "issueTracker": "https://github.com/danielvartan/lockr/issues/",
-  "license": "https://spdx.org/licenses/MIT",
+  "license": "https://spdx.org/licenses/GPL-3.0",
   "version": "0.3.0.9000",
   "programmingLanguage": {
     "@type": "ComputerLanguage",
     "name": "R",
     "url": "https://r-project.org"
   },
-  "runtimePlatform": "R version 4.4.3 (2025-02-28)",
+  "runtimePlatform": "R version 4.5.2 (2025-10-31)",
   "author": [
     {
       "@type": "Person",
       "givenName": "Daniel",
       "familyName": "Vartanian",
-      "email": "danvartan@gmail.com",
+      "email": "danielvartan@proton.me",
       "@id": "https://orcid.org/0000-0001-7782-759X"
     }
   ],
@@ -29,7 +29,7 @@
       "@type": "Person",
       "givenName": "Daniel",
       "familyName": "Vartanian",
-      "email": "danvartan@gmail.com",
+      "email": "danielvartan@proton.me",
       "@id": "https://orcid.org/0000-0001-7782-759X"
     }
   ],
@@ -38,7 +38,7 @@
       "@type": "Person",
       "givenName": "Daniel",
       "familyName": "Vartanian",
-      "email": "danvartan@gmail.com",
+      "email": "danielvartan@proton.me",
       "@id": "https://orcid.org/0000-0001-7782-759X"
     }
   ],
@@ -58,9 +58,22 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "bslib",
+      "name": "bslib",
+      "version": ">= 0.9.0",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=bslib"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "covr",
       "name": "covr",
-      "version": ">= 3.6.4",
+      "version": ">= 3.6.5",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -73,7 +86,7 @@
       "@type": "SoftwareApplication",
       "identifier": "knitr",
       "name": "knitr",
-      "version": ">= 1.49",
+      "version": ">= 1.50",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -84,9 +97,22 @@
     },
     {
       "@type": "SoftwareApplication",
+      "identifier": "magrittr",
+      "name": "magrittr",
+      "version": ">= 2.0.4",
+      "provider": {
+        "@id": "https://cran.r-project.org",
+        "@type": "Organization",
+        "name": "Comprehensive R Archive Network (CRAN)",
+        "url": "https://cran.r-project.org"
+      },
+      "sameAs": "https://CRAN.R-project.org/package=magrittr"
+    },
+    {
+      "@type": "SoftwareApplication",
       "identifier": "mockr",
       "name": "mockr",
-      "version": ">= 0.2.1",
+      "version": ">= 0.2.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -99,7 +125,7 @@
       "@type": "SoftwareApplication",
       "identifier": "rmarkdown",
       "name": "rmarkdown",
-      "version": ">= 2.29",
+      "version": ">= 2.30",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -112,7 +138,7 @@
       "@type": "SoftwareApplication",
       "identifier": "spelling",
       "name": "spelling",
-      "version": ">= 2.3.1",
+      "version": ">= 2.3.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -125,7 +151,7 @@
       "@type": "SoftwareApplication",
       "identifier": "testthat",
       "name": "testthat",
-      "version": ">= 3.2.2",
+      "version": ">= 3.3.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -140,13 +166,13 @@
       "@type": "SoftwareApplication",
       "identifier": "R",
       "name": "R",
-      "version": ">= 4.3"
+      "version": ">= 4.4"
     },
     "2": {
       "@type": "SoftwareApplication",
       "identifier": "checkmate",
       "name": "checkmate",
-      "version": ">= 2.3.2",
+      "version": ">= 2.3.3",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -159,7 +185,7 @@
       "@type": "SoftwareApplication",
       "identifier": "cli",
       "name": "cli",
-      "version": ">= 3.6.3",
+      "version": ">= 3.6.5",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -185,7 +211,7 @@
       "@type": "SoftwareApplication",
       "identifier": "fs",
       "name": "fs",
-      "version": ">= 1.6.5",
+      "version": ">= 1.6.6",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -198,7 +224,7 @@
       "@type": "SoftwareApplication",
       "identifier": "here",
       "name": "here",
-      "version": ">= 1.0.1",
+      "version": ">= 1.0.2",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -209,22 +235,9 @@
     },
     "7": {
       "@type": "SoftwareApplication",
-      "identifier": "lifecycle",
-      "name": "lifecycle",
-      "version": ">= 1.0.4",
-      "provider": {
-        "@id": "https://cran.r-project.org",
-        "@type": "Organization",
-        "name": "Comprehensive R Archive Network (CRAN)",
-        "url": "https://cran.r-project.org"
-      },
-      "sameAs": "https://CRAN.R-project.org/package=lifecycle"
-    },
-    "8": {
-      "@type": "SoftwareApplication",
       "identifier": "openssl",
       "name": "openssl",
-      "version": ">= 2.3.2",
+      "version": ">= 2.3.4",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -233,11 +246,11 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=openssl"
     },
-    "9": {
+    "8": {
       "@type": "SoftwareApplication",
       "identifier": "readr",
       "name": "readr",
-      "version": ">= 2.1.5",
+      "version": ">= 2.1.6",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -246,11 +259,11 @@
       },
       "sameAs": "https://CRAN.R-project.org/package=readr"
     },
-    "10": {
+    "9": {
       "@type": "SoftwareApplication",
       "identifier": "stringr",
       "name": "stringr",
-      "version": ">= 1.5.1",
+      "version": ">= 1.6.0",
       "provider": {
         "@id": "https://cran.r-project.org",
         "@type": "Organization",
@@ -261,7 +274,7 @@
     },
     "SystemRequirements": null
   },
-  "fileSize": "44.498KB",
+  "fileSize": "136.057KB",
   "citation": [
     {
       "@type": "CreativeWork",
@@ -271,18 +284,18 @@
           "@type": "Person",
           "givenName": "Daniel",
           "familyName": "Vartanian",
-          "email": "danvartan@gmail.com",
+          "email": "danielvartan@proton.me",
           "@id": "https://orcid.org/0000-0001-7782-759X"
         }
       ],
-      "name": "{lockr}: Easily encrypt/decrypt files",
+      "name": "lockr: Easily encrypt and decrypt files",
       "url": "https://danielvartan.github.io/lockr/",
-      "description": "R package"
+      "description": "Computer software"
     }
   ],
-  "releaseNotes": "https://github.com/danielvartan/lockr/blob/master/NEWS.md",
+  "releaseNotes": "https://github.com/danielvartan/lockr/blob/main/NEWS.md",
   "readme": "https://github.com/danielvartan/lockr/blob/main/README.md",
-  "contIntegration": ["https://github.com/danielvartan/lockr/actions/workflows/check-standard.yaml", "https://app.codecov.io/gh/danielvartan/lockr?branch=main"],
-  "developmentStatus": ["https://www.repostatus.org/#active", "https://lifecycle.r-lib.org/articles/stages.html#maturing"],
+  "contIntegration": ["https://github.com/danielvartan/lockr/actions", "https://app.codecov.io/gh/danielvartan/lockr"],
+  "developmentStatus": "https://www.repostatus.org/#active",
   "keywords": ["r-package", "encryption", "r", "rstats"]
 }
