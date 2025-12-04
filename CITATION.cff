@@ -8,7 +8,7 @@ message: 'To cite package "lockr" in publications use:'
 type: software
 license: GPL-3.0-or-later
 title: 'lockr: Easily Encrypt and Decrypt Files'
-version: 0.4.0
+version: 0.4.0.9000
 identifiers:
 - type: url
   value: https://github.com/danielvartan/lockr/
