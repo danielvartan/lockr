@@ -8,14 +8,14 @@ using an [OpenSSL](https://www.openssl.org/) RSA key pair.
 ``` r
 lock_file(
   file,
-  public_key = here::here("_ssh", "id_rsa.pub"),
+  public_key = here::here(".ssh", "id_rsa.pub"),
   suffix = ".lockr",
   remove_file = TRUE
 )
 
 unlock_file(
   file,
-  private_key = here::here("_ssh", "id_rsa"),
+  private_key = here::here(".ssh", "id_rsa"),
   suffix = ".lockr",
   remove_file = TRUE,
   password = NULL
@@ -39,7 +39,7 @@ unlock_file(
   the public key path. See
   [`rsa_keygen()`](https://danielvartan.github.io/lockr/reference/rsa_keygen.md)
   to learn how to create an RSA key pair (default:
-  `here::here("_ssh", "id_rsa.pub")`).
+  `here::here(".ssh", "id_rsa.pub")`).
 
 - suffix:
 
@@ -62,7 +62,7 @@ unlock_file(
   the private key path. See
   [`rsa_keygen()`](https://danielvartan.github.io/lockr/reference/rsa_keygen.md)
   to learn how to create an RSA key pair (default:
-  `here::here("_ssh", "id_rsa")`).
+  `here::here(".ssh", "id_rsa")`).
 
 - password:
 
@@ -94,12 +94,12 @@ dir.create(temp_dir)
 temp_file <- tempfile(tmpdir = temp_dir)
 
 rsa_keygen(temp_dir)
-#> ℹ Keys successfully created at /tmp/Rtmpu67Iup/dir19f650bc8d4d.
+#> ℹ Keys successfully created at /tmp/RtmpwNDBbf/dir1c0d40635a9b.
 
 con <- file(temp_file, "w+")
 cat("Test", file = temp_file, sep = "\n")
 list.files(temp_dir)
-#> [1] "file19f67182e13a" "id_rsa"           "id_rsa.pub"      
+#> [1] "file1c0d3f26f3da" "id_rsa"           "id_rsa.pub"      
 suppressWarnings(readLines(con))
 #> [1] "Test"
 close(con)
@@ -110,21 +110,18 @@ temp_file |>
   lock_file(
     public_key = file.path(temp_dir, "id_rsa.pub")
   )
-#> ℹ Locked file written at /tmp/Rtmpu67Iup/dir19f650bc8d4d/file19f67182e13a.lockr.
+#> ℹ Locked file written at /tmp/RtmpwNDBbf/dir1c0d40635a9b/file1c0d3f26f3da.lockr.
 
 temp_file_locked <- paste0(temp_file, ".lockr")
 
 con <- file(temp_file_locked, "rb")
 list.files(temp_dir)
-#> [1] "file19f67182e13a.lockr" "id_rsa"                 "id_rsa.pub"            
+#> [1] "file1c0d3f26f3da.lockr" "id_rsa"                 "id_rsa.pub"            
 suppressWarnings(readLines(con))
-#> [1] "\037\x8b\b"                                                                                                                                                                                                                                          
-#> [2] "\xcbַ\xf7\xb9\xb7\xab\xae\xd8c\xb3\xbdH\xb6%\xbbJ\xf6\xff\035\x87\x9f\xf5\xf5\x97>\xbb\xc5sH\x96\xbd\xfb\036\xbb\x9c\xed\023\xb7Ef\xf8Z;\x96\x86=\x9f8\xb9\x98\xa4N9-\017\xf8'j?\x8by9ӻ\031\xf2\xa2w\035&\xe7.\xe5\x9f_\xe0'\xfc*u\xae\x9c\xf8\xb2r\x8f\xf4"
-#> [3] "n\xcf6\x9d[\xa7\x96\xc4m\xbf\xe8\xee\xef\xff\006\x97Rċ\x8e\177\xfe2\xb9\xe3N\xa2\xff\xeb\xf4\xd3\027\x96d]\x9eƘ\xf1\xdc^$R~\v\xfb\xf2\xc5\xcfU\x9d\xc4n\xb4(\xe7\xdd\xe4\xe3"                                                                        
-#> [4] "\xde\xec)\025\xe2\0366\xff\xf6\017\x9d\x9b.E\037w\xd4(\xae2\x8e~\xa0\024\xbf\xa5d\xadb\x88ы\xca9\xcf~;\034\bl\xbf$\030}m\x87[\x85O\x86\x9e\xa7\xb6\x87\xf4ꆧ\034\xbe"                                                                                
-#> [5] "\xfeO\xbag\x96\004\t_\016\xb8\xcc\xdb\xf8$\xe5`z\xfb\xebČٕ\xbe\x97\xaf2|\x9a \xfb\xb6\xbb,u\x9bpI\xee\xb1\xe9\x9a\xcb\f\x8f\xc1\u0087\xe7lw\xfe\024w\xe3\xff\xeb/\xf3\xed`k\xe3\xeee``ab"                                                             
-#> [6] "!\xa1"                                                                                                                                                                                                                                               
-#> [7] "\026d\xca,\x83\xb2؋S\x8b\x8b3\xf3\xf3\xa0\\\x96\x94ĒD \xfd\017"                                                                                                                                                                                      
+#> [1] "\037\x8b\b"                                                                                                                                                                                      
+#> [2] ">\xf9\x9d\006\x9b\xa2W\xdaH\xac\xda(\xbe\xd0\xebwů\025^\x8f\xb5\v\xef\xffe\021\xee\xb4jܖuyf\xf2\xee\xc5\xfb?\xe6\x9a\xcbT\xd7\025o\x9f.6\xf3\xc1\xc2S\xda˿*\x89f\xce4\x88"                       
+#> [3] "\016[[\xc9\xf9\xc5\xce\xc2a熃L\xe2N-\x8b#\xa5|\xae\x9d\xdaY\xf7\xe7\xe4>\x86\xc3G\xcbLxJ\x82\x8d\xa7\xd6o\xf9\xf8\xdcjŦ"                                                                         
+#> [4] "o\xf6\xc4ɜ\xcd5\x91\x90\x9eɧc\001\v\x9f\x84ٶ\xdb.=\xd5Y\xfbkŭl\xa3s\xdf\03610\xb001\x80\002\x88\x85\x81\023\024\xa8y\x89\xb9\xa9\xc5 \x85\x90\xd0\006\v2e\x96AY\xecũ\xc5ř\xf9yP.KJbI\"\x90\xfe\a"
 close(con)
 
 ## Unlocking Files -----
@@ -133,10 +130,10 @@ temp_file_locked |>
   unlock_file(
     private_key = file.path(temp_dir, "id_rsa")
   )
-#> ℹ Unlocked file written at /tmp/Rtmpu67Iup/dir19f650bc8d4d/file19f67182e13a.
+#> ℹ Unlocked file written at /tmp/RtmpwNDBbf/dir1c0d40635a9b/file1c0d3f26f3da.
 
 list.files(temp_dir)
-#> [1] "file19f67182e13a" "id_rsa"           "id_rsa.pub"      
+#> [1] "file1c0d3f26f3da" "id_rsa"           "id_rsa.pub"      
 con <- file(temp_file, "r+")
 readLines(con)
 #> [1] "Test"

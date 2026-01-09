@@ -7,7 +7,7 @@
 ## Usage
 
 ``` r
-rsa_keygen(dir = here::here("_ssh"), password = NULL, bits = 2048)
+rsa_keygen(dir = here::here(".ssh"), password = NULL, bits = 2048)
 ```
 
 ## Arguments
@@ -16,7 +16,7 @@ rsa_keygen(dir = here::here("_ssh"), password = NULL, bits = 2048)
 
   (optional) A [`character`](https://rdrr.io/r/base/character.html)
   string specifying the directory to save the generated keys (default:
-  `here::here("_ssh")`)
+  `here::here(".ssh")`)
 
 - password:
 
@@ -45,7 +45,7 @@ temp_dir |>
     password = "test",
     bits = 2048
   )
-#> ℹ Keys successfully created at /tmp/Rtmpu67Iup/dir19f64b016b22.
+#> ℹ Keys successfully created at /tmp/RtmpwNDBbf/dir1c0d6aec20bf.
 
 list.files(temp_dir)
 #> [1] "id_rsa"     "id_rsa.pub"

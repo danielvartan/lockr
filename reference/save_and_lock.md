@@ -11,7 +11,7 @@ save_and_lock(
   x,
   file,
   type = "rds",
-  public_key = here::here("_ssh", "id_rsa.pub"),
+  public_key = here::here(".ssh", "id_rsa.pub"),
   ...
 )
 ```
@@ -43,7 +43,7 @@ save_and_lock(
   the public key path. See
   [`rsa_keygen()`](https://danielvartan.github.io/lockr/reference/rsa_keygen.md)
   to learn how to create an RSA key pair (default:
-  `here::here("_ssh", "id_rsa.pub")`).
+  `here::here(".ssh", "id_rsa.pub")`).
 
 - ...:
 
@@ -71,7 +71,7 @@ temp_dir <- tempfile("dir")
 dir.create(temp_dir)
 
 rsa_keygen(temp_dir)
-#> ℹ Keys successfully created at /tmp/Rtmpu67Iup/dir19f634b43839.
+#> ℹ Keys successfully created at /tmp/RtmpwNDBbf/dir1c0d3bb44fae.
 
 x <- letters
 
@@ -83,6 +83,6 @@ x |>
     type = "rds",
     public_key = file.path(temp_dir, "id_rsa.pub")
   )
-#> ℹ Locked file written at /tmp/Rtmpu67Iup/file19f69bcc85d.lockr.
-#> [1] "/tmp/Rtmpu67Iup/file19f69bcc85d.lockr"
+#> ℹ Locked file written at /tmp/RtmpwNDBbf/file1c0dd76ed14.lockr.
+#> [1] "/tmp/RtmpwNDBbf/file1c0dd76ed14.lockr"
 ```

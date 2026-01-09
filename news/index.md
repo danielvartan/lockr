@@ -2,6 +2,9 @@
 
 ## lockr (development version)
 
+- The default directory for locating keys was changed from `_ssh` to
+  `.ssh` to follow standard conventions.
+
 ## lockr 0.4.0 (2025-12-04)
 
 - The package code was refactored to improve readability and
