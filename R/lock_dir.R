@@ -49,7 +49,7 @@
 #'   )
 lock_dir <- function(
   dir,
-  public_key = here::here("_ssh", "id_rsa.pub"),
+  public_key = here::here(".ssh", "id_rsa.pub"),
   suffix = ".lockr",
   remove_file = TRUE
 ) {
@@ -61,7 +61,7 @@ lock_dir <- function(
 
   try_to_lock <- function(
     file,
-    public_key = here::here("_ssh", "id_rsa.pub"),
+    public_key = here::here(".ssh", "id_rsa.pub"),
     suffix = ".lockr",
     remove_file = TRUE
   ) {
@@ -100,7 +100,7 @@ lock_dir <- function(
 #' @export
 unlock_dir <- function(
   dir,
-  private_key = here::here("_ssh", "id_rsa"),
+  private_key = here::here(".ssh", "id_rsa"),
   suffix = ".lockr",
   remove_file = TRUE,
   password = NULL
@@ -114,7 +114,7 @@ unlock_dir <- function(
 
   try_to_unlock <- function(
     file,
-    private_key = here::here("_ssh", "id_rsa"),
+    private_key = here::here(".ssh", "id_rsa"),
     suffix = ".lockr",
     remove_file = TRUE,
     password = NULL

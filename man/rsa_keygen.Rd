@@ -4,11 +4,11 @@
 \alias{rsa_keygen}
 \title{Generate and write a pair of RSA keys}
 \usage{
-rsa_keygen(dir = here::here("_ssh"), password = NULL, bits = 2048)
+rsa_keygen(dir = here::here(".ssh"), password = NULL, bits = 2048)
 }
 \arguments{
 \item{dir}{(optional) A \code{\link[base:character]{character}} string specifying the
-directory to save the generated keys (default: \code{here::here("_ssh")})}
+directory to save the generated keys (default: \code{here::here(".ssh")})}
 
 \item{password}{(optional) A \code{\link[base:character]{character}} string specifying
 the password to protect the private key. If \code{NULL}, the private key will

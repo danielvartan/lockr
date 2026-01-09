@@ -8,7 +8,7 @@ save_and_lock(
   x,
   file,
   type = "rds",
-  public_key = here::here("_ssh", "id_rsa.pub"),
+  public_key = here::here(".ssh", "id_rsa.pub"),
   ...
 )
 }
@@ -26,7 +26,7 @@ to save the object as. Must be one of \code{"csv"} or \code{"rds"}
 \item{public_key}{(optional) An \code{\link[openssl:keygen]{openssl}} RSA public
 key or a \code{\link[base:character]{character}} string specifying the public key
 path. See \code{\link[=rsa_keygen]{rsa_keygen()}} to learn how to create an RSA key pair
-(default: \code{here::here("_ssh", "id_rsa.pub")}).}
+(default: \code{here::here(".ssh", "id_rsa.pub")}).}
 
 \item{...}{(optional) Additional arguments passed to
 \code{\link[readr:write_delim]{write_csv}} or \code{\link[readr:read_rds]{write_rds}}.}

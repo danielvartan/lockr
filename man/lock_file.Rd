@@ -7,14 +7,14 @@
 \usage{
 lock_file(
   file,
-  public_key = here::here("_ssh", "id_rsa.pub"),
+  public_key = here::here(".ssh", "id_rsa.pub"),
   suffix = ".lockr",
   remove_file = TRUE
 )
 
 unlock_file(
   file,
-  private_key = here::here("_ssh", "id_rsa"),
+  private_key = here::here(".ssh", "id_rsa"),
   suffix = ".lockr",
   remove_file = TRUE,
   password = NULL
@@ -28,7 +28,7 @@ the suffix parameter.}
 \item{public_key}{(optional) An \code{\link[openssl:keygen]{openssl}} RSA public
 key or a \code{\link[base:character]{character}} string specifying the public key
 path. See \code{\link[=rsa_keygen]{rsa_keygen()}} to learn how to create an RSA key pair
-(default: \code{here::here("_ssh", "id_rsa.pub")}).}
+(default: \code{here::here(".ssh", "id_rsa.pub")}).}
 
 \item{suffix}{(optional) A \code{\link[base:character]{character}} string specifying
 the suffix to add when encrypting or remove when decrypting. Must start
@@ -41,7 +41,7 @@ process (default: \code{TRUE}).}
 \item{private_key}{(optional) An \code{\link[openssl:keygen]{openssl}} RSA
 private key or a \code{\link[base:character]{character}} string specifying the
 private key path. See \code{\link[=rsa_keygen]{rsa_keygen()}} to learn how to create an RSA key pair
-(default: \code{here::here("_ssh", "id_rsa")}).}
+(default: \code{here::here(".ssh", "id_rsa")}).}
 
 \item{password}{(optional) A \code{\link[base:character]{character}} string
 specifying the password for decrypting a protected private key.

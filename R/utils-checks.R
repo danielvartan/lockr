@@ -1,5 +1,5 @@
 test_public_key <- function(
-  public_key = here::here("_ssh", "id_rsa.pub")
+  public_key = here::here(".ssh", "id_rsa.pub")
 ) {
   if (checkmate::test_class(public_key, "rsa")) {
     if (inherits(public_key, "pubkey")) {
@@ -24,7 +24,7 @@ test_public_key <- function(
 }
 
 assert_public_key <- function(
-  public_key = here::here("_ssh", "id_rsa.pub")
+  public_key = here::here(".ssh", "id_rsa.pub")
 ) {
   if (!test_public_key(public_key)) {
     cli::cli_abort(paste(
@@ -36,7 +36,7 @@ assert_public_key <- function(
 }
 
 test_private_key <- function(
-  private_key = here::here("_ssh", "id_rsa"),
+  private_key = here::here(".ssh", "id_rsa"),
   password = NULL
 ) {
   checkmate::assert_string(password, null.ok = TRUE)
@@ -64,7 +64,7 @@ test_private_key <- function(
 }
 
 assert_private_key <- function(
-  private_key = here::here("_ssh", "id_rsa"),
+  private_key = here::here(".ssh", "id_rsa"),
   password = NULL
 ) {
   if (!test_private_key(private_key, password)) {

@@ -7,7 +7,7 @@
 #' private and public keys.
 #'
 #' @param dir (optional) A [`character`][base::character] string specifying the
-#'   directory to save the generated keys (default: `here::here("_ssh")`)
+#'   directory to save the generated keys (default: `here::here(".ssh")`)
 #' @param password (optional) A [`character`][base::character] string specifying
 #'   the password to protect the private key. If `NULL`, the private key will
 #'   not be protected (default: `NULL`).
@@ -32,7 +32,7 @@
 #'
 #' list.files(temp_dir)
 rsa_keygen <- function(
-  dir = here::here("_ssh"),
+  dir = here::here(".ssh"),
   password = NULL,
   bits = 2048
 ) {

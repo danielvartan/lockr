@@ -63,7 +63,7 @@
 #' close(con)
 lock_file <- function(
   file,
-  public_key = here::here("_ssh", "id_rsa.pub"), #nolint
+  public_key = here::here(".ssh", "id_rsa.pub"), #nolint
   suffix = ".lockr",
   remove_file = TRUE
 ) {
@@ -119,7 +119,7 @@ lock_file <- function(
 #' @export
 unlock_file <- function(
   file,
-  private_key = here::here("_ssh", "id_rsa"), #nolint
+  private_key = here::here(".ssh", "id_rsa"), #nolint
   suffix = ".lockr",
   remove_file = TRUE,
   password = NULL

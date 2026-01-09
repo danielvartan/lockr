@@ -44,7 +44,7 @@ save_and_lock <- function(
   x,
   file,
   type = "rds",
-  public_key = here::here("_ssh", "id_rsa.pub"),
+  public_key = here::here(".ssh", "id_rsa.pub"),
   ...
 ) {
   checkmate::assert_path_for_output(file, overwrite = TRUE)
